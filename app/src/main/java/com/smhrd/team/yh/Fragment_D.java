@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Fragment_D extends Fragment implements View.OnClickListener{
-    TextView tv_setting_gun1, tv_setting_gun2;
-    Button btn_setting_notice, btn_setting_change, btn_setting_quit, btn_setting_qa, btn_setting_as;
+    private TextView tv_setting_gun1, tv_setting_gun2;
+    private Button btn_setting_notice, btn_setting_change, btn_setting_quit, btn_setting_qa, btn_setting_as;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +44,8 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
 
         if(v.getId() == R.id.btn_setting_notice){
+            Intent intent = new Intent(v.getContext(),Notice.class);
+            startActivityForResult(intent,1111);
 
         }
     }

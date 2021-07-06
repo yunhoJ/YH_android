@@ -7,7 +7,7 @@
     tools:context=".Join">
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/fraga_edt_pw"
         android:layout_width="331dp"
         android:layout_height="33dp"
         android:ems="10"
@@ -135,7 +135,7 @@
         app:srcCompat="@drawable/ic_baseline_menu_24" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_notice_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="기본 정보"
