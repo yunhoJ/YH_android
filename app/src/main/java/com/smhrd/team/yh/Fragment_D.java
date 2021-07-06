@@ -45,7 +45,7 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
 
         if(v.getId() == R.id.btn_setting_notice){
             Intent intent = new Intent(v.getContext(),Notice.class);
-            startActivityForResult(intent,1111);
+            startActivity(intent);
 
         }
     }
