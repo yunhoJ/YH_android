@@ -7,7 +7,7 @@
     tools:context=".Fragment_B">
 
     <TextView
-        android:id="@+id/maintop"
+        android:id="@+id/mainview"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_weight="0.05"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/btn_search"
         android:layout_width="328dp"
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maintop"
+        app:layout_constraintTop_toBottomOf="@+id/mainview"
         app:strokeColor="#F8F8F8"
         app:strokeWidth="5dp" />
 
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search"
         app:layout_constraintVertical_bias="0.0">
 
     </ListView>
