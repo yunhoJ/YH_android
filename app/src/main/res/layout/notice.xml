@@ -26,11 +26,11 @@
             android:id="@+id/tv_notice_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
             android:layout_marginTop="5dp"
             android:text="2021 - 06 - 05"
-            android:textColor="#373636"
+            android:textColor="#38383C"
             android:textStyle="bold" />
     </LinearLayout>
 

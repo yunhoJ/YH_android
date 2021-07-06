@@ -20,14 +20,15 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
 
         View fragment=inflater.inflate(R.layout.fragment_d,container,false);
 
-        tv_setting_gun1 = fragment.findViewById(R.id.tv_setting_gun1);
-        tv_setting_gun2 = fragment.findViewById(R.id.tv_setting_gun2);
-        btn_setting_notice = fragment.findViewById(R.id.btn_setting_notice);
-        btn_setting_change = fragment.findViewById(R.id.btn_setting_change);
-        btn_setting_quit = fragment.findViewById(R.id.btn_setting_quit);
-        btn_setting_qa = fragment.findViewById(R.id.btn_setting_qa);
-        btn_setting_as = fragment.findViewById(R.id.btn_setting_as);
+        initView(fragment);
 
+        button();
+
+
+        return fragment;
+    }
+
+    private void button() {
         tv_setting_gun1.setOnClickListener(this);
         tv_setting_gun2.setOnClickListener(this);
         btn_setting_notice.setOnClickListener(this);
@@ -35,9 +36,16 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         btn_setting_quit.setOnClickListener(this);
         btn_setting_qa.setOnClickListener(this);
         btn_setting_as.setOnClickListener(this);
+    }
 
-
-        return fragment;
+    private void initView(View fragment) {
+        tv_setting_gun1 = fragment.findViewById(R.id.tv_setting_gun1);
+        tv_setting_gun2 = fragment.findViewById(R.id.tv_setting_gun2);
+        btn_setting_notice = fragment.findViewById(R.id.btn_setting_notice);
+        btn_setting_change = fragment.findViewById(R.id.btn_setting_change);
+        btn_setting_quit = fragment.findViewById(R.id.btn_setting_quit);
+        btn_setting_qa = fragment.findViewById(R.id.btn_setting_qa);
+        btn_setting_as = fragment.findViewById(R.id.btn_setting_as);
     }
 
     @Override
