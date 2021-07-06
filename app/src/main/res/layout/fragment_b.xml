@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Fragment_B">
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="34dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="13dp"
-        app:layout_constraintStart_toStartOf="@+id/mainview2"
-        app:layout_constraintTop_toTopOf="@+id/mainview2"
-        app:srcCompat="@drawable/ic_baseline_chevron_left_24" />
-
     <TextView
         android:id="@+id/mainview"
         android:layout_width="match_parent"
