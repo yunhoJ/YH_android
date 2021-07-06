@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="맞춤정책"
+        android:title="커뮤니티"
         android:id="@+id/page1"
         android:icon="@drawable/ic_baseline_comment_24"
         />
@@ -14,7 +14,7 @@
         android:icon="@drawable/ic_baseline_home_24"
         />
     <item
-        android:title="커뮤니티"
+        android:title="맞춤정책"
         android:id="@+id/page3"
         android:icon="@drawable/ic_baseline_menu_book_24"
         />
