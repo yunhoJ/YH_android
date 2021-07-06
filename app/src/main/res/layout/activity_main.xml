@@ -27,6 +27,39 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="-2dp">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="328dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="16dp"
+                android:gravity="left"
+                android:text="검색"
+                android:textColor="#9A9A9A"
+                android:textSize="12sp"
+                app:backgroundTint="#6FFFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.388"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="20dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="290dp"
+                android:layout_marginLeft="290dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/btn"
+                app:layout_constraintStart_toStartOf="@+id/btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_search_24"
+                tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
