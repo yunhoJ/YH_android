@@ -1,6 +1,5 @@
 package com.smhrd.team.yh;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -14,7 +13,7 @@ public class Fragment_D extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        View fragment=inflater.inflate(R.layout.activity_fragment_d,container,false);
+        View fragment=inflater.inflate(R.layout.fragment_d,container,false);
 
 
 
