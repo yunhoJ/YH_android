@@ -1,11 +1,7 @@
 package com.smhrd.team.yh;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ActionMode;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +22,7 @@ public class Fragment_B extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View fragment = inflater.inflate(R.layout.fragment_d, container, false);
+        View fragment = inflater.inflate(R.layout.fragment_b, container, false);
 
 
         return fragment;
