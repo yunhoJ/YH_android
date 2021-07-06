@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YH</string>
+    <string name="tv_setting_gun1"><u>0건</u></string>
+
 </resources>
