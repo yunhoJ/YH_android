@@ -15,12 +15,13 @@ public class Notice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
 
-        noticeListView = findViewById(R.id.noticeListView);
         Intent intent = getIntent();
+
+        noticeListView = findViewById(R.id.noticeListView);
 
         NoticeAdapter adapter = new NoticeAdapter();
         adapter.addNotice("2021년 보육료·유아 학비 사전신청안내","2021 - 06 - 05");
-        adapter.addNotice("추가추가","날짜 날짜");
+        adapter.addNotice("2021년 생계급여 부양의무자 폐지 대상 안내","2021 - 06 - 03");
 
 
 
