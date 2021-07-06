@@ -1,6 +1,5 @@
 package com.smhrd.team.yh;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
@@ -8,8 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 public class Fragment_A extends Fragment {
     private MainActivity mainActivity;
@@ -20,11 +17,12 @@ public class Fragment_A extends Fragment {
         mainActivity=(MainActivity)getActivity();//연결된 액티비티
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        View fragment=inflater.inflate(R.layout.activity_fragment_a,container,false);
+        View fragment=inflater.inflate(R.layout.fragment_a,container,false);
 
 
 
