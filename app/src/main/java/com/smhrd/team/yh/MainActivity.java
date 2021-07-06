@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         fragment_c = new Fragment_C();
         fragment_d = new Fragment_D();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_a).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
 
 
         navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

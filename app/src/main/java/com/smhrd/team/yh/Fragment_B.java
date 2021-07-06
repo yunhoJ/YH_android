@@ -16,13 +16,16 @@ public class Fragment_B extends Fragment {
     private ListView happyListView;
     private Button btn;
 
-    private ArrayList<String> items = new ArrayList<String>();
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View fragment = inflater.inflate(R.layout.fragment_b, container, false);
+
+        happyListView.findViewById(R.id.happyListView);
+
 
 
         return fragment;
