@@ -6,38 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".searchPage">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
-
-        <FrameLayout
-            android:id="@+id/frag"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="10"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="-2dp"/>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navi"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-
-
-            android:layout_weight="0.3"
-            android:background="#FFE34020"
-            app:itemIconTint="#FDFCFC"
-            app:itemTextColor="#F6F5F5"
-            app:menu="@menu/item"
-            tools:layout_editor_absoluteY="1dp">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    </LinearLayout>
-
     <Button
         android:id="@+id/btn_searchBar"
         android:layout_width="328dp"
