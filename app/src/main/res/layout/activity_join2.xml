@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".join2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Join">
+
+
+        <EditText
+            android:id="@+id/txt_sex2"
+            android:layout_width="331dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="한부모가정"
+            android:inputType="textPersonName"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_id" />
+
+        <EditText
+            android:id="@+id/txt_sex3"
+            android:layout_width="331dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="장애인"
+            android:inputType="textPersonName"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sex2" />
+
+        <EditText
+            android:id="@+id/txt_phone"
+            android:layout_width="331dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="연락처"
+            android:inputType="textPersonName"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_birth" />
+
+
+        <TextView
+            android:id="@+id/main_join"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_weight="0.05"
+            android:background="#FFE34020"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="회원가입"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_pre2"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toStartOf="@+id/main_join"
+            app:layout_constraintTop_toTopOf="@+id/main_join"
+            app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/img_pre1"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toStartOf="@+id/main_join"
+            app:layout_constraintTop_toTopOf="@+id/main_join"
+            app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/img_psa"
+            android:layout_width="52dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_join"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/img_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_psa"
+            app:srcCompat="@drawable/ic_baseline_camera_alt_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="35dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="290dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/main_join"
+            app:layout_constraintStart_toEndOf="@+id/btn_pre"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_menu_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <Button
+            android:id="@+id/btn_photo"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="32dp"
+            android:background="#00ff0000"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:iconTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_join"
+            app:rippleColor="#00FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_pre"
+            android:layout_width="62dp"
+            android:layout_height="58dp"
+            android:background="#00ff0000"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:iconTint="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#00FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_ham"
+            android:layout_width="59dp"
+            android:layout_height="52dp"
+            android:background="#00ff0000"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:iconTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#00FFFFFF" />
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="세부 정보"
+            app:layout_constraintTop_toBottomOf="@+id/img_psa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="37dp" />
+
+        <EditText
+            android:id="@+id/txt_id"
+            android:layout_width="331dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="임신"
+            android:inputType="textPersonName"
+            android:textColor="#B1B1B1"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt" />
+
+        <EditText
+            android:id="@+id/txt_birth"
+            android:layout_width="331dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="생년월일"
+            android:inputType="textPersonName"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sex" />
+
+        <EditText
+            android:id="@+id/txt_sex"
+            android:layout_width="331dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="성별"
+            android:inputType="textPersonName"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sex3" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="가입완료"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:backgroundTint="#FFE34020"
+            app:layout_constraintTop_toBottomOf="@+id/txt_phone"
+            tools:layout_editor_absoluteX="153dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

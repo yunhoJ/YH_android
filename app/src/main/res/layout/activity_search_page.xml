@@ -6,11 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".searchPage">
 
+    <TextView
+        android:id="@+id/mainview3"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_weight="0.05"
+        android:background="#FFE34020"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="행복혜"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgham"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mainview3"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+    <Button
+        android:id="@+id/btn_hambar"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/mainview"
+        app:layout_constraintTop_toTopOf="@+id/mainview3"
+        app:rippleColor="#00FFFFFF" />
+
     <Button
         android:id="@+id/btn_searchBar"
         android:layout_width="328dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:gravity="center|left"
         android:text="검색"
         android:textColor="#9A9A9A"
@@ -19,142 +58,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainview3"
         app:strokeColor="#F8F8F8"
         app:strokeWidth="5dp" />
-
-    <ImageView
-        android:id="@+id/img_search"
-        android:layout_width="22dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:src="@drawable/ic_baseline_search_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/img_imsin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_yeong"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:srcCompat="@drawable/icon_imsin" />
-
-    <ImageView
-        android:id="@+id/img_gyo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_geon"
-        app:layout_constraintEnd_toStartOf="@+id/img_go"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_geon"
-        app:layout_constraintTop_toTopOf="@+id/img_geon"
-        app:srcCompat="@drawable/icon_gyo6" />
-
-    <ImageView
-        android:id="@+id/img_han"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_jang"
-        app:layout_constraintEnd_toStartOf="@+id/img_jeo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_jang"
-        app:layout_constraintTop_toTopOf="@+id/img_jang"
-        app:srcCompat="@drawable/icon_hanboomo" />
-
-    <ImageView
-        android:id="@+id/img_geon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_gyo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_jang"
-        app:srcCompat="@drawable/icon_geongang" />
-
-    <ImageView
-        android:id="@+id/img_moon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_seo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_seo"
-        app:layout_constraintTop_toTopOf="@+id/img_seo"
-        app:srcCompat="@drawable/icon_moonhwa" />
-
-    <ImageView
-        android:id="@+id/img_seo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_joo"
-        app:layout_constraintEnd_toStartOf="@+id/img_moon"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_joo"
-        app:layout_constraintTop_toTopOf="@+id/img_joo"
-        app:srcCompat="@drawable/icon_seominmoney" />
-
-    <ImageView
-        android:id="@+id/img_joo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_seo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_geon"
-        app:srcCompat="@drawable/icon_joogeo" />
-
-    <ImageView
-        android:id="@+id/img_so"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_yeong"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_yeong"
-        app:layout_constraintTop_toTopOf="@+id/img_yeong"
-        app:srcCompat="@drawable/icon_sonyeon" />
-
-    <ImageView
-        android:id="@+id/img_go"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_gyo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_gyo"
-        app:layout_constraintTop_toTopOf="@+id/img_gyo"
-        app:srcCompat="@drawable/icon_goyong" />
-
-    <ImageView
-        android:id="@+id/img_yeong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_imsin"
-        app:layout_constraintEnd_toStartOf="@+id/img_so"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_imsin"
-        app:layout_constraintTop_toTopOf="@+id/img_imsin"
-        app:srcCompat="@drawable/icon_yeongyooa" />
-
-    <ImageView
-        android:id="@+id/img_cheong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_joong"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_imsin"
-        app:srcCompat="@drawable/icon_cheongnyeon" />
 
     <ImageView
         android:id="@+id/img_jeo"
@@ -165,7 +71,98 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/img_han"
         app:layout_constraintTop_toTopOf="@+id/img_han"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_jeosodk" />
+
+    <ImageView
+        android:id="@+id/img_han"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_jang"
+        app:layout_constraintEnd_toStartOf="@+id/img_jeo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_jang"
+        app:layout_constraintTop_toTopOf="@+id/img_jang"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_hanboomo" />
+
+    <ImageView
+        android:id="@+id/img_moon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_seo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_seo"
+        app:layout_constraintTop_toTopOf="@+id/img_seo"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_moonhwa" />
+
+    <ImageView
+        android:id="@+id/img_imsin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_yeong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:srcCompat="@drawable/icon_imsin" />
+
+    <Button
+        android:id="@+id/btn_imsin"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="35dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_gyo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_geon"
+        app:layout_constraintEnd_toStartOf="@+id/img_go"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_geon"
+        app:layout_constraintTop_toTopOf="@+id/img_geon"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_gyo6" />
+
+    <ImageView
+        android:id="@+id/img_so"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_yeong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_yeong"
+        app:layout_constraintTop_toTopOf="@+id/img_yeong"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_sonyeon" />
+
+    <Button
+        android:id="@+id/btn_so"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_yeong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toEndOf="@+id/img_yeong"
+        app:rippleColor="#00FFFFFF" />
 
     <ImageView
         android:id="@+id/img_joong"
@@ -176,7 +173,56 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/img_cheong"
         app:layout_constraintTop_toTopOf="@+id/img_cheong"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_joongjangnyeon" />
+
+    <ImageView
+        android:id="@+id/img_geon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_gyo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_jang"
+        app:srcCompat="@drawable/icon_geongang" />
+
+    <ImageView
+        android:id="@+id/img_yeong"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_imsin"
+        app:layout_constraintEnd_toStartOf="@+id/img_so"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_imsin"
+        app:layout_constraintTop_toTopOf="@+id/img_imsin"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_yeongyooa" />
+
+    <Button
+        android:id="@+id/btn_yeong"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_imsin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toEndOf="@+id/img_imsin"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_jang"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_han"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_cheong"
+        app:srcCompat="@drawable/icon_jangaein" />
 
     <ImageView
         android:id="@+id/img_no"
@@ -187,17 +233,65 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/img_joong"
         app:layout_constraintTop_toTopOf="@+id/img_joong"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_nonyeon" />
 
     <ImageView
-        android:id="@+id/img_jang"
+        android:id="@+id/img_go"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_han"
+        app:layout_constraintBottom_toBottomOf="@+id/img_gyo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_gyo"
+        app:layout_constraintTop_toTopOf="@+id/img_gyo"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_goyong" />
+
+    <ImageView
+        android:id="@+id/img_cheong"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_joong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_imsin"
+        app:srcCompat="@drawable/icon_cheongnyeon" />
+
+    <ImageView
+        android:id="@+id/img_seo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_joo"
+        app:layout_constraintEnd_toStartOf="@+id/img_moon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_joo"
+        app:layout_constraintTop_toTopOf="@+id/img_joo"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_seominmoney" />
+
+    <ImageView
+        android:id="@+id/img_joo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_seo"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_cheong"
-        app:srcCompat="@drawable/icon_jangaein" />
+        app:layout_constraintTop_toBottomOf="@+id/img_geon"
+        app:srcCompat="@drawable/icon_joogeo" />
+
+    <ImageView
+        android:id="@+id/img_search"
+        android:layout_width="22dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
