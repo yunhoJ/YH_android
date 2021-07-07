@@ -67,7 +67,7 @@
         android:id="@+id/fragc_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="ooo님을 위한 정책은 8건 있습니다."
         android:textColor="#FFE34020"
         android:textSize="20sp"
