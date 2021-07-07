@@ -29,29 +29,14 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="30dp"
-            android:text="관심있는 복지혜택"
-            android:textColor="#F8F3F3"
-            android:textSize="16sp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="로그인 해주세요:)"
+            android:textColor="#FAF7F7"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_setting_gun1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/tv_setting_gun1"
-            android:textAllCaps="false"
-            android:textColor="#F8F3F3"
-            android:textIsSelectable="false"
-            android:textSize="16sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,32 +46,31 @@
         android:background="#D33719"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView3"
+        <Button
+            android:id="@+id/button10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="20dp"
-            android:text="내가 쓴 댓글"
-            android:textColor="#F8F3F3"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="2"
+            android:text="로그인"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:backgroundTint="#D33719" />
 
-        <TextView
-            android:id="@+id/tv_setting_gun2"
+        <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="170dp"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/tv_setting_gun1"
-            android:textColor="#F8F3F3"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="228dp"
+            android:layout_marginRight="228dp"
+            android:layout_weight="10"
+            android:gravity="center|left"
+            android:text="회원가입"
+            android:textStyle="bold"
+            app:backgroundTint="#D33719" />
     </LinearLayout>
 
     <LinearLayout
@@ -102,28 +86,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:text="공지사항"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:backgroundTint="#FFE34020" />
-
-        <Button
-            android:id="@+id/btn_setting_change"
-            android:layout_width="300dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="회원정보수정"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:backgroundTint="#FFE34020" />
-
-        <Button
-            android:id="@+id/btn_setting_quit"
-            android:layout_width="300dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="회원탈퇴"
             android:textSize="16sp"
             android:textStyle="bold"
             app:backgroundTint="#FFE34020" />

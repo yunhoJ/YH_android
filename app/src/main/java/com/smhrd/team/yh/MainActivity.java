@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment_B fragment_b;
     private Fragment_C fragment_c;
     private Fragment_D fragment_d;
+    private Fragment_D_2 fragment_d_2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         fragment_b = new Fragment_B();
         fragment_c = new Fragment_C();
         fragment_d = new Fragment_D();
+        fragment_d_2 = new Fragment_D_2();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
 
@@ -45,8 +47,11 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_c).commit();
 
                 } else if (selectItem == R.id.page4) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_d).commit();
-
+                    if(true) {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_d).commit();
+                    }else{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_d_2).commit();
+                        }
                 }
 
                 return true;

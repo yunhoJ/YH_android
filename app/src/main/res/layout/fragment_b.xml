@@ -16,7 +16,9 @@
         android:text="행복혜"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,12 +59,14 @@
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="@+id/mainview"
         app:layout_constraintTop_toTopOf="@+id/mainview"
-        app:srcCompat="@drawable/ic_baseline_menu_24" />
+        app:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="VectorDrawableCompat" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_hamb"
         android:layout_width="59dp"
         android:layout_height="52dp"
+        android:layout_marginTop="4dp"
         android:background="#00ff0000"
         android:text=""
         app:backgroundTint="#00FFFFFF"
@@ -72,6 +76,17 @@
         app:layout_constraintStart_toStartOf="@+id/mainview"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="#00FFFFFF" />
+
+    <ListView
+        android:id="@+id/happyListView"
+        android:layout_width="385dp"
+        android:layout_height="580dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
