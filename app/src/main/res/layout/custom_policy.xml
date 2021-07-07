@@ -56,6 +56,19 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="10dp">
 
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="35dp"
+                    android:layout_height="25dp"
+                    android:background="#00FFFFFF"
+                    app:backgroundTint="#00FFFFFF"
+                    app:iconTint="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="35dp"
@@ -63,9 +76,11 @@
                     android:layout_gravity="right"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/button9"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@null" />
+                    app:srcCompat="@drawable/star" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
