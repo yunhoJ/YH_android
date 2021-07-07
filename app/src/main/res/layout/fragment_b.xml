@@ -16,7 +16,9 @@
         android:text="행복혜"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,6 +65,7 @@
         android:id="@+id/button8"
         android:layout_width="59dp"
         android:layout_height="52dp"
+        android:layout_marginTop="4dp"
         android:background="#00ff0000"
         android:text=""
         app:backgroundTint="#00FFFFFF"

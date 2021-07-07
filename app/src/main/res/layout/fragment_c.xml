@@ -4,4 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_C"/>
+    android:orientation="vertical"
+    tools:context=".Fragment_A">
+
+    <TextView
+        android:id="@+id/mainview"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_weight="0.05"
+        android:background="#FFE34020"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="맞춤정책"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/mainview"
+        app:layout_constraintTop_toTopOf="@+id/mainview"
+        app:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/mainview"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/mainview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#00FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="맞춤정책"
+        android:textColor="#FFE34020"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainview" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="ooo님을 위한 정책은 8건 있습니다."
+        android:textColor="#FFE34020"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.smhrd.team.yh.Fragment_B"
+        android:layout_width="386dp"
+        android:layout_height="450dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
