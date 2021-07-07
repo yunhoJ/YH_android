@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<<<<<<< HEAD
+    <item name="btn_setting_notice" type="id" />
+    <item name="btn_setting_change" type="id" />
+    <item name="btn_setting_quit" type="id" />
+    <item name="btn_setting_qa" type="id" />
+    <item name="btn_setting_as" type="id" />
+=======
+    <item name="ContentLayout" type="id" />
+    <item name="child_fragment" type="id" />
+>>>>>>> 2a5c18bb3167a1d279fc4c7fa16ac84aa50aee99
+</resources>
