@@ -7,7 +7,7 @@
     tools:context=".Join">
 
     <EditText
-        android:id="@+id/login_edt_pw"
+        android:id="@+id/fraga_edt_pw"
         android:layout_width="331dp"
         android:layout_height="33dp"
         android:ems="10"
