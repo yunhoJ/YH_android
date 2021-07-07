@@ -26,8 +26,7 @@ public class Fragment_B extends Fragment {
         View fragment = inflater.inflate(R.layout.fragment_b, container, false);
 
         btn_search = fragment.findViewById(R.id.btn_search);
-        btn_enter = fragment.findViewById(R.id.btn_enter);
-        btn_more = fragment.findViewById(R.id.btn_more);
+
         btn_hamb = fragment.findViewById(R.id.btn_hamb);
         happyListView = fragment.findViewById(R.id.happyListView);
 
