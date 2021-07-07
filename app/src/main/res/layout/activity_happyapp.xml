@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".happyapp">
+
+    <TextView
+        android:id="@+id/main_delete2"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_weight="0.05"
+        android:background="#FFE34020"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="행복혜"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/main_delete2"
+        app:layout_constraintTop_toTopOf="@+id/main_delete2"
+        app:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <Button
+        android:id="@+id/btn_hamb3"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/main_delete2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_pre6"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/main_delete2"
+        app:layout_constraintTop_toTopOf="@+id/main_delete2"
+        app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/img_pre7"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/main_delete2"
+        app:layout_constraintTop_toTopOf="@+id/main_delete2"
+        app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <Button
+        android:id="@+id/btn_preid3"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/app_title"
+        android:layout_width="447dp"
+        android:layout_height="648dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698"
+        app:srcCompat="@drawable/app" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="209dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="행복혜"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="210dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="대한민국 1등 복지앱"
+        android:textColor="#070707"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_delete2" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="넘겨보기 >"
+        app:backgroundTint="#FFE34020"
+        app:layout_constraintBottom_toTopOf="@+id/navi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navi"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+
+
+        android:layout_weight="0.3"
+        android:background="#FFE34020"
+        app:itemIconTint="#FDFCFC"
+        app:itemTextColor="#F6F5F5"
+        app:layout_constraintBottom_toBottomOf="@+id/frag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/item">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/frag"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-2dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
