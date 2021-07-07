@@ -22,15 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/frag"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_weight="10"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-    </FrameLayout>
-
     <Button
         android:id="@+id/btn_search"
         android:layout_width="328dp"
@@ -95,26 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_search" >
-
-    </ListView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navi"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-
-
-        android:layout_weight="0.3"
-        android:background="#FFE34020"
-        app:itemIconTint="#FDFCFC"
-        app:itemTextColor="#F6F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/item">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

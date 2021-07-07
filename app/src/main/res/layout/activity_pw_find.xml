@@ -54,7 +54,7 @@
             app:rippleColor="#00FFFFFF" />
 
         <ImageView
-            android:id="@+id/img_psa_join"
+            android:id="@+id/imageView2"
             android:layout_width="35dp"
             android:layout_height="27dp"
             android:layout_marginTop="16dp"
@@ -67,7 +67,7 @@
             tools:ignore="VectorDrawableCompat" />
 
         <Button
-            android:id="@+id/btn_findpw"
+            android:id="@+id/btn_next2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 찾기"
@@ -141,31 +141,5 @@
             tools:ignore="VectorDrawableCompat" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navi"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-
-
-        android:layout_weight="0.3"
-        android:background="#FFE34020"
-        app:itemIconTint="#FDFCFC"
-        app:itemTextColor="#F6F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/item">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    <FrameLayout
-        android:id="@+id/frag"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_weight="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="531dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

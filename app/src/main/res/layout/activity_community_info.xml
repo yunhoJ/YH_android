@@ -208,4 +208,11 @@
 
     </ListView>
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="81dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
