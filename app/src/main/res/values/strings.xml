@@ -2,5 +2,7 @@
     <string name="app_name">YH</string>
     <string name="tv_setting_gun1"><u>0건</u></string>
     <string name="showDetail"><u>자세히 보기</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
