@@ -36,7 +36,7 @@ public class NoticeAdapter extends BaseAdapter {
         }
 
         TextView title = convertView.findViewById(R.id.tv_notice_title);
-        TextView date = convertView.findViewById(R.id.txt);
+        TextView date = convertView.findViewById(R.id.tv_notice_date);
 
         ListViewNotice listViewNotice = listViewNoticeList.get(position);
         title.setText(listViewNotice.getTitle());

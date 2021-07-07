@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if (selectItem == R.id.page4) {
                     if(true) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
-                    }else{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_2).commit();
-                        }
+                    }
+//                    else{
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_2).commit();
+//                        }
                 }
 
                 return true;
