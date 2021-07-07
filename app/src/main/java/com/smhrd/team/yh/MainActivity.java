@@ -1,9 +1,6 @@
 package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -31,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
         fragment_c = new Fragment_C();
         fragment_d = new Fragment_D();
         fragment_d_2 = new Fragment_D_2();
-
-
-
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
 
@@ -68,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     };
-
-
-
 
     public Bundle getBundle() {
         return bundle;
