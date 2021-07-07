@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         fragment_d = new Fragment_D();
         fragment_d_2 = new Fragment_D_2();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
+        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
 
 
         navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -38,19 +38,19 @@ public class MainActivity extends AppCompatActivity {
                 int selectItem = item.getItemId();
 
                 if (selectItem == R.id.page1) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_a).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_a).commit();
 
                 } else if (selectItem == R.id.page2) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_b).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
 
                 } else if (selectItem == R.id.page3) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_c).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_c).commit();
 
                 } else if (selectItem == R.id.page4) {
                     if(true) {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_d).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
                     }else{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragment_d_2).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_2).commit();
                         }
                 }
 
