@@ -53,8 +53,8 @@
 
         <Button
             android:id="@+id/button16"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="89dp"
+            android:layout_height="86dp"
             android:layout_gravity="center"
             android:drawableBottom="@drawable/photoprofile"
             android:drawingCacheQuality="auto"
