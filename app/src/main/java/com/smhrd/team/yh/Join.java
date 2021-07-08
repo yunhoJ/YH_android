@@ -42,7 +42,7 @@ public class Join extends AppCompatActivity {
         btn_photo = findViewById(R.id.btn_photo);
         btn_ham = findViewById(R.id.btn_ham);
         btn_pre = findViewById(R.id.btn_pre);
-        btn_next = findViewById(R.id.btn_next);
+        btn_next = findViewById(R.id.btn_join);
 
         btn_photo.setOnClickListener(new View.OnClickListener() {
             @Override
