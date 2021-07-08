@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 public class Join extends AppCompatActivity {
 
@@ -25,12 +27,12 @@ public class Join extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
-        txt_id = findViewById(R.id.txt_id);
+        txt_id = findViewById(R.id.txt_im);
         txt_pw = findViewById(R.id.txt_pw);
         txt_pw2 = findViewById(R.id.txt_pw2);
-        txt_birth = findViewById(R.id.txt_birth);
-        txt_sex = findViewById(R.id.txt_sex);
-        txt_phone = findViewById(R.id.txt_phone);
+        txt_birth = findViewById(R.id.txt_gwan);
+        txt_sex = findViewById(R.id.txt_so);
+        txt_phone = findViewById(R.id.txt_ji);
         txt = findViewById(R.id.txt);
         img_psa = findViewById(R.id.img_psa);
         img_pre1 = findViewById(R.id.img_pre1);
@@ -48,15 +50,18 @@ public class Join extends AppCompatActivity {
                 // 회원가입할때 프사(img_psa)에 사진찍어서넣기
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent, 128);
+                Log.v("resultValue", "click");
 
             }
-//            public void doTakeAlbumAction(){
-//                // 회원가입할때 프사(img_psa)에 카메라앨범에서넣기
-//                Intent intent1 = new Intent(Intent.ACTION_PICK);
-//                intent1.setType(MediaStore.Images.Media.CONTENT_TYPE);
-//                startActivityForResult(intent1, img_psa);
-//
-//            }
+            public void doTakeAlbumAction(){
+//               // 회원가입할때 프사(img_psa)에 카메라앨범에서넣기
+                // 그냥 실제로는 카메라앨범에서 넣는것만 가능하게 만들거임 혹시안될까봐
+                // 2개만듬
+                Intent intent1 = new Intent(Intent.ACTION_PICK);
+                intent1.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                startActivityForResult(intent1, 128);
+
+            }
 
         });
 
@@ -92,10 +97,22 @@ public class Join extends AppCompatActivity {
                 String birth = txt_birth.getText().toString();
                 String phone = txt_phone.getText().toString();
                 // 유저 정보 보내기
-                Intent intent = new Intent(getApplicationContext(), join2.class);
-                intent.putExtra("data", "user");
-                startActivityForResult(intent, 1004);
+
+//                intent.putExtra("user", "user");
+//                startActivityForResult(intent, 1004);
+
                 // next 다음버튼 눌러서 회원가입 2번째 창으로 넘어가기
+
+                MemberDTO dto = new MemberDTO(id, pw, sex, birth, phone);
+                Gson gson = new Gson();
+                String value = gson.toJson(dto);
+                Log.v("resultValue", value);
+
+                //info 라는 key 값으로 json 저장
+                PreferenceManager.setString(getApplicationContext(),"info",value);
+                Intent intent = new Intent(getApplicationContext(), join2.class);
+
+                startActivity(intent);
             }
         });
 
