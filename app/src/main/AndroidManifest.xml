@@ -10,16 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YH">
+        <activity android:name=".AS"></activity>
+        <activity android:name=".QnA"></activity>
+        <activity android:name=".UserInfoChange2" />
         <activity android:name=".hamburger"></activity>
         <activity android:name=".happyApp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".user_delete" />
-        <activity android:name=".UserInfoChange2" />
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
@@ -29,7 +27,13 @@
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
         <activity android:name=".searchPage" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
