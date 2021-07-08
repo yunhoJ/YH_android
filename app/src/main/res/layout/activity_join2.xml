@@ -19,12 +19,21 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="한부모가정"
+            android:hint="    한부모가정"
             android:inputType="textPersonName"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_id" />
+
+        <CheckBox
+            android:id="@+id/cb_han"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_sex2"
+            app:layout_constraintEnd_toEndOf="@+id/txt_sex2"
+            app:layout_constraintStart_toStartOf="@+id/txt_sex2"
+            app:layout_constraintTop_toTopOf="@+id/txt_sex2" />
 
         <EditText
             android:id="@+id/txt_sex3"
@@ -33,7 +42,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="장애인"
+            android:hint="    장애인"
             android:inputType="textPersonName"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +57,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="연락처"
+            android:hint="    연락처"
             android:inputType="textPersonName"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +78,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cb_jang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_sex3"
+            app:layout_constraintEnd_toEndOf="@+id/txt_sex3"
+            app:layout_constraintStart_toStartOf="@+id/txt_sex3"
+            app:layout_constraintTop_toTopOf="@+id/txt_sex3" />
 
         <ImageView
             android:id="@+id/img_pre2"
@@ -186,7 +204,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="임신"
+            android:hint="    임신"
             android:inputType="textPersonName"
             android:textColor="#B1B1B1"
             android:textSize="10sp"
@@ -201,7 +219,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="생년월일"
+            android:hint="    생년월일"
             android:inputType="textPersonName"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -215,7 +233,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="성별"
+            android:hint="    성별"
             android:inputType="textPersonName"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -233,6 +251,15 @@
             app:backgroundTint="#FFE34020"
             app:layout_constraintTop_toBottomOf="@+id/txt_phone"
             tools:layout_editor_absoluteX="153dp" />
+
+        <CheckBox
+            android:id="@+id/cb_im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_id"
+            app:layout_constraintEnd_toEndOf="@+id/txt_id"
+            app:layout_constraintStart_toStartOf="@+id/txt_id"
+            app:layout_constraintTop_toTopOf="@+id/txt_id" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

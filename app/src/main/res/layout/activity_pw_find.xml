@@ -34,7 +34,7 @@
             android:layout_weight="0.05"
             android:background="#FFE34020"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="아이디 찾기"
+            android:text="비밀번호 찾기"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,50 +70,58 @@
             android:id="@+id/btn_next2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:text="비밀번호 찾기"
             android:textSize="18sp"
             android:textStyle="normal"
             app:backgroundTint="#FFE34020"
-            tools:layout_editor_absoluteX="132dp"
-            tools:layout_editor_absoluteY="433dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_pw3" />
 
         <EditText
             android:id="@+id/txt_id2"
             android:layout_width="331dp"
             android:layout_height="33dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="생년월일"
+            android:hint="    생년월일"
             android:inputType="textPersonName"
             android:textColor="#B1B1B1"
             android:textSize="10sp"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="257dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_id3" />
 
         <EditText
             android:id="@+id/txt_id3"
             android:layout_width="331dp"
             android:layout_height="33dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="아이디"
+            android:hint="    아이디"
             android:inputType="textPersonName"
             android:textColor="#B1B1B1"
             android:textSize="10sp"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="193dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_join2" />
 
         <EditText
             android:id="@+id/txt_pw3"
             android:layout_width="331dp"
             android:layout_height="33dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="연락처"
+            android:hint="    연락처"
             android:inputType="textPassword"
             android:textSize="10sp"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="323dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_id2" />
 
         <ImageView
             android:id="@+id/img_pre3"
