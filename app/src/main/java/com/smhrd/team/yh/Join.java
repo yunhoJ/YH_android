@@ -12,27 +12,43 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Join extends AppCompatActivity {
 
     private TextView txt;
-    private EditText txt_id, txt_pw, txt_pw2, txt_birth, txt_sex, txt_phone;
+    private EditText join_id, join_pw, join_pw2, join_gender, join_age, join_interesting;
     private ImageView img_psa, img_pre1, img_pre2, img_camera, imgView4;
     private Button btn_photo, btn_ham, btn_pre, btn_next;
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
-        txt_id = findViewById(R.id.txt_im);
-        txt_pw = findViewById(R.id.txt_pw);
-        txt_pw2 = findViewById(R.id.txt_pw2);
-        txt_birth = findViewById(R.id.txt_gwan);
-        txt_sex = findViewById(R.id.txt_so);
-        txt_phone = findViewById(R.id.txt_ji);
+        join_id = findViewById(R.id.join_id);
+        join_pw = findViewById(R.id.join_pw);
+        join_pw2 = findViewById(R.id.join_pw2);
+        join_gender = findViewById(R.id.join_gender);
+        join_age = findViewById(R.id.join_age);
+        join_interesting = findViewById(R.id.join_interesting);
         txt = findViewById(R.id.txt);
         img_psa = findViewById(R.id.img_psa);
         img_pre1 = findViewById(R.id.img_pre1);
@@ -42,7 +58,7 @@ public class Join extends AppCompatActivity {
         btn_photo = findViewById(R.id.btn_photo);
         btn_ham = findViewById(R.id.btn_ham);
         btn_pre = findViewById(R.id.btn_pre);
-        btn_next = findViewById(R.id.btn_next);
+        btn_next = findViewById(R.id.btn_join_ok);
 
         btn_photo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,12 +106,12 @@ public class Join extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = txt_id.getText().toString();
-                String pw = txt_pw.getText().toString();
-                String pw2 = txt_pw2.getText().toString();
-                String sex = txt_sex.getText().toString();
-                String birth = txt_birth.getText().toString();
-                String phone = txt_phone.getText().toString();
+                String id = join_id.getText().toString();
+                String pw = join_pw.getText().toString();
+                String pw2 = join_pw2.getText().toString();
+                String gender = join_gender.getText().toString();
+                String age = join_age.getText().toString();
+                String interesting = join_interesting.getText().toString();
                 // 유저 정보 보내기
 
 //                intent.putExtra("user", "user");
@@ -103,30 +119,83 @@ public class Join extends AppCompatActivity {
 
                 // next 다음버튼 눌러서 회원가입 2번째 창으로 넘어가기
 
-                MemberDTO dto = new MemberDTO(id, pw, sex, birth, phone);
+                MemberDTO dto = new MemberDTO(id, pw, gender, age, interesting);
                 Gson gson = new Gson();
                 String value = gson.toJson(dto);
                 Log.v("resultValue", value);
-
-                //info 라는 key 값으로 json 저장
                 PreferenceManager.setString(getApplicationContext(),"info",value);
-                Intent intent = new Intent(getApplicationContext(), join2.class);
-
-                startActivity(intent);
+                if(id.equals("")&&pw.equals("")&&pw2.equals("")&&gender.equals("")&&age.equals("")&&interesting.equals("")){
+                Intent intent = new Intent(getApplicationContext(),join2.class);
+                    sendRequest();
+                    startActivity(intent);
+                }
             }
         });
 
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == 128 && resultCode == RESULT_OK) ;
+//        Bundle bundle = data.getExtras();
+//        Bitmap bitmap = (Bitmap) bundle.get("data");
+//        img_psa.setImageBitmap(bitmap);
+//        // 회원가입할때 프사(img_psa) btn_photo 클릭에 사진촬영해서넣기
+//    }
+    public void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://59.0.234.126:3000/Join";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // Server로 부터 데이터를 받아온 곳
+                Log.v("resultValue",response);
 
-        if (requestCode == 128 && resultCode == RESULT_OK) ;
-        Bundle bundle = data.getExtras();
-        Bitmap bitmap = (Bitmap) bundle.get("data");
-        img_psa.setImageBitmap(bitmap);
-        // 회원가입할때 프사(img_psa) btn_photo 클릭에 사진촬영해서넣기
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("resultValue",value);
+                    if(value.equals("true")){
+                        Intent intent = new Intent(getApplicationContext(),join2.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(getApplicationContext(), "회원가입에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
+                        join_id.setText("");
+                        join_pw.setText("");
+                        join_pw2.setText("");
+                        join_gender.setText("");
+                        join_age.setText("");
+                        join_interesting.setText("");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // Server 통신시 Error발생 하면 오는 곳
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                // Server로 데이터를 보낼 시 넣어주는 곳
+                // alt + shift + r 한꺼번에 바꿀 수 있다.
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("id",join_id.getText().toString());
+                params.put("pw",join_pw.getText().toString());
+                params.put("pw2",join_pw2.getText().toString());
+                params.put("gender",join_gender.getText().toString());
+                params.put("age",join_age.getText().toString());
+                params.put("interesting",join_interesting.getText().toString());
+                Log.v("params",params+"");
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
 }
