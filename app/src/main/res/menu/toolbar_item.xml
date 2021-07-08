@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/account"
-        android:title="계정정보"/>
-
+        android:id="@+id/hamberger_notice"
+        android:title="공지사항"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="always"/>
     <item
-        android:id="@+id/logout"
-        android:title="로그아웃"/>
-
-
+        android:id="@+id/hamberger_app_introduct"
+        android:title="어플소개"
+        android:icon="@drawable/ic_baseline_comment_24"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/hamberger_service_center"
+        android:title="고객센터"
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/hamberger_q_a"
+        android:title="Q&amp;A"
+        android:icon="@drawable/star"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/hamberger_set"
+        android:title="설정"
+        android:icon="@drawable/ic_baseline_settings_24"
+        app:showAsAction="always"/>
 
 </menu>
