@@ -6,4 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".happyApp">
 
+    <FrameLayout
+        android:id="@+id/child_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navi"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+
+
+        android:layout_weight="0.3"
+        android:background="#FFE34020"
+        app:itemIconTint="#FDFCFC"
+        app:itemTextColor="#F6F5F5"
+        app:layout_constraintBottom_toBottomOf="@+id/child_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/item">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="439dp"
+        android:layout_height="805dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainview2"
+        app:srcCompat="@drawable/happyapp" />
+
+    <TextView
+        android:id="@+id/mainview2"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_weight="0.05"
+        android:background="#FFE34020"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="행복혜"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgham2"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+    <Button
+        android:id="@+id/btn_hambar2"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/mainview"
+        app:layout_constraintTop_toTopOf="@+id/mainview3"
+        app:rippleColor="#00FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="223dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="대한민국 1등 복지앱"
+        android:textColor="#292929"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainview2" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="157dp"
+        android:layout_height="73dp"
+        android:gravity="center"
+        android:text="행복혜"
+        android:textColor="#FF3C22"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="62dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="235dp"
+        android:text="●"
+        android:textColor="#CDCDCD"
+        android:textSize="24sp"
+        app:backgroundTint="#00F1F1F1"
+        app:layout_constraintBottom_toBottomOf="@+id/child_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
