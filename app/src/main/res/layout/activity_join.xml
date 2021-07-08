@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/txt_phone"
+        android:id="@+id/txt_ji"
         android:layout_width="331dp"
         android:layout_height="33dp"
         android:layout_marginTop="15dp"
@@ -20,7 +20,7 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_birth" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_gwan" />
 
 
     <TextView
@@ -65,7 +65,7 @@
         android:id="@+id/img_psa"
         android:layout_width="52dp"
         android:layout_height="56dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_join"
@@ -102,7 +102,7 @@
         android:id="@+id/btn_photo"
         android:layout_width="57dp"
         android:layout_height="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="55dp"
         android:background="#00ff0000"
         android:text=""
         app:backgroundTint="#00FFFFFF"
@@ -142,12 +142,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="기본 정보"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_psa"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/txt_id"
+        android:id="@+id/txt_im"
         android:layout_width="331dp"
         android:layout_height="33dp"
         android:layout_marginTop="24dp"
@@ -173,7 +175,7 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_id" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_im" />
 
     <EditText
         android:id="@+id/txt_pw2"
@@ -190,7 +192,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_pw" />
 
     <EditText
-        android:id="@+id/txt_birth"
+        android:id="@+id/txt_gwan"
         android:layout_width="331dp"
         android:layout_height="33dp"
         android:layout_marginTop="15dp"
@@ -201,10 +203,10 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_sex" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_so" />
 
     <EditText
-        android:id="@+id/txt_sex"
+        android:id="@+id/txt_so"
         android:layout_width="331dp"
         android:layout_height="33dp"
         android:layout_marginTop="15dp"
@@ -226,7 +228,8 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:backgroundTint="#FFE34020"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone"
-        tools:layout_editor_absoluteX="153dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ji" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
