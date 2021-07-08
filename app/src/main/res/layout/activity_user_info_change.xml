@@ -17,17 +17,15 @@
 
         <Button
             android:id="@+id/button12"
-            android:layout_width="40dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:drawableBottom="@drawable/ic_baseline_chevron_left_24"
             app:backgroundTint="#FFE34020" />
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:background="#FFE34020"
             android:gravity="center"
             android:text="회원정보수정"
@@ -37,11 +35,9 @@
 
         <Button
             android:id="@+id/button13"
-            android:layout_width="40dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/ic_baseline_chevron_left_24"
+            android:drawableBottom="@drawable/ic_baseline_menu_24"
             app:backgroundTint="#FFE34020" />
 
     </LinearLayout>
@@ -71,7 +67,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:text="기본 정보"
-            android:textColor="#090909"
+            android:textColor="#1E1E1E"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -87,10 +83,11 @@
             android:id="@+id/textView7"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
             android:gravity="center|left"
             android:hapticFeedbackEnabled="false"
             android:text="아이디"
-            android:background="@drawable/rectangle"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -114,9 +111,10 @@
             android:id="@+id/textView11"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
             android:gravity="center|left"
             android:text="비밀번호"
-            android:background="@drawable/rectangle"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -139,9 +137,10 @@
             android:id="@+id/textView12"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
             android:gravity="center|left"
             android:text="비밀번호확인"
-            android:background="@drawable/rectangle"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -172,9 +171,10 @@
             android:id="@+id/textView13"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
             android:gravity="center|left"
             android:text="성별"
-            android:background="@drawable/rectangle"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -203,9 +203,10 @@
             android:id="@+id/textView14"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
             android:gravity="center|left"
             android:text="연락처"
-            android:background="@drawable/rectangle"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -227,9 +228,10 @@
             android:id="@+id/textView15"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
             android:gravity="center|left"
             android:text="맞춤 정보 알람"
-            android:background="@drawable/rectangle"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -237,7 +239,8 @@
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginStart="220dp"
+            android:layout_marginLeft="220dp" />
     </LinearLayout>
 
     <LinearLayout

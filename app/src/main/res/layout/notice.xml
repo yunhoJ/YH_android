@@ -14,7 +14,7 @@
         android:layout_marginTop="15dp"
         android:text="2021년 보육료 육아학비 사전신청 안내"
         android:textColor="#131313"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
