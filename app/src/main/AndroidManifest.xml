@@ -10,17 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YH">
-        <activity android:name=".UserInfoChange2"></activity>
+        <activity android:name=".happyApp"></activity>
+        <activity android:name=".user_delete" />
+        <activity android:name=".UserInfoChange2" />
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
         <activity android:name=".ListViewItem" />
-        <activity android:name=".ListViewAdapter"
+        <activity
+            android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
-        <activity android:name=".searchPage">
-
-        </activity>
+        <activity android:name=".searchPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
