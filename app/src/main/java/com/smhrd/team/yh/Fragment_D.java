@@ -51,10 +51,16 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-        if(v.getId() == R.id.btn_setting_notice){
+        if(v.getId() == R.id.btn_setting_notice){ //--- 클릭시 공지사항페이지로 이동
             Intent intent = new Intent(getActivity(),Notice.class);
             startActivity(intent);
-    }
+        }else if(v.getId() == R.id.btn_setting_qa){ //--- 클릭시 QnA페이지로 이동
+            Intent intent = new Intent(getActivity(),QnA.class);
+            startActivity(intent);
+        }else if(v.getId() == R.id.btn_setting_as){ //--- 클릭시 고객센터페이지로 이동
+            Intent intent = new Intent(getActivity(),AS.class);
+            startActivity(intent);
+        }
     }
 
 }
