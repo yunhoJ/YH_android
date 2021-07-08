@@ -2,6 +2,7 @@ package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ public class user_delete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_delete);
+
+        Intent intent = getIntent();
 
         user_delete = findViewById(R.id.user_delete);
         userdelete_id = findViewById(R.id.userdelete_id);

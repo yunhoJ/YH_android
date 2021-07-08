@@ -13,11 +13,15 @@
         <activity android:name=".JoinResult"></activity>
         <activity android:name=".AS" />
         <activity android:name=".QnA" />
+        <activity android:name=".test2"></activity>
+        <activity android:name=".AS" />
+        <activity android:name=".QnA" />
         <activity android:name=".UserInfoChange2" />
         <activity android:name=".hamburger" />
         <activity android:name=".happyApp" />
         <activity android:name=".hemberger_test"></activity>
         <activity android:name=".My_comment" />
+        <activity android:name=".UserInfoChange" />
         <activity android:name=".user_delete" />
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />

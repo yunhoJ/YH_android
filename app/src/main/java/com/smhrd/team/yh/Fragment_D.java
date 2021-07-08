@@ -28,7 +28,7 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         return fragment;
     }
 
-    private void button() {
+    private void button() { // 버튼 메소드
         tv_setting_gun1.setOnClickListener(this);
         tv_setting_gun2.setOnClickListener(this);
         btn_setting_notice.setOnClickListener(this);
@@ -38,7 +38,7 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         btn_setting_as.setOnClickListener(this);
     }
 
-    private void initView(View fragment) {
+    private void initView(View fragment) { //뷰 초기화 initView메소드
         tv_setting_gun1 = fragment.findViewById(R.id.tv_setting_gun1);
         tv_setting_gun2 = fragment.findViewById(R.id.tv_setting_gun2);
         btn_setting_notice = fragment.findViewById(R.id.btn_setting_notice);
@@ -59,6 +59,12 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
             startActivity(intent);
         }else if(v.getId() == R.id.btn_setting_as){ //--- 클릭시 고객센터페이지로 이동
             Intent intent = new Intent(getActivity(),AS.class);
+            startActivity(intent);
+        }else if(v.getId() == R.id.btn_setting_change){ //--- 클릭시 회원정보수정 페이지로 이동
+            Intent intent = new Intent(getActivity(),UserInfoChange.class);
+            startActivity(intent);
+        }else if(v.getId() == R.id.btn_setting_quit){ //--- 클릭시 회원정보수정 페이지로 이동
+            Intent intent = new Intent(getActivity(),user_delete.class);
             startActivity(intent);
         }
     }
