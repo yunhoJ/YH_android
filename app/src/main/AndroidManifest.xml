@@ -16,6 +16,11 @@
         <activity android:name=".hamburger"></activity>
         <activity android:name=".happyApp"/>
         <activity android:name=".hemberger_test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".My_comment" />
         <activity android:name=".UserInfoChange2" />
@@ -31,11 +36,7 @@
 
         </activity>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
