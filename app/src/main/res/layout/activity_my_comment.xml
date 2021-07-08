@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".My_comment">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navi"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+
+
+        android:layout_weight="0.3"
+        android:background="#FFE34020"
+        app:itemIconTint="#FDFCFC"
+        app:itemTextColor="#F6F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/item">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
     <TextView
         android:id="@+id/mainview"
         android:layout_width="match_parent"
@@ -76,5 +93,15 @@
         app:layout_constraintTop_toTopOf="@+id/btn_preid"
         app:srcCompat="@drawable/ic_baseline_chevron_left_24"
         tools:ignore="VectorDrawableCompat" />
+
+    <ListView
+        android:layout_width="409dp"
+        android:layout_height="601dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/navi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
