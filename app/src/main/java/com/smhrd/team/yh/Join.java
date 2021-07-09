@@ -22,7 +22,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,7 +47,7 @@ public class Join extends AppCompatActivity {
 
         join_id = findViewById(R.id.join_id);
         join_pw = findViewById(R.id.join_pw);
-        join_pw2 = findViewById(R.id.join_pw2);
+       // join_pw2 = findViewById(R.id.join_pw2);
         join_gender = findViewById(R.id.join_gender);
         join_age = findViewById(R.id.join_age);
         join_interesting = findViewById(R.id.join_interesting);
@@ -108,7 +110,7 @@ public class Join extends AppCompatActivity {
             public void onClick(View v) {
                 String id = join_id.getText().toString();
                 String pw = join_pw.getText().toString();
-                String pw2 = join_pw2.getText().toString();
+                //String pw2 = join_pw2.getText().toString();
                 String gender = join_gender.getText().toString();
                 String age = join_age.getText().toString();
                 String interesting = join_interesting.getText().toString();
@@ -120,15 +122,15 @@ public class Join extends AppCompatActivity {
                 // next 다음버튼 눌러서 회원가입 2번째 창으로 넘어가기
 
                 MemberDTO dto = new MemberDTO(id, pw, gender, age, interesting);
-                Gson gson = new Gson();
-                String value = gson.toJson(dto);
-                Log.v("resultValue", value);
-                PreferenceManager.setString(getApplicationContext(),"info",value);
-                if(id.equals("")&&pw.equals("")&&pw2.equals("")&&gender.equals("")&&age.equals("")&&interesting.equals("")){
+//                Gson gson = new Gson();
+//                String value = gson.toJson(dto);
+//                Log.v("resultValue", value);
+                //PreferenceManager.setString(getApplicationContext(),"info",value);
                 Intent intent = new Intent(getApplicationContext(),join2.class);
-                    sendRequest();
-                    startActivity(intent);
-                }
+                intent.putExtra("join1",dto);
+                startActivity(intent);
+
+
             }
         });
 
@@ -145,57 +147,55 @@ public class Join extends AppCompatActivity {
 //        img_psa.setImageBitmap(bitmap);
 //        // 회원가입할때 프사(img_psa) btn_photo 클릭에 사진촬영해서넣기
 //    }
-    public void sendRequest() {
-        queue = Volley.newRequestQueue(this);
-        String url = "http://59.0.234.126:3000/Join";
-        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                // Server로 부터 데이터를 받아온 곳
-                Log.v("resultValue",response);
-
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("resultValue",value);
-                    if(value.equals("true")){
-                        Intent intent = new Intent(getApplicationContext(),join2.class);
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(getApplicationContext(), "회원가입에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
-                        join_id.setText("");
-                        join_pw.setText("");
-                        join_pw2.setText("");
-                        join_gender.setText("");
-                        join_age.setText("");
-                        join_interesting.setText("");
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // Server 통신시 Error발생 하면 오는 곳
-                error.printStackTrace();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                // Server로 데이터를 보낼 시 넣어주는 곳
-                // alt + shift + r 한꺼번에 바꿀 수 있다.
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("id",join_id.getText().toString());
-                params.put("pw",join_pw.getText().toString());
-                params.put("pw2",join_pw2.getText().toString());
-                params.put("gender",join_gender.getText().toString());
-                params.put("age",join_age.getText().toString());
-                params.put("interesting",join_interesting.getText().toString());
-                Log.v("params",params+"");
-                return params;
-            }
-        };
-        queue.add(stringRequest);
-    }
+//    public void sendRequest() {
+//        queue = Volley.newRequestQueue(this);
+//        String url = "http://59.0.234.126:3000/Join";
+//        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                // Server로 부터 데이터를 받아온 곳
+//                //Log.v("resultValue",response);
+//
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    String value = jsonObject.getString("check");
+//                   // Log.v("resultValue",value);
+//                    if(value.equals("ok")){
+//                    }else{
+//                        Toast.makeText(getApplicationContext(), "회원가입에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
+//                        join_id.setText("");
+//                        join_pw.setText("");
+//                       // join_pw2.setText("");
+//                        join_gender.setText("");
+//                        join_age.setText("");
+//                        join_interesting.setText("");
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                // Server 통신시 Error발생 하면 오는 곳
+//                error.printStackTrace();
+//            }
+//        }) {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                // Server로 데이터를 보낼 시 넣어주는 곳
+//                // alt + shift + r 한꺼번에 바꿀 수 있다.
+//                Map<String,String> params = new HashMap<String, String>();
+//                JSONObject jsonObject = new JSONObject();
+//                params.put("id",join_id.getText().toString());
+//                params.put("pw",join_pw.getText().toString());
+//                params.put("gender",join_gender.getText().toString());
+//                params.put("age",join_age.getText().toString());
+//                params.put("interesting",join_interesting.getText().toString());
+////                Log.v("params",params+"");
+//                return params;
+//            }
+//        };
+//        queue.add(stringRequest);
+//    }
 }

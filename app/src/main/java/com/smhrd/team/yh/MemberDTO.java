@@ -1,6 +1,8 @@
 package com.smhrd.team.yh;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable {
 
     // join 회원가입 유저정보 받기위한 DTO !
     private String users_id;
@@ -15,6 +17,21 @@ public class MemberDTO {
     private String users_pregnant_women;
     private String users_alaram;
     private String location_no;
+
+    public MemberDTO(String users_id, String users_pw, String users_gender, String users_age, String users_interesting, String users_income, String users_single_parent, String users_phone_number, String users_disabled_person, String users_pregnant_women, String users_alaram, String location_no) {
+        this.users_id = users_id;
+        this.users_pw = users_pw;
+        this.users_gender = users_gender;
+        this.users_age = users_age;
+        this.users_interesting = users_interesting;
+        this.users_income = users_income;
+        this.users_single_parent = users_single_parent;
+        this.users_phone_number = users_phone_number;
+        this.users_disabled_person = users_disabled_person;
+        this.users_pregnant_women = users_pregnant_women;
+        this.users_alaram = users_alaram;
+        this.location_no = location_no;
+    }
 
     public MemberDTO(String users_income, String users_single_parent, String users_phone_number, String users_disabled_person, String users_pregnant_women, String users_alaram, String location_no) {
         this.users_income = users_income;
