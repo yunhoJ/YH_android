@@ -117,6 +117,7 @@ public class Join extends AppCompatActivity {
                 String interesting = join_interesting.getText().toString();
                 // 유저 정보 보내기
 
+
 //                intent.putExtra("user", "user");
 //                startActivityForResult(intent, 1004);
 
