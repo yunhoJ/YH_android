@@ -7,6 +7,32 @@
     tools:context=".searchPage">
 
     <TextView
+        android:id="@+id/tv3"
+        android:layout_width="298dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:text="    장애인                       한부모                    저소득층"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_han" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="298dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:text="     청년                        중·장년                        노년"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_joong" />
+
+    <TextView
         android:id="@+id/mainview3"
         android:layout_width="match_parent"
         android:layout_height="58dp"
@@ -293,5 +319,17 @@
         android:src="@drawable/ic_baseline_search_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="298dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:text="  임신·출산                   영·유아                     청소년"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_yeong" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

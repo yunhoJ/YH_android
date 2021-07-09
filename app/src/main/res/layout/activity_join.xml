@@ -8,21 +8,6 @@
     tools:context=".Join">
 
 
-    <EditText
-        android:id="@+id/txt_ji"
-        android:layout_width="331dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/round"
-        android:ems="10"
-        android:hint="    연락처"
-        android:inputType="textPersonName"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_gwan" />
-
-
     <TextView
         android:id="@+id/main_join"
         android:layout_width="match_parent"
@@ -149,10 +134,10 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/txt_im"
+        android:id="@+id/join_id"
         android:layout_width="331dp"
         android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round"
         android:ems="10"
         android:hint="    아이디"
@@ -160,56 +145,30 @@
         android:textColor="#B1B1B1"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <EditText
-        android:id="@+id/txt_pw"
+        android:id="@+id/join_pw"
         android:layout_width="331dp"
         android:layout_height="33dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round"
         android:ems="10"
         android:hint="    비밀번호"
         android:inputType="textPassword"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_im" />
+        app:layout_constraintTop_toBottomOf="@+id/join_id" />
 
     <EditText
-        android:id="@+id/txt_pw2"
+        android:id="@+id/join_gender"
         android:layout_width="331dp"
         android:layout_height="33dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/round"
-        android:ems="10"
-        android:hint="    비밀번호 확인"
-        android:inputType="textPassword"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pw" />
-
-    <EditText
-        android:id="@+id/txt_gwan"
-        android:layout_width="331dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/round"
-        android:ems="10"
-        android:hint="    생년월일"
-        android:inputType="textPersonName"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_so" />
-
-    <EditText
-        android:id="@+id/txt_so"
-        android:layout_width="331dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/round"
         android:ems="10"
         android:hint="    성별"
@@ -217,19 +176,49 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pw2" />
+        app:layout_constraintTop_toBottomOf="@+id/join_pw" />
+
+    <EditText
+        android:id="@+id/join_age"
+        android:layout_width="331dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:ems="10"
+        android:hint="    생년월일"
+        android:inputType="textPersonName"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_gender" />
+
+    <EditText
+        android:id="@+id/join_interesting"
+        android:layout_width="331dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:ems="10"
+        android:hint="관심분야"
+        android:inputType="textPersonName"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_age" />
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_join_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:text="다음으로"
         android:textSize="18sp"
         android:textStyle="normal"
         app:backgroundTint="#FFE34020"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ji" />
+        app:layout_constraintTop_toBottomOf="@+id/join_interesting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

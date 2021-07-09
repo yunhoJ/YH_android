@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imghappyham"
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_marginTop="16dp"
@@ -36,7 +36,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_happyham"
         android:layout_width="59dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"
@@ -51,7 +51,7 @@
         app:rippleColor="#00FFFFFF" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/happytitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
     <TextView
-        android:id="@+id/fragc_tv"
+        android:id="@+id/happysub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/happytitle" />
 
     <Button
         android:id="@+id/fragc_btn_all"
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragc_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/happysub" />
 
     <Button
         android:id="@+id/fragc_btn_choice"
@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragc_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/happysub" />
 
     <LinearLayout
         android:layout_width="414dp"

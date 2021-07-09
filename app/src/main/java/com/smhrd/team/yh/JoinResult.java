@@ -16,11 +16,11 @@ public class JoinResult extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_result);
-        txt_id = findViewById(R.id.txt_im);
-        txt_pw = findViewById(R.id.txt_pw);
-        txt_sex = findViewById(R.id.txt_so);
-        txt_birth = findViewById(R.id.txt_gwan);
-        txt_phone = findViewById(R.id.txt_ji);
+        txt_id = findViewById(R.id.join2_low_income);
+        txt_pw = findViewById(R.id.join_pw);
+        txt_sex = findViewById(R.id.join2_disabled_person);
+        txt_birth = findViewById(R.id.join2_pregnant_women);
+        txt_phone = findViewById(R.id.join2_location);
 
 
         String info = PreferenceManager.getString(getApplicationContext(),"info");

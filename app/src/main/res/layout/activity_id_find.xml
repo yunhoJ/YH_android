@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/btn_idpre"
+    android:id="@+id/btn_pwpre"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".id_find">
 
     <Button
-        android:id="@+id/btn_preid"
+        android:id="@+id/btn_prepw"
         android:layout_width="59dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"
@@ -23,7 +23,7 @@
         app:rippleColor="#00FFFFFF" />
 
     <TextView
-        android:id="@+id/main_join2"
+        android:id="@+id/pwfind"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_weight="0.05"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_hamid"
+        android:id="@+id/btn_pwfindham"
         android:layout_width="59dp"
         android:layout_height="52dp"
         android:background="#00ff0000"
@@ -49,89 +49,97 @@
         app:rippleColor="#00FFFFFF" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_pwfindham"
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/main_join2"
+        app:layout_constraintEnd_toEndOf="@+id/pwfind"
         app:layout_constraintStart_toEndOf="@+id/btn_pre"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_menu_24"
         tools:ignore="VectorDrawableCompat" />
 
     <Button
-        android:id="@+id/btn_next2"
+        android:id="@+id/btn_pwfind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:text="아이디찾기"
         android:textSize="18sp"
         android:textStyle="normal"
         app:backgroundTint="#FFE34020"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwfind_phone" />
 
     <EditText
-        android:id="@+id/txt_id2"
+        android:id="@+id/pwfind_birth"
         android:layout_width="331dp"
         android:layout_height="33dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round"
         android:ems="10"
-        android:hint="생년월일"
+        android:hint="    생년월일"
         android:inputType="textPersonName"
         android:textColor="#B1B1B1"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwfind_id" />
 
     <EditText
-        android:id="@+id/txt_id3"
+        android:id="@+id/pwfind_id"
         android:layout_width="331dp"
         android:layout_height="33dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/round"
         android:ems="10"
-        android:hint="이름"
+        android:hint="    이름"
         android:inputType="textPersonName"
         android:textColor="#B1B1B1"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="193dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwfind" />
 
     <EditText
-        android:id="@+id/txt_pw3"
+        android:id="@+id/pwfind_phone"
         android:layout_width="331dp"
         android:layout_height="33dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round"
         android:ems="10"
-        android:hint="연락처"
+        android:hint="    연락처"
         android:inputType="textPassword"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="323dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwfind_birth" />
 
     <ImageView
-        android:id="@+id/img_pre3"
+        android:id="@+id/img_pwfind2"
         android:layout_width="34dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="14dp"
-        app:layout_constraintStart_toStartOf="@+id/btn_preid"
-        app:layout_constraintTop_toTopOf="@+id/main_join2"
+        app:layout_constraintStart_toStartOf="@+id/btn_prepw"
+        app:layout_constraintTop_toTopOf="@+id/pwfind"
         app:srcCompat="@drawable/ic_baseline_chevron_left_24"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
-        android:id="@+id/img_pre"
+        android:id="@+id/img_pwfind"
         android:layout_width="34dp"
         android:layout_height="35dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="340dp"
         android:layout_marginRight="340dp"
-        app:layout_constraintEnd_toEndOf="@+id/main_join2"
-        app:layout_constraintStart_toStartOf="@+id/img_pre3"
-        app:layout_constraintTop_toTopOf="@+id/main_join2"
+        app:layout_constraintEnd_toEndOf="@+id/pwfind"
+        app:layout_constraintStart_toStartOf="@+id/img_pwfind2"
+        app:layout_constraintTop_toTopOf="@+id/pwfind"
         app:srcCompat="@drawable/ic_baseline_chevron_left_24"
         tools:ignore="VectorDrawableCompat" />
 
