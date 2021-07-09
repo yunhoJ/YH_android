@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
         android:layout_width="wrap_content"
@@ -16,12 +17,13 @@
         app:headerLayout="@layout/toolbar_header_text"
         app:menu="@menu/toolbar_item" />
 
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <include layout="@layout/toolbar_test" />
+
+
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
