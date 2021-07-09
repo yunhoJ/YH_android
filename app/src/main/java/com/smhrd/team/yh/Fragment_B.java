@@ -72,12 +72,13 @@ public class Fragment_B extends Fragment {
     public void sendRequest() {
         queue = Volley.newRequestQueue(fragment.getContext());//새로운 객체
         //ㄴ요청하는 것
-        String url = "http://59.0.234.126:3000/policy";
+        String url = "59.0.234.126:3000/policy";
         stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() { //요청방식 get-내가 보낸데이터가 ?뒤 query=검색한거 일때-내가 검색한 기록을 공유해야 할때,post 데이터가 노출되지 않는다
             //ㄴ요청 정보
             @Override
             public void onResponse(String response) {
 
+                Log.v("response11", response);
 
 
 
@@ -120,6 +121,9 @@ public class Fragment_B extends Fragment {
 
         queue.add(stringRequest);
     }
+
+
+
 }
 
 

@@ -20,6 +20,8 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
 
         View fragment=inflater.inflate(R.layout.fragment_d,container,false);
 
+
+
         initView(fragment);
 
         button();

@@ -48,7 +48,7 @@ public class Join extends AppCompatActivity {
         join_id = findViewById(R.id.join_id);
         join_pw = findViewById(R.id.join_pw);
        // join_pw2 = findViewById(R.id.join_pw2);
-        join_gender = findViewById(R.id.join_gender);
+       // join_gender = findViewById(R.id.join_gender);
         join_age = findViewById(R.id.join_age);
         join_interesting = findViewById(R.id.join_interesting);
         txt = findViewById(R.id.txt);
@@ -116,6 +116,7 @@ public class Join extends AppCompatActivity {
                 String age = join_age.getText().toString();
                 String interesting = join_interesting.getText().toString();
                 // 유저 정보 보내기
+
 
 //                intent.putExtra("user", "user");
 //                startActivityForResult(intent, 1004);

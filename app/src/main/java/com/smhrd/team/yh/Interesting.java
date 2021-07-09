@@ -13,12 +13,9 @@ public class Interesting {
         this.name = name;
     }
 
-    public static  void initInterestings(){
+    public static  void initInterestings(){ // interestingArrayList에 id, name 초기화 해서 넣기
 
         interestingArrayList = new ArrayList<>();
-
-        Interesting select = new Interesting(0,"선택");
-        interestingArrayList.add(select);
 
         Interesting education = new Interesting(0,"교육");
         interestingArrayList.add(education);
@@ -40,11 +37,11 @@ public class Interesting {
 
     }
 
-    public static  ArrayList<Interesting> getLanguageArrayList(){
+    public static  ArrayList<Interesting> getInterestingArrayList(){
         return interestingArrayList;
     }
 
-    public static String[] languageNames(){
+    public static String[] interestingNames(){
         String[] names = new String[interestingArrayList.size()];
         for(int i = 0; i< interestingArrayList.size(); i++){
             names[i] = interestingArrayList.get(i).name;

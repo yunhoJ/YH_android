@@ -37,12 +37,18 @@
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
 
+        <activity android:name=".Join" >
         <activity android:name=".ListViewItem" />
         <activity android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
-        <activity android:name=".searchPage">
+        <activity android:name=".searchPage"></activity>
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".MainActivity">

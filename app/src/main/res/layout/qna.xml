@@ -21,6 +21,5 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:background="#ECEAEA"
-        android:drawableTop="@drawable/arrow_down"
         app:backgroundTint="#ECEAEA" />
 </LinearLayout>
