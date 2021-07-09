@@ -17,22 +17,15 @@
         <activity android:name=".QnA" />
         <activity android:name=".test2"></activity>
 
-        <activity android:name=".AS" />
-        <activity android:name=".QnA" />
+
         <activity android:name=".UserInfoChange2" />
         <activity android:name=".hamburger" />
         <activity android:name=".happyApp" />
         <activity android:name=".hemberger_test">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".hamburger"></activity>
-        <activity android:name=".happyApp"/>
-        <activity android:name=".hemberger_test">   </activity>
+
 
         <activity android:name=".My_comment" />
 
@@ -43,7 +36,7 @@
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
-        <activity android:name=".Join" >
+
         <activity android:name=".ListViewItem" />
         <activity android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />

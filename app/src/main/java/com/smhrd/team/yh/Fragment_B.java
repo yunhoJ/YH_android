@@ -17,8 +17,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonArray;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -32,7 +34,7 @@ public class Fragment_B extends Fragment {
     private ListView happyListView;
     private Button btn_search, btn_hamb;
     private View fragment;
-
+    private HomePolisyAdapter adapter = new HomePolisyAdapter();
 
 
     @Override
@@ -46,14 +48,17 @@ public class Fragment_B extends Fragment {
 
         happyListView = fragment.findViewById(R.id.happyListView);
 
-        HomePolisyAdapter adapter = new HomePolisyAdapter();
-        adapter.addItem("5차재난지원금","코로나 19 피해");
-        adapter.addItem("전세대출지원금","광주지역 만 24세부터");
-        adapter.addItem("청년구직활동지원금","청년 무직자");
-        adapter.addItem("청소년급식비지원","한부모 가정 ");
-        adapter.addItem("지원금","안농");
-        adapter.addItem("지원금","안농");
-        adapter.addItem("지원금","나는유이야");
+
+
+
+//        adapter.addItem("5차재난지원금","코로나 19 피해");
+//        adapter.addItem("전세대출지원금","광주지역 만 24세부터");
+//        adapter.addItem("청년구직활동지원금","청년 무직자");
+//        adapter.addItem("청소년급식비지원","한부모 가정 ");
+//        adapter.addItem("지원금","안농");
+//        adapter.addItem("지원금","안농");
+//        adapter.addItem("지원금","나는유이야");
+//        adapter.addItem("asd","asdioi");
         sendRequest();
 
         happyListView.setAdapter(adapter);
@@ -72,15 +77,25 @@ public class Fragment_B extends Fragment {
             //ㄴ요청 정보
             @Override
             public void onResponse(String response) {
-                Log.v("response11",response);
 
-                if(response.equals("ok")) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String value = jsonObject.getString("check");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+
+
+
+                try {
+                    JSONArray array=new JSONArray(response);
+                    for(int i=0;i<10;i++)
+                    {
+                        //뽑으면 제이슨 오브젝트 타입
+                        JSONObject jsonObject=array.getJSONObject(i);
+                        String id= jsonObject.getString("policy_name");
+                        String chat = jsonObject.getString("policy_summary");
+                        Log.v("policy_name",id);
+                        adapter.addItem(id,chat);
+                        happyListView.setAdapter(adapter);
                     }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
 
