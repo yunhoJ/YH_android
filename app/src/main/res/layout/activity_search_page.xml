@@ -20,8 +20,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="307dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:text="    임신·출산                 영·유아                  청소년"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_yeong" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="307dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:text="        청년                     중·장년                    노년"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_joong" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="307dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:text="      장애인                    한부모                  저소득층"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_han" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="307dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:text="        건강                       교육                       고용"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_gyo" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="307dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:text="        주거                    서민금융                   문화"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_seomin" />
+
     <ImageView
-        android:id="@+id/imgham"
+        android:id="@+id/img_search_ham"
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_marginTop="16dp"
@@ -52,14 +118,14 @@
         android:layout_marginTop="32dp"
         android:gravity="center|left"
         android:text="검색"
-        android:textColor="#9A9A9A"
+        android:textColor="#656565"
         android:textSize="12sp"
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview3"
-        app:strokeColor="#F8F8F8"
+        app:strokeColor="#F6F6F6"
         app:strokeWidth="5dp" />
 
     <ImageView
@@ -74,6 +140,23 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_jeosodk" />
 
+    <Button
+        android:id="@+id/btn_jeo"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="236dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
         android:id="@+id/img_han"
         android:layout_width="50dp"
@@ -86,17 +169,51 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_hanboomo" />
 
+    <Button
+        android:id="@+id/btn_han"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="236dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
         android:id="@+id/img_moon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_seo"
+        app:layout_constraintBottom_toBottomOf="@+id/img_seomin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_seo"
-        app:layout_constraintTop_toTopOf="@+id/img_seo"
+        app:layout_constraintStart_toEndOf="@+id/img_seomin"
+        app:layout_constraintTop_toTopOf="@+id/img_seomin"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_moonhwa" />
+
+    <Button
+        android:id="@+id/btn_moon"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="432dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
 
     <ImageView
         android:id="@+id/img_imsin"
@@ -131,12 +248,29 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/img_geon"
-        app:layout_constraintEnd_toStartOf="@+id/img_go"
+        app:layout_constraintEnd_toStartOf="@+id/img_goyong"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/img_geon"
         app:layout_constraintTop_toTopOf="@+id/img_geon"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_gyo6" />
+
+    <Button
+        android:id="@+id/btn_gyo"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="332dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
 
     <ImageView
         android:id="@+id/img_so"
@@ -176,6 +310,23 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_joongjangnyeon" />
 
+    <Button
+        android:id="@+id/btn_joong"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="132dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
         android:id="@+id/img_geon"
         android:layout_width="50dp"
@@ -186,6 +337,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_jang"
         app:srcCompat="@drawable/icon_geongang" />
+
+    <Button
+        android:id="@+id/btn_geon"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="332dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
 
     <ImageView
         android:id="@+id/img_yeong"
@@ -224,6 +392,23 @@
         app:layout_constraintTop_toBottomOf="@+id/img_cheong"
         app:srcCompat="@drawable/icon_jangaein" />
 
+    <Button
+        android:id="@+id/btn_jang"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="236dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
         android:id="@+id/img_no"
         android:layout_width="50dp"
@@ -236,8 +421,25 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_nonyeon" />
 
+    <Button
+        android:id="@+id/btn_no"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="132dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
-        android:id="@+id/img_go"
+        android:id="@+id/img_goyong"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/img_gyo"
@@ -247,6 +449,23 @@
         app:layout_constraintTop_toTopOf="@+id/img_gyo"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_goyong" />
+
+    <Button
+        android:id="@+id/btn_goyong"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="332dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
 
     <ImageView
         android:id="@+id/img_cheong"
@@ -260,8 +479,25 @@
         app:layout_constraintTop_toBottomOf="@+id/img_imsin"
         app:srcCompat="@drawable/icon_cheongnyeon" />
 
+    <Button
+        android:id="@+id/btn_cheong"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="132dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
-        android:id="@+id/img_seo"
+        android:id="@+id/img_seomin"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/img_joo"
@@ -272,16 +508,50 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_seominmoney" />
 
+    <Button
+        android:id="@+id/btn_seomin"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="432dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
+
     <ImageView
         android:id="@+id/img_joo"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_seo"
+        app:layout_constraintEnd_toStartOf="@+id/img_seomin"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_geon"
         app:srcCompat="@drawable/icon_joogeo" />
+
+    <Button
+        android:id="@+id/btn_joo"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="428dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
+        app:rippleColor="#00FFFFFF" />
 
     <ImageView
         android:id="@+id/img_search"

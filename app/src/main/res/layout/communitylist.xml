@@ -36,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/img_policy"
                 android:layout_width="35dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
@@ -85,7 +85,7 @@
                 android:textColor="#3C3737" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/happytitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

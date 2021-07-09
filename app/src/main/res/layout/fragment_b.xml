@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imghappyham"
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_marginTop="16dp"
@@ -79,8 +79,8 @@
 
     <ListView
         android:id="@+id/happyListView"
-        android:layout_width="385dp"
-        android:layout_height="580dp"
+        android:layout_width="0dp"
+        android:layout_height="499dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
