@@ -1,0 +1,33 @@
+package com.smhrd.team.yh;
+
+import android.widget.Button;
+
+public class HomePolisyDTO {
+    String tv_policy_title;
+    String tv_policy_content;
+
+
+    public HomePolisyDTO(String tv_policy_title, String tv_policy_content) {
+        this.tv_policy_title = tv_policy_title;
+        this.tv_policy_content = tv_policy_content;
+
+    }
+
+    public String getTv_policy_title() {
+        return tv_policy_title;
+    }
+
+    public void setTv_policy_title(String tv_policy_title) {
+        this.tv_policy_title = tv_policy_title;
+    }
+
+    public String getTv_policy_content() {
+        return tv_policy_content;
+    }
+
+    public void setTv_policy_content(String tv_policy_content) {
+        this.tv_policy_content = tv_policy_content;
+    }
+
+
+}
