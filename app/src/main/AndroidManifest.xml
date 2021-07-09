@@ -24,11 +24,7 @@
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
         <activity android:name=".Join" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".ListViewItem" />
         <activity
@@ -37,7 +33,11 @@
         <activity android:name=".Notice" />
         <activity android:name=".searchPage"></activity>
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
