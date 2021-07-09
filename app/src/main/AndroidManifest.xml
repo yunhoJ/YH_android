@@ -35,13 +35,14 @@
         <activity android:name=".Notice" />
         <activity android:name=".searchPage"></activity>
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".volley_test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".volley_test">
+
         </activity>
 
     </application>
