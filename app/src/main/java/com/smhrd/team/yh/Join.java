@@ -62,6 +62,7 @@ public class Join extends AppCompatActivity {
         btn_pre = findViewById(R.id.btn_pre);
         btn_next = findViewById(R.id.btn_join_ok);
 
+
         btn_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
