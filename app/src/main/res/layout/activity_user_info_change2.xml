@@ -166,7 +166,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            app:srcCompat="@drawable/picker_icon" />
+            app:srcCompat="@drawable/picker_icon"
+            tools:ignore="VectorDrawableCompat" />
 
     </LinearLayout>
 
@@ -214,7 +215,7 @@
             android:textStyle="bold" />
 
         <NumberPicker
-            android:id="@+id/location_city_picker"
+            android:id="@+id/join_age_picker"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical" />
@@ -224,7 +225,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            app:srcCompat="@drawable/picker_icon" />
+            app:srcCompat="@drawable/picker_icon"
+            tools:ignore="VectorDrawableCompat" />
 
         <NumberPicker
             android:id="@+id/location_gu_picker"

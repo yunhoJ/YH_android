@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,17 +34,19 @@ import java.util.Map;
 
 public class Join extends AppCompatActivity {
 
-    private TextView txt;
+    private TextView txt, tv_age;
     private EditText join_id, join_pw, join_pw2, join_gender, join_age, join_interesting;
     private ImageView img_psa, img_pre1, img_pre2, img_camera, imgView4;
     private Button btn_photo, btn_ham, btn_pre, btn_next;
     private RequestQueue queue;
     private StringRequest stringRequest;
+    private NumberPicker join_age_picker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
+
 
         join_id = findViewById(R.id.join_id);
         join_pw = findViewById(R.id.join_pw);

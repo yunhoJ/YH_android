@@ -9,38 +9,39 @@
     tools:context=".UserInfoChange">
 
 
-    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:background="#FFE34020"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button12"
-            android:layout_width="100dp"
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawableBottom="@drawable/ic_baseline_chevron_left_24"
-            app:backgroundTint="#FFE34020" />
+            tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="210dp"
-            android:layout_height="match_parent"
-            android:background="#FFE34020"
-            android:gravity="center"
-            android:text="회원정보수정"
-            android:textColor="#F8F5F5"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|right"
+                app:headerLayout="@layout/toolbar_header_text"
+                app:menu="@menu/toolbar_item" />
 
-        <Button
-            android:id="@+id/button13"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:drawableBottom="@drawable/ic_baseline_menu_24"
-            app:backgroundTint="#FFE34020" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/toolbar_test" />
+            </LinearLayout>
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

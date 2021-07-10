@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class QnAadapter extends BaseAdapter { //어댑터 클래스 상속
     @Override
     public int getCount() {
         return listViewQnAList.size();
-    } //listViewQnAList 갯수만큼
+    } //listViewQnAList 크기만큼
 
     @Override
     public Object getItem(int position) {
@@ -44,6 +46,7 @@ public class QnAadapter extends BaseAdapter { //어댑터 클래스 상속
         ListViewQnA listViewQnA= listViewQnAList.get(position);
         q.setText(listViewQnA.getQ());
         open.setOnClickListener((View.OnClickListener) listViewQnA.getOpen());
+
 
         //해당 위치 View 리턴
         return convertView;
