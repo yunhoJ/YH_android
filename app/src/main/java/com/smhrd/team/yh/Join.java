@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,12 +34,13 @@ import java.util.Map;
 
 public class Join extends AppCompatActivity {
 
-    private TextView txt;
+    private TextView txt, tv_age;
     private EditText join_id, join_pw, join_pw2, join_gender, join_age, join_interesting;
     private ImageView img_psa, img_pre1, img_pre2, img_camera, imgView4;
     private Button btn_photo, btn_ham, btn_pre, btn_next;
     private RequestQueue queue;
     private StringRequest stringRequest;
+    private NumberPicker join_age_picker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,6 @@ public class Join extends AppCompatActivity {
        // join_gender = findViewById(R.id.join_gender);
         join_age = findViewById(R.id.join_age);
         join_interesting = findViewById(R.id.join_interesting);
-        txt = findViewById(R.id.txt);
         img_psa = findViewById(R.id.img_psa);
         img_pre1 = findViewById(R.id.img_pre1);
         img_pre2 = findViewById(R.id.img_pre2);
@@ -61,6 +62,31 @@ public class Join extends AppCompatActivity {
         btn_ham = findViewById(R.id.btn_ham);
         btn_pre = findViewById(R.id.btn_pre);
         btn_next = findViewById(R.id.btn_join_ok);
+
+        join_age_picker = (NumberPicker) findViewById(R.id.join_age_picker);
+        tv_age = (TextView) findViewById(R.id.tv_age);
+
+        join_age_picker.setMaxValue(100);
+        join_age_picker.setMinValue(0);
+        join_age_picker.setValue(10);
+        join_age_picker.setWrapSelectorWheel(false);
+
+        join_age_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal < 2){
+                    tv_age.setText("영유아");
+                }else if(newVal <20){
+                    tv_age.setText("아동");
+                }else if(newVal <35){
+                    tv_age.setText("청년");
+                }else if(newVal <51){
+                    tv_age.setText("중장년");
+                }else{
+                    tv_age.setText("노년");
+                }
+            }
+        });
 
 
         btn_photo.setOnClickListener(new View.OnClickListener() {

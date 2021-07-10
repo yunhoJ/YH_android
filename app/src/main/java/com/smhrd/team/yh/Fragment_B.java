@@ -103,7 +103,7 @@ public class Fragment_B extends Fragment {
             @Override
             public void onResponse(String response) {
 
-                Log.v("response11",response);
+                Log.v("response11", response);
 
 
 
