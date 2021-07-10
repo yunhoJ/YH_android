@@ -98,6 +98,25 @@ public class Fragment_B extends Fragment {
 //                }
 
 
+
+                try {
+                    JSONArray array=new JSONArray(response);
+                    for(int i=0;i<10;i++)
+                    {
+                        //뽑으면 제이슨 오브젝트 타입
+                        JSONObject jsonObject=array.getJSONObject(i);
+                        String id= jsonObject.getString("policy_name");
+                        String chat = jsonObject.getString("policy_summary");
+                        Log.v("policy_name",id);
+                        adapter.addItem(id,chat);
+                        happyListView.setAdapter(adapter);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
         }, new Response.ErrorListener() {
             @Override

@@ -26,43 +26,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="세부 정보"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.112"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_psa"
-            tools:ignore="MissingConstraints" />
-
         <EditText
             android:id="@+id/join2_low_income"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="저소득"
+            android:hint="    저소득"
             android:inputType="textPersonName"
             android:textColor="#B1B1B1"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt" />
+            app:layout_constraintTop_toBottomOf="@+id/img_psa" />
 
         <EditText
             android:id="@+id/join2_single_parent"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/round"
             android:ems="10"
             android:hint="    한부모가정"
             android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/join2_low_income" />
@@ -70,13 +58,13 @@
         <EditText
             android:id="@+id/join2_phone_number"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="전화번호"
+            android:hint="    전화번호"
             android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,13 +73,13 @@
         <EditText
             android:id="@+id/join2_disabled_person"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="장애인"
+            android:hint="    장애인"
             android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/join2_phone_number" />
@@ -99,13 +87,13 @@
         <EditText
             android:id="@+id/join2_pregnant_women"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="임산부"
+            android:hint="    임산부"
             android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/join2_disabled_person" />
@@ -114,13 +102,13 @@
         <EditText
             android:id="@+id/join2_alarm"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="알람"
+            android:hint="    알람"
             android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,43 +117,16 @@
         <EditText
             android:id="@+id/join2_location"
             android:layout_width="331dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/round"
             android:ems="10"
             android:hint="    지역"
             android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/join2_alarm" />
-
-        <CheckBox
-            android:id="@+id/cb_im"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/join2_low_income"
-            app:layout_constraintEnd_toEndOf="@+id/join2_low_income"
-            app:layout_constraintStart_toStartOf="@+id/join2_low_income"
-            app:layout_constraintTop_toTopOf="@+id/join2_low_income" />
-
-        <CheckBox
-            android:id="@+id/cb_han"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/join2_single_parent"
-            app:layout_constraintEnd_toEndOf="@+id/join2_single_parent"
-            app:layout_constraintStart_toStartOf="@+id/join2_single_parent"
-            app:layout_constraintTop_toTopOf="@+id/join2_single_parent" />
-
-        <CheckBox
-            android:id="@+id/cb_jang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/join2_phone_number"
-            app:layout_constraintEnd_toEndOf="@+id/join2_phone_number"
-            app:layout_constraintStart_toStartOf="@+id/join2_phone_number"
-            app:layout_constraintTop_toTopOf="@+id/join2_phone_number" />
 
         <ImageView
             android:id="@+id/img_pre2"
@@ -195,8 +156,9 @@
             android:id="@+id/img_psa"
             android:layout_width="52dp"
             android:layout_height="56dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="44dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_join"
             app:srcCompat="@drawable/ic_baseline_account_circle_24"
@@ -232,7 +194,7 @@
             android:id="@+id/btn_photo"
             android:layout_width="57dp"
             android:layout_height="57dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="44dp"
             android:background="#00ff0000"
             android:text=""
             app:backgroundTint="#00FFFFFF"
@@ -268,17 +230,35 @@
 
         <Button
             android:id="@+id/btn_join_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:layout_marginTop="28dp"
             android:text="가입완료"
             android:textSize="18sp"
             android:textStyle="normal"
             app:backgroundTint="#FFE34020"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/join2_location" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/join2_location"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/join2_location"
+            app:layout_constraintTop_toBottomOf="@+id/join2_location"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            tools:layout_editor_absoluteX="151dp"
+            tools:layout_editor_absoluteY="174dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            tools:layout_editor_absoluteX="260dp"
+            tools:layout_editor_absoluteY="174dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
