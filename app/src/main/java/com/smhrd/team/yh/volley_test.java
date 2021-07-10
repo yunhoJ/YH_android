@@ -40,7 +40,7 @@ public class volley_test extends AppCompatActivity {
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://www.google.com";
+        String url = "http://59.0.234.126:3000/policy";
         stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
