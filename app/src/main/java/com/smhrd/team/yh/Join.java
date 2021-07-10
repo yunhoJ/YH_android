@@ -51,10 +51,9 @@ public class Join extends AppCompatActivity {
         join_id = findViewById(R.id.join_id);
         join_pw = findViewById(R.id.join_pw);
        // join_pw2 = findViewById(R.id.join_pw2);
-        join_gender = findViewById(R.id.join_gender);
+       // join_gender = findViewById(R.id.join_gender);
         join_age = findViewById(R.id.join_age);
         join_interesting = findViewById(R.id.join_interesting);
-        txt = findViewById(R.id.txt);
         img_psa = findViewById(R.id.img_psa);
         img_pre1 = findViewById(R.id.img_pre1);
         img_pre2 = findViewById(R.id.img_pre2);
@@ -64,6 +63,31 @@ public class Join extends AppCompatActivity {
         btn_ham = findViewById(R.id.btn_ham);
         btn_pre = findViewById(R.id.btn_pre);
         btn_next = findViewById(R.id.btn_join_ok);
+
+        join_age_picker = (NumberPicker) findViewById(R.id.join_age_picker);
+        tv_age = (TextView) findViewById(R.id.tv_age);
+
+        join_age_picker.setMaxValue(100);
+        join_age_picker.setMinValue(0);
+        join_age_picker.setValue(10);
+        join_age_picker.setWrapSelectorWheel(false);
+
+        join_age_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal < 2){
+                    tv_age.setText("영유아");
+                }else if(newVal <20){
+                    tv_age.setText("아동");
+                }else if(newVal <35){
+                    tv_age.setText("청년");
+                }else if(newVal <51){
+                    tv_age.setText("중장년");
+                }else{
+                    tv_age.setText("노년");
+                }
+            }
+        });
 
 
         btn_photo.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +143,7 @@ public class Join extends AppCompatActivity {
                 String age = join_age.getText().toString();
                 String interesting = join_interesting.getText().toString();
                 // 유저 정보 보내기
+
 
 //                intent.putExtra("user", "user");
 //                startActivityForResult(intent, 1004);

@@ -22,12 +22,12 @@ public class pw_find extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_find);
 
-        pwfind = findViewById(R.id.pwfind);
+        pwfind = findViewById(R.id.idfind);
         pwfind_birth = findViewById(R.id.pwfind_birth);
-        pwfind_phone = findViewById(R.id.pwfind_phone);
-        btn_prepw = findViewById(R.id.btn_prepw);
-        btn_pwfindham = findViewById(R.id.btn_pwfindham);
-        btn_pwfind = findViewById(R.id.btn_pwfind);
+        pwfind_phone = findViewById(R.id.idfind_phone);
+        btn_prepw = findViewById(R.id.btn_preid);
+        btn_pwfindham = findViewById(R.id.btn_idfindham);
+        btn_pwfind = findViewById(R.id.btn_idfind);
 
         btn_pwfind.setOnClickListener(new View.OnClickListener() {
             @Override

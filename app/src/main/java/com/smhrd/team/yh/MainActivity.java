@@ -2,7 +2,9 @@ package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (selectItem == R.id.page3) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_c).commit();
+                    //MemberDTO memberDTO = new MemberDTO();
+                    Intent intent = new Intent(getApplicationContext(), Join.class);
+
 
                 } else if (selectItem == R.id.page4) {
                     if(true) {

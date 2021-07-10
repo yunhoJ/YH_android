@@ -18,6 +18,7 @@ public class MemberDTO implements Serializable {
     private String users_alaram;
     private String location_no;
 
+
     public MemberDTO(String users_id, String users_pw, String users_gender, String users_age, String users_interesting, String users_income, String users_single_parent, String users_phone_number, String users_disabled_person, String users_pregnant_women, String users_alaram, String location_no) {
         this.users_id = users_id;
         this.users_pw = users_pw;
@@ -49,6 +50,11 @@ public class MemberDTO implements Serializable {
         this.users_gender = users_gender;
         this.users_age = users_age;
         this.users_interesting = users_interesting;
+    }
+
+    public MemberDTO(String users_id, String users_pw) {
+        this.users_id = users_id;
+        this.users_pw = users_pw;
     }
 
     public String getUsers_id() {

@@ -11,17 +11,28 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -32,7 +43,7 @@ public class Fragment_B extends Fragment {
     private ListView happyListView;
     private Button btn_search, btn_hamb;
     private View fragment;
-
+    private HomePolisyAdapter adapter = new HomePolisyAdapter();
 
 
     @Override
@@ -46,14 +57,33 @@ public class Fragment_B extends Fragment {
 
         happyListView = fragment.findViewById(R.id.happyListView);
 
-        HomePolisyAdapter adapter = new HomePolisyAdapter();
-        adapter.addItem("5차재난지원금","코로나 19 피해");
-        adapter.addItem("전세대출지원금","광주지역 만 24세부터");
-        adapter.addItem("청년구직활동지원금","청년 무직자");
-        adapter.addItem("청소년급식비지원","한부모 가정 ");
-        adapter.addItem("지원금","안농");
-        adapter.addItem("지원금","안농");
-        adapter.addItem("지원금","나는유이야");
+//        String url = "http://59.0.234.126:3000/policy";
+//        InputStream is = null;
+//        try {
+//            is = new URL(url).openStream();
+//            BufferedReader rd = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+//            String str;
+//            StringBuffer buffer = new StringBuffer();
+//            while ((str = rd.readLine()) != null) {
+//                buffer.append(str);
+//            }
+//            String receiveMsg = buffer.toString();
+//            Log.v("receiveMsg",receiveMsg);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+
+
+       adapter.addItem("5차재난지원금","코로나 19 피해");
+//        adapter.addItem("전세대출지원금","광주지역 만 24세부터");
+//        adapter.addItem("청년구직활동지원금","청년 무직자");
+//        adapter.addItem("청소년급식비지원","한부모 가정 ");
+//        adapter.addItem("지원금","안농");
+//        adapter.addItem("지원금","안농");
+//        adapter.addItem("지원금","나는유이야");
+//        adapter.addItem("asd","asdioi");
         sendRequest();
 
         happyListView.setAdapter(adapter);
@@ -72,15 +102,28 @@ public class Fragment_B extends Fragment {
             //ㄴ요청 정보
             @Override
             public void onResponse(String response) {
-                Log.v("response11",response);
 
-                if(response.equals("ok")) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String value = jsonObject.getString("check");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                Log.v("response11", response);
+
+
+
+               try {
+                    JSONArray jsonArray=new JSONArray(response);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject= jsonArray.getJSONObject(i);
+                        String policy_name=jsonObject.getString("policy_name");
+                        String policy_summary=jsonObject.getString("policy_summary");
+                        Log.v("jsonObject11",jsonObject+"");
+                        Log.v("policy_name1",policy_name);
+                        Log.v("policy_summary1",policy_summary);
+
+                        adapter.addItem(policy_name,policy_summary);
+                       happyListView.setAdapter(adapter);
+                   }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
 
@@ -95,6 +138,20 @@ public class Fragment_B extends Fragment {
             }
         }) {
             @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                //응답 데이터 가져오는 부분 인코딩
+                try {
+                    String utf8string = new String(response.data, "UTF8");
+                    return Response.success(utf8string, HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                Log.v("response",response+"");
+                return super.parseNetworkResponse(response);
+            }
+
+            @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 //서버로 데이터를 보낼시 넣어주는곳
                 return super.getParams();
@@ -105,6 +162,9 @@ public class Fragment_B extends Fragment {
 
         queue.add(stringRequest);
     }
+
+
+
 }
 
 
