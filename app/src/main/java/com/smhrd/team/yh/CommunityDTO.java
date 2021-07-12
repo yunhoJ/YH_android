@@ -1,5 +1,7 @@
 package com.smhrd.team.yh;
 
+import android.graphics.drawable.Drawable;
+
 public class CommunityDTO {
 
     private String users_id;
