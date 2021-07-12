@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.MenuItem;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment_C fragment_c;
     private Fragment_D fragment_d;
     private Fragment_D_2 fragment_d_2;
+    private Login login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         fragment_c = new Fragment_C();
         fragment_d = new Fragment_D();
         fragment_d_2 = new Fragment_D_2();
+        login=new Login();
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
 
@@ -42,20 +46,19 @@ public class MainActivity extends AppCompatActivity {
                 if (selectItem == R.id.page1) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_a).commit();
 
-                } else if (selectItem == R.id.page2) {
-                    if(PreferenceManager.getString(getApplicationContext(),"Login").equals("")){
-                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment,fragment_b).commit();
+                } else if (selectItem == R.id.page2) {//홈버튼
 
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
+
+                } else if (selectItem == R.id.page3) {//맞춤정책
+                   if(PreferenceManager.getString(getApplicationContext(),"Login").equals("")) {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, login).commit();
+                        Log.v("prefer1",PreferenceManager.getString(getApplicationContext(),"Login"));
                     }else
                     {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_c).commit();
+                        Log.v("prefer1",PreferenceManager.getString(getApplicationContext(),"Login"));
                     }
-
-                } else if (selectItem == R.id.page3) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_c).commit();
-                    //MemberDTO memberDTO = new MemberDTO();
-                    Intent intent = new Intent(getApplicationContext(), Join.class);
-
 
                 } else if (selectItem == R.id.page4) {
                     if(true) {

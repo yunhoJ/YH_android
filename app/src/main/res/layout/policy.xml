@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_policy_title"
+                android:id="@+id/tv_custom_policy_title"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginTop="5dp"
@@ -38,7 +38,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_policy_content"
+                android:id="@+id/tv_custom_policy_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -62,7 +62,7 @@
                 android:layout_marginBottom="10dp">
 
                 <ImageView
-                    android:id="@+id/img_policy"
+                    android:id="@+id/custom_star"
                     android:layout_width="35dp"
                     android:layout_height="25dp"
                     android:layout_gravity="right"
@@ -74,7 +74,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
-                android:id="@+id/btn_policy_apply"
+                android:id="@+id/btn_custom_policy_apply"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -83,7 +83,7 @@
                 app:backgroundTint="#E34020" />
 
             <Button
-                android:id="@+id/btn_policy_detail"
+                android:id="@+id/btn_custom_policy_detail"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
