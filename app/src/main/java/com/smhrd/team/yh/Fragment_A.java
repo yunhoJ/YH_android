@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 
 public class Fragment_A extends Fragment {
     private MainActivity mainActivity;
+    private Switch comm_switch;
 
     @Override //액티비티에서 A 를실행하는순간 연결
     public void onAttach( Context context) {
@@ -23,6 +25,7 @@ public class Fragment_A extends Fragment {
 
 
         View fragment=inflater.inflate(R.layout.fragment_a,container,false);
+        comm_switch = fragment.findViewById(R.id.comm_switch);
 
 
 

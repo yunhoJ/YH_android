@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
 
 
                     PreferenceManager.setString(getApplicationContext(),"Login",value);
-                    Intent intent=new Intent(getApplicationContext(),MainActivity2.class);
+                    Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                  }
             }

@@ -41,7 +41,7 @@ public class UserInfoChange extends AppCompatActivity {
 
         btn_change_photo = findViewById(R.id.btn_chage_photo);
         btn_infoChange_next = findViewById(R.id.btn_infoChange_finish);
-        tv_change_id = findViewById(R.id.tv_change_id);
+        tv_change_id = findViewById(R.id.tv_change_comm);
         edt_change_pw = findViewById(R.id.edt_change_pw);
         edt_change_pw2 = findViewById(R.id.edt_change_pw2);
         btn_pw_check = findViewById(R.id.btn_pw_check);
