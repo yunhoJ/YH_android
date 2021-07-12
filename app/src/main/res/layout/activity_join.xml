@@ -7,6 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".Join">
 
+    <EditText
+        android:id="@+id/join_pw2"
+        android:layout_width="331dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/round"
+        android:ems="10"
+        android:hint="    비밀번호확인"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/join_gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_id"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/main_join"
         android:layout_width="match_parent"
@@ -151,47 +168,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/join_id" />
 
-    <EditText
+    <TextView
         android:id="@+id/join_gender"
         android:layout_width="331dp"
         android:layout_height="40dp"
         android:layout_marginTop="70dp"
         android:background="@drawable/round"
         android:ems="10"
-        android:hint="    성별"
-        android:inputType="textPersonName"
+
+        android:gravity="center_vertical"
+        android:text="    성별"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/join_pw" />
 
-    <EditText
+    <TextView
         android:id="@+id/join_age"
         android:layout_width="331dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/round"
         android:ems="10"
-        android:hint="    나이"
-        android:inputType="textPersonName"
+
+        android:gravity="center_vertical"
+        android:text="    나이"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/join_gender" />
 
 
-    <EditText
+    <TextView
         android:id="@+id/join_interesting"
         android:layout_width="331dp"
         android:layout_height="210dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/round"
         android:ems="10"
-        android:hint="    관심"
-        android:inputType="textPersonName"
+
+        android:gravity="clip_vertical|center_vertical"
+        android:text="    관심"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/join_age" />
 
@@ -210,7 +229,46 @@
         app:layout_constraintTop_toBottomOf="@+id/join_interesting" />
 
     <RadioGroup
-        android:id="@+id/like"
+        android:id="@+id/ra_gender"
+        android:layout_width="210dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="243dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_join"><![CDATA[
+
+        android:textColorLink="#FFE34020" />
+
+
+
+        ]]>
+
+        <RadioButton
+            android:id="@+id/cb_men"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:buttonTint="@color/my_color"
+            android:text="남자"
+            android:textColor="#676767"
+            android:textColorHighlight="#515151" />
+
+        <RadioButton
+            android:id="@+id/cb_women"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/my_color"
+            android:text="여자"
+            android:textColor="#676767"
+            android:textColorHighlight="#515151" />
+        android:textColorLink="#FFE34020" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/ra_like"
         android:layout_width="171dp"
         android:layout_height="207dp"
         android:layout_marginStart="114dp"
@@ -221,7 +279,7 @@
         app:layout_constraintTop_toTopOf="@+id/join_interesting">
 
         <RadioButton
-            android:id="@+id/cb_geon"
+            android:id="@+id/cb_health"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="8dp"
@@ -229,7 +287,7 @@
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/cb_gyo"
+            android:id="@+id/cb_education"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
@@ -237,7 +295,7 @@
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/cb_go"
+            android:id="@+id/cb_hire"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
@@ -245,7 +303,7 @@
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/cb_joo"
+            android:id="@+id/cb_home"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
@@ -253,7 +311,7 @@
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/cb_moon"
+            android:id="@+id/cb_culture"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
@@ -286,11 +344,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/join_age"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/area_picker"
+        app:layout_constraintStart_toEndOf="@+id/join_age_picker"
         app:layout_constraintTop_toBottomOf="@+id/main_join" />
 
     <NumberPicker
-        android:id="@+id/area_picker"
+        android:id="@+id/join_age_picker"
         android:layout_width="55dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
@@ -299,7 +357,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/join_age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/join_age"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.7"
         tools:ignore="MissingConstraints" />
 
     <RadioGroup
