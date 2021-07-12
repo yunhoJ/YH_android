@@ -1,11 +1,14 @@
 package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -34,26 +37,29 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Login extends AppCompatActivity {
+public class Login extends Fragment {
     private EditText login_edt_id, login_edt_pw;
     private Button login_btn;
     private RequestQueue queue;
     private StringRequest stringRequest;
     private CheckBox login_ck;
     private boolean isLogin ;
+    private View fragment;
     private TextView textView6, login_tv_id, login_tv_pw, login_tv_join;
 
     private View view, view2, view3;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        login_edt_id = findViewById(R.id.login_edt_id);
-        login_edt_pw = findViewById(R.id.login_edt_pw);
-        login_btn = findViewById(R.id.login_btn);
-        login_ck = findViewById(R.id.login_ck);
+
+        fragment = inflater.inflate(R.layout.activity_login, container, false);
+
+
+        login_edt_id = fragment.findViewById(R.id.login_edt_id);
+        login_edt_pw = fragment.findViewById(R.id.login_edt_pw);
+        login_btn = fragment.findViewById(R.id.login_btn);
+        login_ck = fragment.findViewById(R.id.login_ck);
 
 
         sendRequest();
@@ -61,17 +67,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendRequest();
-                if(isLogin){
-                    String id = login_edt_id.getText().toString();
-                    String pw = login_edt_pw.getText().toString();
-
-                    Log.v("passw",id+pw);
-                    MemberDTO dto = new MemberDTO(id,pw);
-                    Gson gson = new Gson();
-                    String value = gson.toJson(dto);
-                    Log.v("resultValue", value);
-
-
+                if (isLogin) {
 
                     PreferenceManager.setString(getApplicationContext(),"Login",value);
                     Intent intent=new Intent(getApplicationContext(),MainActivity.class);
@@ -80,6 +76,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        return fragment;
+    }
 
 
 
@@ -87,7 +85,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void sendRequest() {
-        queue = Volley.newRequestQueue(this);
+        queue = Volley.newRequestQueue(fragment.getContext());
         String url = "http://59.0.234.126:3000/Login";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -98,10 +96,23 @@ public class Login extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getString("check").equals("ok")) {
                         isLogin = true;
+                        String id = login_edt_id.getText().toString();
+                        String pw = login_edt_pw.getText().toString();
+
+                        Log.v("passw", id + pw);
+                        MemberDTO dto = new MemberDTO(id, pw);
+                        Gson gson = new Gson();
+                        String value = gson.toJson(dto);
+                        Log.v("resultValue", value);
+
+
+                        PreferenceManager.setString(fragment.getContext(), "Login", value);
+                        Intent intent = new Intent(fragment.getContext(), MainActivity.class);
+                        startActivity(intent);
 
                     } else {
                         isLogin = false;
-                        Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요~!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(fragment.getContext(), "아이디와 비밀번호를 확인해주세요~!", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -142,16 +153,16 @@ public class Login extends AppCompatActivity {
         };
         queue.add(stringRequest);
 
-        textView6 = findViewById(R.id.textView6);
-        login_tv_id = findViewById(R.id.login_tv_id);
-        login_tv_pw = findViewById(R.id.login_tv_pw);
-        login_edt_id = findViewById(R.id.login_edt_id);
-        login_edt_pw = findViewById(R.id.login_edt_pw);
-        login_ck = findViewById(R.id.login_ck);
-        login_btn = findViewById(R.id.login_btn);
-        view = findViewById(R.id.view);
-        view2 = findViewById(R.id.view2);
-        view3 = findViewById(R.id.view3);
+        textView6 = fragment.findViewById(R.id.textView6);
+        login_tv_id = fragment.findViewById(R.id.login_tv_id);
+        login_tv_pw = fragment.findViewById(R.id.login_tv_pw);
+        login_edt_id = fragment.findViewById(R.id.login_edt_id);
+        login_edt_pw = fragment.findViewById(R.id.login_edt_pw);
+        login_ck = fragment.findViewById(R.id.login_ck);
+        login_btn = fragment.findViewById(R.id.login_btn);
+        view = fragment.findViewById(R.id.view);
+        view2 = fragment.findViewById(R.id.view2);
+        view3 = fragment.findViewById(R.id.view3);
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override

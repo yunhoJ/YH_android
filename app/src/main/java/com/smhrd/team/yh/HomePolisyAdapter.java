@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class HomePolisyAdapter extends BaseAdapter {
@@ -37,10 +36,10 @@ public class HomePolisyAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.policy, parent, false);
         }
-        TextView tv_policy_title = convertView.findViewById(R.id.tv_policy_title);
-        TextView tv_policy_content = convertView.findViewById(R.id.tv_policy_content);
-        Button btn_policy_apply = convertView.findViewById(R.id.btn_policy_apply);
-        Button btn_policy_detail = convertView.findViewById(R.id.btn_policy_detail);
+        TextView tv_policy_title = convertView.findViewById(R.id.tv_custom_policy_title);
+        TextView tv_policy_content = convertView.findViewById(R.id.tv_custom_policy_content);
+        Button btn_policy_apply = convertView.findViewById(R.id.btn_custom_policy_apply);
+        Button btn_policy_detail = convertView.findViewById(R.id.btn_custom_policy_detail);
 
         HomePolisyDTO dto = homepolisyDTO.get(position);
         tv_policy_title.setText(dto.getTv_policy_title());

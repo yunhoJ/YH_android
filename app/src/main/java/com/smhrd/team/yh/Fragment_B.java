@@ -45,7 +45,7 @@ public class Fragment_B extends Fragment {
         fragment = inflater.inflate(R.layout.fragment_b, container, false);
 
         btn_search = fragment.findViewById(R.id.btn_search);
-        btn_hamb = fragment.findViewById(R.id.btn_hamb);
+        btn_hamb = fragment.findViewById(R.id.button60);
 
 
         happyListView = fragment.findViewById(R.id.community_list);
@@ -54,7 +54,7 @@ public class Fragment_B extends Fragment {
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),searchPage.class);
+                Intent intent = new Intent(getActivity(), SearchPage.class);
                 startActivity(intent);
             }
         });
