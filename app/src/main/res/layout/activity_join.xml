@@ -360,29 +360,4 @@
         app:layout_constraintVertical_bias="0.7"
         tools:ignore="MissingConstraints" />
 
-    <RadioGroup
-        android:id="@+id/GENDER"
-        android:layout_width="204dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="237dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_join">
-
-        <RadioButton
-            android:id="@+id/M"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="남자" />
-
-        <RadioButton
-            android:id="@+id/F"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="여자" />
-    </RadioGroup>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

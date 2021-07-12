@@ -41,7 +41,6 @@ public class Login extends AppCompatActivity {
     private StringRequest stringRequest;
     private CheckBox login_ck;
     private boolean isLogin ;
-
     private TextView textView6, login_tv_id, login_tv_pw, login_tv_join;
 
     private View view, view2, view3;

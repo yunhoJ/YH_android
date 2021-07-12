@@ -165,7 +165,7 @@
         app:srcCompat="@drawable/staroff" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_change_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
