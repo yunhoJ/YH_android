@@ -1,7 +1,6 @@
 package com.smhrd.team.yh;
 
 
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -21,21 +20,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.Map;
 
 public class Fragment_B extends Fragment {
@@ -57,7 +48,7 @@ public class Fragment_B extends Fragment {
         btn_hamb = fragment.findViewById(R.id.btn_hamb);
 
 
-        happyListView = fragment.findViewById(R.id.happyListView);
+        happyListView = fragment.findViewById(R.id.community_list);
 
         // 상단 검색 버튼 페이지 이동
         btn_search.setOnClickListener(new View.OnClickListener() {
