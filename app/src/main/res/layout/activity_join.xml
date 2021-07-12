@@ -210,45 +210,6 @@
         app:layout_constraintTop_toBottomOf="@+id/join_interesting" />
 
     <RadioGroup
-        android:id="@+id/TELECOM"
-        android:layout_width="210dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="243dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_join"><![CDATA[
-
-        android:textColorLink="#FFE34020" />
-
-
-
-        ]]>
-
-        <RadioButton
-            android:id="@+id/SKT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:buttonTint="@color/my_color"
-            android:text="남자"
-            android:textColor="#676767"
-            android:textColorHighlight="#515151" />
-
-        <RadioButton
-            android:id="@+id/KT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/my_color"
-            android:text="여자"
-            android:textColor="#676767"
-            android:textColorHighlight="#515151" />
-        android:textColorLink="#FFE34020" />
-    </RadioGroup>
-
-    <RadioGroup
         android:id="@+id/like"
         android:layout_width="171dp"
         android:layout_height="207dp"
@@ -325,11 +286,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/join_age"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/join_age_picker"
+        app:layout_constraintStart_toEndOf="@+id/area_picker"
         app:layout_constraintTop_toBottomOf="@+id/main_join" />
 
     <NumberPicker
-        android:id="@+id/join_age_picker"
+        android:id="@+id/area_picker"
         android:layout_width="55dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
@@ -338,6 +299,32 @@
         app:layout_constraintBottom_toBottomOf="@+id/join_age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/join_age"
-        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/GENDER"
+        android:layout_width="204dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="237dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_join">
+
+        <RadioButton
+            android:id="@+id/M"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="남자" />
+
+        <RadioButton
+            android:id="@+id/F"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="여자" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

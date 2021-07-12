@@ -215,7 +215,7 @@
             android:textStyle="bold" />
 
         <NumberPicker
-            android:id="@+id/join_age_picker"
+            android:id="@+id/area_picker"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical" />

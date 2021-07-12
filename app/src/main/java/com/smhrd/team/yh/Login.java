@@ -43,9 +43,7 @@ public class Login extends AppCompatActivity {
     private boolean isLogin ;
 
     private TextView textView6, login_tv_id, login_tv_pw, login_tv_join;
-    private EditText login_edt_id, login_edt_pw;
-    private CheckBox login_ck;
-    private Button login_btn;
+
     private View view, view2, view3;
 
     @Override

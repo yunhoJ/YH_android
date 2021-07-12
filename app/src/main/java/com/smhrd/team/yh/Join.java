@@ -3,7 +3,6 @@ package com.smhrd.team.yh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -13,24 +12,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Join extends AppCompatActivity {
 
@@ -64,7 +48,7 @@ public class Join extends AppCompatActivity {
         btn_pre = findViewById(R.id.btn_pre);
         btn_next = findViewById(R.id.btn_join_ok);
 
-        join_age_picker = (NumberPicker) findViewById(R.id.join_age_picker);
+        join_age_picker = (NumberPicker) findViewById(R.id.area_picker);
         tv_age = (TextView) findViewById(R.id.tv_age);
 
         join_age_picker.setMaxValue(100);
