@@ -26,7 +26,14 @@
         <activity android:name=".hemberger_test"></activity>
         <activity android:name=".My_comment" />
         <activity android:name=".user_delete" />
-        <activity android:name=".Join"></activity>
+        <activity android:name=".Join">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".Login"></activity>
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />
@@ -41,11 +48,7 @@
         <activity android:name=".MainActivity2"/>
 
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".volley_test">
 
