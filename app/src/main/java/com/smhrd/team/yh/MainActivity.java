@@ -43,7 +43,13 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_a).commit();
 
                 } else if (selectItem == R.id.page2) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
+                    if(PreferenceManager.getString(getApplicationContext(),"Login").equals("")){
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment,fragment_b).commit();
+
+                    }else
+                    {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
+                    }
 
                 } else if (selectItem == R.id.page3) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_c).commit();

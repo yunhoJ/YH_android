@@ -3,6 +3,8 @@ package com.smhrd.team.yh;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,6 +58,15 @@ public class Fragment_B extends Fragment {
 
 
         happyListView = fragment.findViewById(R.id.happyListView);
+
+        // 상단 검색 버튼 페이지 이동
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),searchPage.class);
+                startActivity(intent);
+            }
+        });
 
 //        String url = "http://59.0.234.126:3000/policy";
 //        InputStream is = null;
@@ -162,6 +173,8 @@ public class Fragment_B extends Fragment {
 
         queue.add(stringRequest);
     }
+
+
 
 
 

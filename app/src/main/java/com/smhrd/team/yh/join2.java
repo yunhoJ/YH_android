@@ -2,6 +2,7 @@ package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -30,14 +33,17 @@ import java.util.Map;
 
 public class join2 extends AppCompatActivity {
 
-    private TextView txt;
-    private EditText join2_low_income, join2_single_parent, join2_phone_number, join2_disabled_person, join2_pregnant_women, join2_alarm, join2_location;
+
+    private EditText join2_phone_number,join2_location;
     private ImageView img_psa, img_pre1, img_pre2, img_camera, imgView4;
-    private Button btn_photo, btn_ham, btn_pre, btn_join_ok;
+    private Button  btn_join_ok;
     private RequestQueue queue;
     private StringRequest stringRequest;
     private String value;
+    private RadioGroup ra_low_income,ra_single_parent,ra_disabled_person,ra_pregnant,ra_alarm;
+   private String low_income,single_parent,disabled_person,pregnant,alarm;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,34 +54,105 @@ public class join2 extends AppCompatActivity {
 
 
 
-        join2_low_income = findViewById(R.id.join2_low_income);
-        join2_single_parent = findViewById(R.id.join2_single_parent);
-        join2_phone_number = findViewById(R.id.join2_phone_number);
-        join2_disabled_person = findViewById(R.id.join2_disabled_person);
-        join2_pregnant_women = findViewById(R.id.join2_pregnant_women);
-        join2_alarm = findViewById(R.id.join2_alarm);
-        join2_location = findViewById(R.id.join2_location);
-        btn_join_ok = findViewById(R.id.btn_join_ok);
 
+        join2_phone_number = findViewById(R.id.join2_phone_number);
+
+        join2_location=findViewById(R.id.join2_location);
+        ra_low_income=findViewById(R.id.ra_low_income);
+        ra_single_parent=findViewById(R.id.ra_single_parent);
+        ra_disabled_person=findViewById(R.id.ra_disabled_person);
+        ra_pregnant=findViewById(R.id.ra_pregnent);
+        ra_alarm=findViewById(R.id.ra_alarm);
+
+
+        ra_low_income.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.cb_low_income_Y)
+                {
+                    low_income="1";
+                }
+                else
+                {
+                    low_income="0";
+                }
+            }
+        });
+        ra_single_parent.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.cb_single_parent_Y)
+                {
+                   single_parent="1";
+                }
+                else
+                {
+                    single_parent="0";
+                }
+
+            }
+        });
+
+        ra_disabled_person.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.cb_disabled_person_Y)
+                {
+                    disabled_person="1";
+                }
+                else
+                {
+                    disabled_person="0";
+                }
+
+            }
+        });
+
+        ra_pregnant.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.cb_pregnant_Y)
+                {
+                    pregnant="1";
+                }
+                else
+                {
+                    pregnant="0";
+                }
+
+            }
+        });
+
+        ra_alarm.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.cb_alarm_Y)
+                {
+                    alarm="Y";
+                    Log.v("alarm",alarm);
+                }
+                else
+                {
+                    alarm="N";
+                    Log.v("alarm",alarm);
+                }
+
+            }
+        });
+
+        btn_join_ok = findViewById(R.id.btn_join_ok);
         btn_join_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String low_income = join2_low_income.getText().toString();
-                String single_parent = join2_single_parent.getText().toString();
+
                 String phone_number = join2_phone_number.getText().toString();
-                String disabled_person = join2_disabled_person.getText().toString();
-                String pregnant_women = join2_pregnant_women.getText().toString();
-                String alarm = join2_alarm.getText().toString();
-                String locaiton = join2_location.getText().toString();
-
+                String location = join2_location.getText().toString();
                 MemberDTO  memberDTO=new MemberDTO(s.getUsers_id(),s.getUsers_pw(),s.getUsers_gender(),s.getUsers_age(),s.getUsers_interesting(),
-                  low_income, single_parent, phone_number, disabled_person, pregnant_women,alarm, locaiton);
-
-//                MemberDTO dto = new MemberDTO(low_income, single_parent, phone_number, disabled_person, pregnant_women,alarm, locaiton);
+                  low_income, single_parent, phone_number, disabled_person, pregnant,alarm, location);
                 Gson gson = new Gson();
                value = gson.toJson(memberDTO);
                 Log.v("resultValue", value);
-//                PreferenceManager.setString(getApplicationContext(),"info",value);
+
                     sendRequest();
 
                 }
@@ -84,16 +161,7 @@ public class join2 extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == 128 && resultCode == RESULT_OK) ;
-//        Bundle bundle = data.getExtras();
-//        Bitmap bitmap = (Bitmap) bundle.get("data");
-//        img_psa.setImageBitmap(bitmap);
-//        // 회원가입할때 프사(img_psa) btn_photo 클릭에 사진촬영해서넣기
-//    }
+
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
         String url = "http://59.0.234.126:3000/Join";
@@ -103,15 +171,15 @@ public class join2 extends AppCompatActivity {
                 // Server로 부터 데이터를 받아온 곳
                 Log.v("resultValue",response);
 
-//                try {
-//                    JSONObject jsonObject = new JSONObject(response);
-//                    String value = jsonObject.getString("check");
-//                    Log.v("resultValue",value);
-//                    if(value.equals("true")){
-//                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//                        startActivity(intent);
-//                    }else{
-//                        Toast.makeText(getApplicationContext(), "회원가입에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("resultValue",value);
+                    if(value.equals("ok")){
+                        Intent intent1 = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent1);
+                    }else{
+                        Toast.makeText(getApplicationContext(), "회원가입에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
 //                        join2_low_income.setText("");
 //                        join2_single_parent.setText("");
 //                        join2_phone_number.setText("");
@@ -120,10 +188,10 @@ public class join2 extends AppCompatActivity {
 //                        join2_alarm.setText("");
 //                        join2_location.setText("");
 //
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override
@@ -135,10 +203,9 @@ public class join2 extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 // Server로 데이터를 보낼 시 넣어주는 곳
-                // alt + shift + r 한꺼번에 바꿀 수 있다.
+
                 Map<String,String> params = new HashMap<String, String>();
                 try {
-
 
                     JSONObject jsonObject = new JSONObject(value);
                     params.put("id",jsonObject.getString("users_id"));
@@ -157,12 +224,7 @@ public class join2 extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-//                params.put(MemberDTO..getText().toString());
-//                params.put("pw",join_pw.getText().toString());
-//                params.put("gender",join_gender.getText().toString());
-//                params.put("age",join_age.getText().toString());
-//                params.put("interesting",join_interesting.getText().toString());
-                Log.v("params2",params+"");
+//
 
                 return params;
             }
