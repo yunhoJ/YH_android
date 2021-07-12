@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private  Bundle bundle;
+    private Bundle bundle;
     private BottomNavigationView navi;
     private Fragment_A fragment_a;
     private Fragment_B fragment_b;
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment_D fragment_d;
     private Fragment_D_2 fragment_d_2;
     private Login login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         fragment_c = new Fragment_C();
         fragment_d = new Fragment_D();
         fragment_d_2 = new Fragment_D_2();
-        login=new Login();
+        login = new Login();
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
@@ -43,25 +44,26 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 int selectItem = item.getItemId();
 
-                if (selectItem == R.id.page1) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_a).commit();
-
+                if (selectItem == R.id.page1) {//커뮤니티
+                    if (PreferenceManager.getString(getApplicationContext(), "Login").equals("")) {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, login).commit();
+                    }else {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_a).commit();
+                    } Log.v("prefer1", PreferenceManager.getString(getApplicationContext(), "Login"));
                 } else if (selectItem == R.id.page2) {//홈버튼
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_b).commit();
 
                 } else if (selectItem == R.id.page3) {//맞춤정책
-                   if(PreferenceManager.getString(getApplicationContext(),"Login").equals("")) {
+                    if (PreferenceManager.getString(getApplicationContext(), "Login").equals("")) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, login).commit();
-                        Log.v("prefer1",PreferenceManager.getString(getApplicationContext(),"Login"));
-                    }else
-                    {
+                    } else {
                         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_c).commit();
-                        Log.v("prefer1",PreferenceManager.getString(getApplicationContext(),"Login"));
                     }
+                    Log.v("prefer1", PreferenceManager.getString(getApplicationContext(), "Login"));
 
                 } else if (selectItem == R.id.page4) {
-                    if(true) {
+                    if (true) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
                     }
 //                    else{
@@ -76,13 +78,15 @@ public class MainActivity extends AppCompatActivity {
         ;
 
 
-    };
+    }
+
+    ;
 
     public Bundle getBundle() {
         return bundle;
     }
 
-    public void setBundle(Bundle bundle){
+    public void setBundle(Bundle bundle) {
         this.bundle = bundle;
     }
 }

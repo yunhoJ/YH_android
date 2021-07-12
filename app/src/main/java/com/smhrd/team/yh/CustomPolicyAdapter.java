@@ -1,7 +1,6 @@
 package com.smhrd.team.yh;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
@@ -45,7 +42,7 @@ public class CustomPolicyAdapter extends BaseAdapter {
         Button btn_custom_policy_apply = convertView.findViewById(R.id.btn_custom_policy_apply);
         Button btn_custom_policy_detail = convertView.findViewById(R.id.btn_custom_policy_detail);
         Button btn_custom_star=convertView.findViewById(R.id.btn_custom_star);
-        ImageView custom_star=convertView.findViewById(R.id.custom_star);
+        ImageView custom_star=convertView.findViewById(R.id.img_community);
         HomePolisyDTO dto=arrayList.get(position);
         tv_custom_policy_title.setText(dto.getTv_policy_title());
         tv_custom_policy_content.setText(dto.getTv_policy_content());
@@ -67,7 +64,7 @@ public class CustomPolicyAdapter extends BaseAdapter {
 
         return convertView;
     }
-    public void addItem(String tv_custom_policy_title, String tv_custom_policy_content){
+        public void addItem(String tv_custom_policy_title, String tv_custom_policy_content){
         HomePolisyDTO dto = new HomePolisyDTO(tv_custom_policy_title, tv_custom_policy_content);
         arrayList.add(dto);
 

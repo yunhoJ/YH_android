@@ -51,7 +51,7 @@
         app:rippleColor="#00FFFFFF" />
 
     <TextView
-        android:id="@+id/happytitle"
+        android:id="@+id/tv_community_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/happytitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_community_person" />
 
     <LinearLayout
         android:layout_width="414dp"

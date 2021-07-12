@@ -1,6 +1,5 @@
 package com.smhrd.team.yh;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
@@ -10,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,7 +35,7 @@ public class Fragment_C extends Fragment {
         imghappyham = fragment.findViewById(R.id.imghappyham);
         btn_happyham = fragment.findViewById(R.id.btn_happyham);
         mainview = fragment.findViewById(R.id.mainview);
-        happytitle = fragment.findViewById(R.id.happytitle);
+        happytitle = fragment.findViewById(R.id.tv_community_person);
         happysub = fragment.findViewById(R.id.happysub);
         getChildFragmentManager().beginTransaction().replace(R.id.child_fragment, new Fragment_C_child1()).commit();
       navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
