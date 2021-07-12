@@ -4,10 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".searchPage">
+    tools:context=".SearchPage">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="288dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Find_View">
+
+        <TextView
+            android:id="@+id/tv_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="지역을 선택해주세요"
+            android:textColor="#FFE34020"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <NumberPicker
+            android:id="@+id/area_picker"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints" />
+
+        <NumberPicker
+            android:id="@+id/area_picker2"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/mainview3"
+        android:id="@+id/Find_View"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_weight="0.05"
@@ -31,7 +68,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_yeong" />
+        app:layout_constraintTop_toBottomOf="@+id/img_child" />
 
     <TextView
         android:id="@+id/tv2"
@@ -44,7 +81,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_joong" />
+        app:layout_constraintTop_toBottomOf="@+id/img_middle_Age" />
 
     <TextView
         android:id="@+id/tv3"
@@ -57,7 +94,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_han" />
+        app:layout_constraintTop_toBottomOf="@+id/img_single_Parent" />
 
     <TextView
         android:id="@+id/tv4"
@@ -70,7 +107,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_gyo" />
+        app:layout_constraintTop_toBottomOf="@+id/img_education" />
 
     <TextView
         android:id="@+id/tv5"
@@ -84,10 +121,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_seomin" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_microfinance" />
 
     <ImageView
-        android:id="@+id/img_search_ham"
+        android:id="@+id/img_search_Ham"
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_marginTop="16dp"
@@ -95,10 +132,437 @@
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_menu_24" />
+        app:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/img_pregnant"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_child"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/icon_imsin" />
 
     <Button
-        android:id="@+id/btn_hambar"
+        android:id="@+id/btn_pregnant"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="17dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_child"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_pregnant"
+        app:layout_constraintEnd_toStartOf="@+id/img_teenager"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_pregnant"
+        app:layout_constraintTop_toTopOf="@+id/img_pregnant"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_yeongyooa" />
+
+    <Button
+        android:id="@+id/btn_child"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_pregnant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toEndOf="@+id/img_pregnant"
+        app:layout_constraintTop_toTopOf="@+id/btn_pregnant"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_teenager"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_child"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_child"
+        app:layout_constraintTop_toTopOf="@+id/img_child"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_sonyeon" />
+
+    <Button
+        android:id="@+id/btn_teenager"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_child"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toEndOf="@+id/img_child"
+        app:layout_constraintTop_toTopOf="@+id/img_child"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_youth"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_middle_Age"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_pregnant"
+        app:srcCompat="@drawable/icon_cheongnyeon" />
+
+    <Button
+        android:id="@+id/btn_youth"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="114dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_middle_Age"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_youth"
+        app:layout_constraintEnd_toStartOf="@+id/img_old_Age"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_youth"
+        app:layout_constraintTop_toTopOf="@+id/img_youth"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_joongjangnyeon" />
+
+    <Button
+        android:id="@+id/btn_middle_Age"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_youth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_youth"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_old_Age"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_middle_Age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_middle_Age"
+        app:layout_constraintTop_toTopOf="@+id/img_middle_Age"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_nonyeon" />
+
+    <Button
+        android:id="@+id/btn_old_Age"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_middle_Age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_middle_Age"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_disabled"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_single_Parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_youth"
+        app:srcCompat="@drawable/icon_jangaein" />
+
+    <Button
+        android:id="@+id/btn_disabled"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="216dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_single_Parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_disabled"
+        app:layout_constraintEnd_toStartOf="@+id/img_low_Income"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_disabled"
+        app:layout_constraintTop_toTopOf="@+id/img_disabled"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_hanboomo" />
+
+    <Button
+        android:id="@+id/btn_single_Parent"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_disabled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_disabled"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_low_Income"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_single_Parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_single_Parent"
+        app:layout_constraintTop_toTopOf="@+id/img_single_Parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_jeosodk" />
+
+    <Button
+        android:id="@+id/btn_low_Income"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_single_Parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_single_Parent"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_health"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_education"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_disabled"
+        app:srcCompat="@drawable/icon_geongang" />
+
+    <Button
+        android:id="@+id/btn_health"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="315dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_education"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_health"
+        app:layout_constraintEnd_toStartOf="@+id/img_employ"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_health"
+        app:layout_constraintTop_toTopOf="@+id/img_health"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_gyo6" />
+
+    <Button
+        android:id="@+id/btn_education"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_health"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_health"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_employ"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_education"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_education"
+        app:layout_constraintTop_toTopOf="@+id/img_education"
+        app:srcCompat="@drawable/icon_goyong" />
+
+    <Button
+        android:id="@+id/btn_employ"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_education"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_education"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_dwelling"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_microfinance"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_health"
+        app:srcCompat="@drawable/icon_joogeo" />
+
+    <Button
+        android:id="@+id/btn_dwelling"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="413dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_microfinance"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_dwelling"
+        app:layout_constraintEnd_toStartOf="@+id/img_culture"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_dwelling"
+        app:layout_constraintTop_toTopOf="@+id/img_dwelling"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_seominmoney" />
+
+    <Button
+        android:id="@+id/btn_microfinance"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_dwelling"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_dwelling"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/img_culture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_microfinance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_microfinance"
+        app:layout_constraintTop_toTopOf="@+id/img_microfinance"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_moonhwa" />
+
+    <Button
+        android:id="@+id/btn_culture"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/img_microfinance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_microfinance"
+        app:rippleColor="#00FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_search_HamBar"
         android:layout_width="59dp"
         android:layout_height="52dp"
         android:background="#00ff0000"
@@ -107,461 +571,10 @@
         app:iconTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/mainview"
-        app:layout_constraintTop_toTopOf="@+id/mainview3"
+        app:layout_constraintStart_toStartOf="@+id/Find_View"
+        app:layout_constraintTop_toTopOf="@+id/Find_View"
         app:rippleColor="#00FFFFFF" />
 
-    <Button
-        android:id="@+id/btn_searchBar"
-        android:layout_width="328dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
-        android:gravity="center|left"
-        android:text="검색"
-        android:textColor="#656565"
-        android:textSize="12sp"
-        app:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainview3"
-        app:strokeColor="#F6F6F6"
-        app:strokeWidth="5dp" />
 
-    <ImageView
-        android:id="@+id/img_jeo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_han"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_han"
-        app:layout_constraintTop_toTopOf="@+id/img_han"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_jeosodk" />
-
-    <Button
-        android:id="@+id/btn_jeo"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="236dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_han"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_jang"
-        app:layout_constraintEnd_toStartOf="@+id/img_jeo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_jang"
-        app:layout_constraintTop_toTopOf="@+id/img_jang"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_hanboomo" />
-
-    <Button
-        android:id="@+id/btn_han"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="236dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_moon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_seomin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_seomin"
-        app:layout_constraintTop_toTopOf="@+id/img_seomin"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_moonhwa" />
-
-    <Button
-        android:id="@+id/btn_moon"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="432dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_imsin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_yeong"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:srcCompat="@drawable/icon_imsin" />
-
-    <Button
-        android:id="@+id/btn_imsin"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="35dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_gyo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_geon"
-        app:layout_constraintEnd_toStartOf="@+id/img_goyong"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_geon"
-        app:layout_constraintTop_toTopOf="@+id/img_geon"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/icon_gyo6" />
-
-    <Button
-        android:id="@+id/btn_gyo"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="332dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_so"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_yeong"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_yeong"
-        app:layout_constraintTop_toTopOf="@+id/img_yeong"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_sonyeon" />
-
-    <Button
-        android:id="@+id/btn_so"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/img_yeong"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toEndOf="@+id/img_yeong"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_joong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_cheong"
-        app:layout_constraintEnd_toStartOf="@+id/img_no"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_cheong"
-        app:layout_constraintTop_toTopOf="@+id/img_cheong"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/icon_joongjangnyeon" />
-
-    <Button
-        android:id="@+id/btn_joong"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="132dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_geon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_gyo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_jang"
-        app:srcCompat="@drawable/icon_geongang" />
-
-    <Button
-        android:id="@+id/btn_geon"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="332dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_yeong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_imsin"
-        app:layout_constraintEnd_toStartOf="@+id/img_so"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_imsin"
-        app:layout_constraintTop_toTopOf="@+id/img_imsin"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_yeongyooa" />
-
-    <Button
-        android:id="@+id/btn_yeong"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_imsin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.254"
-        app:layout_constraintStart_toEndOf="@+id/img_imsin"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_jang"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_han"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_cheong"
-        app:srcCompat="@drawable/icon_jangaein" />
-
-    <Button
-        android:id="@+id/btn_jang"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="236dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_no"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_joong"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_joong"
-        app:layout_constraintTop_toTopOf="@+id/img_joong"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/icon_nonyeon" />
-
-    <Button
-        android:id="@+id/btn_no"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="132dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_goyong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_gyo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_gyo"
-        app:layout_constraintTop_toTopOf="@+id/img_gyo"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/icon_goyong" />
-
-    <Button
-        android:id="@+id/btn_goyong"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="332dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_cheong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_joong"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_imsin"
-        app:srcCompat="@drawable/icon_cheongnyeon" />
-
-    <Button
-        android:id="@+id/btn_cheong"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="132dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_seomin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_joo"
-        app:layout_constraintEnd_toStartOf="@+id/img_moon"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_joo"
-        app:layout_constraintTop_toTopOf="@+id/img_joo"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_seominmoney" />
-
-    <Button
-        android:id="@+id/btn_seomin"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="432dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_joo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/img_seomin"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_geon"
-        app:srcCompat="@drawable/icon_joogeo" />
-
-    <Button
-        android:id="@+id/btn_joo"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="428dp"
-        android:background="#00ff0000"
-        android:text=""
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchBar"
-        app:rippleColor="#00FFFFFF" />
-
-    <ImageView
-        android:id="@+id/img_search"
-        android:layout_width="22dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:src="@drawable/ic_baseline_search_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

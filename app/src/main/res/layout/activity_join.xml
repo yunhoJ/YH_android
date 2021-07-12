@@ -359,4 +359,5 @@
         app:layout_constraintTop_toTopOf="@+id/join_age"
         app:layout_constraintVertical_bias="0.7"
         tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
