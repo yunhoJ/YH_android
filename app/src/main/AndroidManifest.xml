@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.smhrd.team.yh">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,7 @@
         <activity android:name=".JoinResult"></activity>
         <activity android:name=".AS" />
         <activity android:name=".QnA" />
+        <activity android:name=".UserInfoChange" />
         <activity android:name=".test2"></activity>
 
 

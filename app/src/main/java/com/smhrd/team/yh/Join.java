@@ -47,6 +47,7 @@ public class Join extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
+
         join_id = findViewById(R.id.join_id);
         join_pw = findViewById(R.id.join_pw);
        // join_pw2 = findViewById(R.id.join_pw2);

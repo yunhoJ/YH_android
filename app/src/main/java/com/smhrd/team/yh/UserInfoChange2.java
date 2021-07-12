@@ -20,7 +20,7 @@ public class UserInfoChange2 extends AppCompatActivity {
 
         //id로 pciker 찾아주기
         interesting_picker = findViewById(R.id.interesting_picker);
-        location_city_picker = findViewById(R.id.location_city_picker);
+        location_city_picker = findViewById(R.id.join_age_picker);
         location_gu_picker = findViewById(R.id.location_gu_picker);
 
         LocationCity.initLocationCitys();

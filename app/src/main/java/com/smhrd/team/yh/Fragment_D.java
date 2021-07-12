@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,7 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         btn_setting_as = fragment.findViewById(R.id.btn_setting_as);
     }
 
+
     @Override
     public void onClick(View v) {
 
@@ -65,8 +67,13 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         }else if(v.getId() == R.id.btn_setting_change){ //--- 클릭시 회원정보수정 페이지로 이동
             Intent intent = new Intent(getActivity(),UserInfoChange.class);
             startActivity(intent);
-        }else if(v.getId() == R.id.btn_setting_quit){ //--- 클릭시 회원정보수정 페이지로 이동
+        }else if(v.getId() == R.id.btn_setting_quit){ //--- 클릭시 회원탈퇴 페이지로 이동
             Intent intent = new Intent(getActivity(),user_delete.class);
+            startActivity(intent);
+        }else if(v.getId() == R.id.tv_setting_gun1){
+            Log.v("data","관심있는 복지 혜택");
+        }else if(v.getId() == R.id.tv_setting_gun2){
+            Intent intent = new Intent(getActivity(),My_comment.class);
             startActivity(intent);
         }
     }

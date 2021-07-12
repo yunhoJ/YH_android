@@ -16,7 +16,7 @@ public class LocationGu {
 
     public static void initLocationGus(){
 
-
+        ArrayList<LocationCity> locationCityArrayList = LocationCity.getLocationCityArrayList();
 
         locationGuArrayList = new ArrayList<>();
 
@@ -40,6 +40,7 @@ public class LocationGu {
 
     public static String[] locationguNames(){
         String[] names = new String[locationGuArrayList.size()];
+        String[] names2 = new String[LocationCity.getLocationCityArrayList().size()];
         for(int i = 0; i< locationGuArrayList.size(); i++){
             names[i] = locationGuArrayList.get(i).name;
         }
