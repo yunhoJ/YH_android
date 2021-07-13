@@ -10,18 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Fragment_D extends Fragment implements View.OnClickListener{
     private TextView tv_setting_gun1, tv_setting_gun2;
-    private Button btn_setting_notice, btn_setting_change, btn_setting_quit, btn_setting_qa, btn_setting_as,btn_setting_Logout;
+    private Button btn_setting_notice, btn_setting_change, btn_setting_quit, btn_setting_qa, btn_setting_as;
 
-    private View fragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-         fragment=inflater.inflate(R.layout.fragment_d,container,false);
+        View fragment=inflater.inflate(R.layout.fragment_d,container,false);
 
 
 
@@ -41,7 +39,6 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         btn_setting_quit.setOnClickListener(this);
         btn_setting_qa.setOnClickListener(this);
         btn_setting_as.setOnClickListener(this);
-        btn_setting_Logout.setOnClickListener(this);
     }
 
     private void initView(View fragment) { //뷰 초기화 initView메소드
@@ -52,8 +49,6 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         btn_setting_quit = fragment.findViewById(R.id.btn_setting_quit);
         btn_setting_qa = fragment.findViewById(R.id.btn_setting_qa);
         btn_setting_as = fragment.findViewById(R.id.btn_setting_as);
-        btn_setting_Logout=fragment.findViewById(R.id.btn_setting_Logout);
-
     }
 
 
@@ -75,11 +70,7 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         }else if(v.getId() == R.id.btn_setting_quit){ //--- 클릭시 회원탈퇴 페이지로 이동
             Intent intent = new Intent(getActivity(),user_delete.class);
             startActivity(intent);
-        }else if(v.getId()==R.id.btn_setting_Logout){
-            PreferenceManager.clear(fragment.getContext());
-            Toast.makeText(fragment.getContext(), "로그아웃", Toast.LENGTH_SHORT).show();
-        }
-        else if(v.getId() == R.id.tv_setting_gun1){
+        }else if(v.getId() == R.id.tv_setting_gun1){
             Log.v("data","관심있는 복지 혜택");
         }else if(v.getId() == R.id.tv_setting_gun2){
             Intent intent = new Intent(getActivity(),My_comment.class);

@@ -63,7 +63,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <Button
-        android:id="@+id/button60"
+        android:id="@+id/btn_hamb"
         android:layout_width="59dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"
@@ -78,7 +78,7 @@
         app:rippleColor="#00FFFFFF" />
 
     <ListView
-        android:id="@+id/community_list"
+        android:id="@+id/happyListView"
         android:layout_width="0dp"
         android:layout_height="499dp"
         android:layout_marginTop="16dp"

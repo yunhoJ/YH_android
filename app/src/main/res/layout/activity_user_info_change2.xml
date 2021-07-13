@@ -23,7 +23,7 @@
             app:backgroundTint="#FFE34020" />
 
         <TextView
-            android:id="@+id/tv_community_rating"
+            android:id="@+id/textView4"
             android:layout_width="210dp"
             android:layout_height="match_parent"
             android:background="#FFE34020"
@@ -95,7 +95,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_community_person"
+            android:id="@+id/happytitle"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/rectangle"
@@ -120,7 +120,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_community_title"
+            android:id="@+id/textView12"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/rectangle"
