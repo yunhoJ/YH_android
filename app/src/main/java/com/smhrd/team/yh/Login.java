@@ -54,6 +54,10 @@ public class Login extends AppCompatActivity {
         login_edt_pw = findViewById(R.id.login_edt_pw);
         login_btn = findViewById(R.id.login_btn);
         login_ck = findViewById(R.id.login_ck);
+        login_tv_id = findViewById(R.id.login_tv_id);
+        login_tv_pw = findViewById(R.id.login_tv_pw);
+        login_tv_join = findViewById(R.id.login_tv_join);
+
 
 
         sendRequest();
@@ -81,7 +85,21 @@ public class Login extends AppCompatActivity {
         });
 
 
+        login_tv_id.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+
+        login_tv_pw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        logi
 
 
     }
