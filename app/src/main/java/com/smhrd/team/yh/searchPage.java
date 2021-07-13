@@ -21,11 +21,6 @@ public class searchPage extends AppCompatActivity {
             btn_education, btn_employ, btn_dwelling, btn_microfinance, btn_culture,
             btn_search_HamBar;
 
-    private ImageView img_search_Ham, img_pregnant, img_child, img_teenager, img_youth,
-            img_middle_Age, img_old_Age, img_disabled, img_single_Parent, img_low_Income,
-            img_health, img_education, img_employ, img_dwelling, img_microfinance,
-            img_culture;
-
     private TextView tv_area, tv1, tv2, tv3, tv4, tv5;
     private NumberPicker AreaPicker;
 
@@ -54,23 +49,6 @@ public class searchPage extends AppCompatActivity {
         btn_microfinance = findViewById(R.id.btn_microfinance);
         btn_culture = findViewById(R.id.btn_culture);
         btn_search_HamBar = findViewById(R.id.btn_search_HamBar);
-
-        img_search_Ham = findViewById(R.id.img_search_Ham);
-        img_pregnant = findViewById(R.id.img_pregnant);
-        img_child = findViewById(R.id.img_child);
-        img_teenager = findViewById(R.id.img_teenager);
-        img_youth = findViewById(R.id.img_youth);
-        img_middle_Age = findViewById(R.id.img_middle_Age);
-        img_old_Age = findViewById(R.id.img_old_Age);
-        img_disabled = findViewById(R.id.img_disabled);
-        img_single_Parent = findViewById(R.id.img_single_Parent);
-        img_low_Income = findViewById(R.id.img_low_Income);
-        img_health = findViewById(R.id.img_health);
-        img_education = findViewById(R.id.img_education);
-        img_employ = findViewById(R.id.img_employ);
-        img_dwelling = findViewById(R.id.img_dwelling);
-        img_microfinance = findViewById(R.id.img_microfinance);
-        img_culture = findViewById(R.id.img_culture);
 
         tv_area = findViewById(R.id.tv_area);
         tv1 = findViewById(R.id.tv1);

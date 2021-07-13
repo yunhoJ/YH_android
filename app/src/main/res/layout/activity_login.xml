@@ -15,10 +15,11 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="140dp"
             android:text="Login"
             android:textColor="@color/black"
             android:textSize="48sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,8 +32,10 @@
             android:layout_marginTop="28dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="ID 입력"
+            android:hint="  ID"
             android:inputType="textPersonName"
+            android:textColor="#E1E1E1"
+            android:textColorHint="#BFBFBF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -46,8 +49,9 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/round"
             android:ems="10"
-            android:hint="PW 입력"
+            android:hint="  PW"
             android:inputType="textPersonName"
+            android:textColorHint="#BFBFBF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -60,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="로그인 상태 유지"
+            android:textColor="#838383"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.219"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +77,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/round"
             android:text="로그인"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:backgroundTint="#FFE34020"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +113,7 @@
             android:layout_marginTop="64dp"
             android:background="#FFFF0000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.716"
+            app:layout_constraintHorizontal_bias="0.679"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login_ck" />
 
@@ -118,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="아이디 찾기"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/login_tv_pw"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -126,28 +131,29 @@
 
         <TextView
             android:id="@+id/login_tv_pw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="94dp"
+            android:layout_height="21dp"
             android:text="비밀번호 찾기"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/login_tv_id"
             app:layout_constraintEnd_toStartOf="@+id/login_tv_join"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/login_tv_id"
             app:layout_constraintTop_toTopOf="@+id/login_tv_id"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/login_tv_join"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/login_tv_pw"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/login_tv_pw"
-            app:layout_constraintTop_toTopOf="@+id/login_tv_pw" />
+            app:layout_constraintTop_toTopOf="@+id/login_tv_pw"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

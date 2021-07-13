@@ -151,6 +151,17 @@
             android:textStyle="bold"
             app:backgroundTint="#FFE34020" />
 
+        <Button
+            android:id="@+id/btn_setting_Logout"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="로그아웃"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFE34020" />
+
     </LinearLayout>
 
 </LinearLayout>

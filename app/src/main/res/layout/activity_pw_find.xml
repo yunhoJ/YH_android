@@ -10,20 +10,20 @@
         android:id="@+id/btn_pwpre"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".id_find">
 
         <Button
             android:id="@+id/btn_preid"
             android:layout_width="59dp"
             android:layout_height="52dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="352dp"
-            android:layout_marginRight="352dp"
             android:background="#00ff0000"
             android:text=""
             app:backgroundTint="#00FFFFFF"
             app:iconTint="#00FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="#00FFFFFF" />
 
@@ -130,8 +130,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="14dp"
-            app:layout_constraintStart_toStartOf="@+id/btn_preid"
-            app:layout_constraintTop_toTopOf="@+id/idfind"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_chevron_left_24"
             tools:ignore="VectorDrawableCompat" />
 
@@ -139,12 +139,11 @@
             android:id="@+id/img_idfind2"
             android:layout_width="34dp"
             android:layout_height="35dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="14dp"
-            android:layout_marginEnd="340dp"
-            android:layout_marginRight="340dp"
-            app:layout_constraintEnd_toEndOf="@+id/idfind"
-            app:layout_constraintStart_toStartOf="@+id/img_idfind"
-            app:layout_constraintTop_toTopOf="@+id/idfind"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_chevron_left_24"
             tools:ignore="VectorDrawableCompat" />
 

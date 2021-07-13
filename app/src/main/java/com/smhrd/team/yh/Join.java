@@ -36,7 +36,7 @@ import java.util.Map;
 public class Join extends AppCompatActivity  {
 
     private TextView tv_age;
-    private EditText join_id, join_pw, join_pw2;
+    private EditText join_id, join_pw, join_pw2, edit;
     private Button btn_photo, btn_ham, btn_pre, btn_next;
     private NumberPicker join_age_picker;
     private RadioGroup ra_gender, ra_like;
@@ -56,6 +56,11 @@ public class Join extends AppCompatActivity  {
         tv_age = findViewById(R.id.tv_age);
         ra_gender = findViewById(R.id.ra_gender);
         ra_like = findViewById(R.id.ra_like);
+
+        EditText edit = new EditText(this);
+        edit.setWidth(200);
+        edit.setText("", TextView.BufferType.NORMAL);
+        edit.setPadding(10, 10, 10, 10);
 
 
         ra_gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -164,6 +169,7 @@ public class Join extends AppCompatActivity  {
                 }
             }
         });
+
 
 
     }
