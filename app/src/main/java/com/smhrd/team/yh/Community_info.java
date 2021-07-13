@@ -21,14 +21,14 @@ public class Community_info extends AppCompatActivity {
     private StringRequest stringRequest;
     private ListView community_listview;
     private String users_id;
-   private CommunityAdapter adapter=new CommunityAdapter();
+    private CommunityAdapter adapter = new CommunityAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_info);
 
-        ratingbar_indicator = findViewById(R.id.ratingbar_Indicator);
+//        ratingbar_indicator = findViewById(R.id.ratingbar_Indicator);
 
 //        MyThread myThread = new MyThread();
 //        myThread.start();
@@ -36,30 +36,29 @@ public class Community_info extends AppCompatActivity {
 //        Intent intent = getIntent();
 //        users_id = intent.getStringExtra("id");
 
-        tv_change_comm = findViewById(R.id.tv_change_comm);
-        tv_comm_policy = findViewById(R.id.tv_comm_policy);
-        tv_comm_avg = findViewById(R.id.tv_community_star);
-        edt_community_content = findViewById(R.id.edt_community_content);
-        btn_comm = findViewById(R.id.btn_comm);
-        btn_comm_insert = findViewById(R.id.btn_comm_insert);
-        community_listview = findViewById(R.id.community_listview);
-        adapter.addItem("bm00","210719","asdasd");
-        community_listview.setAdapter(adapter);
+//        tv_change_comm = findViewById(R.id.tv_change_comm);
+//        tv_comm_policy = findViewById(R.id.tv_comm_policy);
+//        tv_comm_avg = findViewById(R.id.tv_community_star);
+//        edt_community_content = findViewById(R.id.edt_community_content);
+//        btn_comm = findViewById(R.id.btn_comm);
+//        btn_comm_insert = findViewById(R.id.btn_comm_insert);
+//        community_listview = findViewById(R.id.community_listview);
+//        adapter.addItem("bm00","210719","asdasd");
+//        community_listview.setAdapter(adapter);
+//
+//
+//        ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
+//    }
+//
 
+        class Listener implements RatingBar.OnRatingBarChangeListener {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                ratingbar_indicator.setRating(rating);
+                tv_change_comm.setText("(" + Float.toString(rating) + "/5.0)점");
 
-        ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
-    }
-
-
-    class Listener implements RatingBar.OnRatingBarChangeListener
-    {
-        @Override
-        public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-            ratingbar_indicator.setRating(rating);
-            tv_change_comm.setText("("+ Float.toString(rating)+"/5.0)점");
-
+            }
         }
-    }
 
 //    public void chatSelect(){
 //        adapter = new CommunityAdapter();
@@ -170,4 +169,5 @@ public class Community_info extends AppCompatActivity {
 //            }
 //        }
 //    }
+    }
 }

@@ -19,7 +19,7 @@ public class Fragment_A extends Fragment {
         mainActivity=(MainActivity)getActivity();//연결된 액티비티
     }
 
-    CommunityAdapter adapter=new CommunityAdapter();
+    CommunityAdapterAMAin adapter=new CommunityAdapterAMAin();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
