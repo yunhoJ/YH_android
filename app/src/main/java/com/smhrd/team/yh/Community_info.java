@@ -67,6 +67,7 @@ public class Community_info extends AppCompatActivity {
         ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
     }
 
+
     class Listener implements RatingBar.OnRatingBarChangeListener
     {
         @Override
