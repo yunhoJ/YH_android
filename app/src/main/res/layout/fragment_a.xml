@@ -17,7 +17,7 @@
         android:showText="true"
         android:textOff="전체"
         android:textOn="맞춤"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.882"
