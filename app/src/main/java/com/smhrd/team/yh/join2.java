@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,9 @@ public class join2 extends AppCompatActivity {
     private String value;
     private RadioGroup ra_low_income,ra_single_parent,ra_disabled_person,ra_pregnant,ra_alarm;
    private String low_income,single_parent,disabled_person,pregnant,alarm;
+   private NumberPicker join_picker1, join_picker2;
+   private String join_area, join_gu;
+   private int location;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -53,7 +57,74 @@ public class join2 extends AppCompatActivity {
         MemberDTO s=(MemberDTO) intent.getSerializableExtra("join1");
 
 
+        join_picker1 = findViewById(R.id.join_picker1);
+        join_picker2 = findViewById(R.id.join_picker2);
 
+        LocationCity.initLocationCitys();
+        join_picker1.setMaxValue(LocationCity.getLocationCityArrayList().size() - 1);
+        join_picker1.setMinValue(0);
+        join_picker1.setDisplayedValues(LocationCity.locationcityNames());
+        join_picker1.setWrapSelectorWheel(false);
+
+        LocationGu.initLocationGus();
+
+        join_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+        join_picker2.setMinValue(0);
+        join_picker2.setDisplayedValues(LocationGu.locationguNames());
+        join_picker2.setWrapSelectorWheel(false);
+
+        join_picker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal == 0){
+                    Log.v("tetet","서울");
+
+                    join_area = "서울";
+
+                    LocationGu.sou();
+                    join_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size()-1);
+                    join_picker2.setMinValue(0);
+                    join_picker2.setDisplayedValues(LocationGu.locationguNames());
+                    join_picker2.setWrapSelectorWheel(false);
+
+                } else if(newVal == 1){
+                    Log.v("tetet","광주");
+
+                    join_area = "광주";
+
+                    LocationGu.gw();
+                    join_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size()-1);
+                    join_picker2.setMinValue(0);
+                    join_picker2.setDisplayedValues(LocationGu.locationguNames());
+                    join_picker2.setWrapSelectorWheel(false);
+
+                }
+
+            }
+
+        });
+
+        join_picker2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(join_area != null){
+                    if(join_area.equals("서울")){
+                        Log.v("select_gu", picker.getValue()+1+"");
+                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
+                        Log.v("s",join_gu);
+                        location = picker.getValue()+1;
+                    }else if(join_area.equals("광주")){
+                        Log.v("select_gu", picker.getValue()+27+"");
+                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
+                        location = picker.getValue()+27;
+                    }
+
+                    Log.v("locationGu", join_gu);
+                    Log.v("loc_num",location+"");
+                }
+
+            }
+        });
 
         join2_phone_number = findViewById(R.id.join2_phone_number);
 
@@ -146,9 +217,9 @@ public class join2 extends AppCompatActivity {
             public void onClick(View v) {
 
                 String phone_number = join2_phone_number.getText().toString();
-                String location = join2_location.getText().toString();
+                String join_location = String.valueOf(location);
                 MemberDTO  memberDTO=new MemberDTO(s.getUsers_id(),s.getUsers_pw(),s.getUsers_gender(),s.getUsers_age(),s.getUsers_interesting(),
-                  low_income, single_parent, phone_number, disabled_person, pregnant,alarm, location);
+                  low_income, single_parent, phone_number, disabled_person, pregnant,alarm, join_location);
                 Gson gson = new Gson();
                value = gson.toJson(memberDTO);
                 Log.v("resultValue", value);

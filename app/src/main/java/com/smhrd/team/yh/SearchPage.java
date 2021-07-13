@@ -1,16 +1,12 @@
 package com.smhrd.team.yh;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -21,8 +17,10 @@ public class SearchPage extends AppCompatActivity {
             btn_old_Age, btn_disabled, btn_single_Parent, btn_low_Income, btn_health,
             btn_education, btn_employ, btn_dwelling, btn_microfinance, btn_culture,
             btn_search_HamBar;
-    private NumberPicker area_picker, area_picker2; //picker 변수정의
+    private NumberPicker area_picker1, area_picker2; //picker 변수정의
     private TextView tv_area, tv1, tv2, tv3, tv4, tv5;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +54,14 @@ public class SearchPage extends AppCompatActivity {
         tv5 = findViewById(R.id.tv5);
 
 
-        area_picker = findViewById(R.id.area_picker);
+        area_picker1 = findViewById(R.id.area_picker1);
         area_picker2 = findViewById(R.id.area_picker2);
 
         LocationCity.initLocationCitys();
-        area_picker.setMaxValue(LocationCity.getLocationCityArrayList().size() - 1);
-        area_picker.setMinValue(0);
-        area_picker.setDisplayedValues(LocationCity.locationcityNames());
-        area_picker.setWrapSelectorWheel(false);
+        area_picker1.setMaxValue(LocationCity.getLocationCityArrayList().size() - 1);
+        area_picker1.setMinValue(0);
+        area_picker1.setDisplayedValues(LocationCity.locationcityNames());
+        area_picker1.setWrapSelectorWheel(false);
 
         LocationGu.initLocationGus();
         area_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
@@ -71,6 +69,30 @@ public class SearchPage extends AppCompatActivity {
         area_picker2.setDisplayedValues(LocationGu.locationguNames());
         area_picker2.setWrapSelectorWheel(false);
 
+        area_picker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal == 0){
+                    Log.v("tetet","서울");
+                    LocationGu.sou();
+                    area_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+                    area_picker2.setMinValue(0);
+                    area_picker2.setDisplayedValues(LocationGu.locationguNames());
+                    area_picker2.setWrapSelectorWheel(false);
+
+                } else if(newVal == 1){
+                    Log.v("tetet","광주");
+                    LocationGu.gw();
+                    area_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+                    area_picker2.setMinValue(0);
+                    area_picker2.setDisplayedValues(LocationGu.locationguNames());
+                    area_picker2.setWrapSelectorWheel(false);
+
+
+                }
+
+            }
+        });
 
 //        NumberPicker picker1 = (NumberPicker) findViewById(R.id.area_picker);
 //        picker1.setDisplayedValues(new String[]{

@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
@@ -35,6 +34,12 @@ public class UserInfoChange2 extends AppCompatActivity {
     private String change_interesting, change_city, change_gu, change_location, value;
     private RequestQueue queue;
     private StringRequest stringRequest;
+
+    private String select_area;
+    private String select_gu;
+    private String select_interesting;
+    private int location;
+
 
         // 도시 location_city_picker, 구 interesting_picker
     @Override
@@ -102,7 +107,7 @@ public class UserInfoChange2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                change_location = String.valueOf(location);
                 MemberDTO  memberDTO =new MemberDTO(c.getUsers_id(), c.getUsers_pw(), c.getUsers_gender(), change_interesting, change_income,
                         change_singleParent, c.getUsers_phone_number(), change_disabled_person, change_fragnant, c.getUsers_alaram(), change_location);
                 Gson gson = new Gson();
@@ -116,7 +121,7 @@ public class UserInfoChange2 extends AppCompatActivity {
 
         //id로 pciker 찾아주기
         interesting_picker = findViewById(R.id.interesting_picker);
-        location_city_picker = findViewById(R.id.area_picker);
+        location_city_picker = findViewById(R.id.area_picker1);
         location_gu_picker = findViewById(R.id.location_gu_picker);
 
 
@@ -154,6 +159,18 @@ public class UserInfoChange2 extends AppCompatActivity {
             }
         });
 
+        interesting_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+
+                if(interesting_picker != null){
+                    if(interesting_picker.equals("교육")){
+
+                    }
+                }
+            }
+        });
+
         // 도시 location_city_picker, 구 location_gu_picker
 
         location_city_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
@@ -161,26 +178,60 @@ public class UserInfoChange2 extends AppCompatActivity {
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                if(newVal == 0){
                    Log.v("tetet","서울");
+
+                   select_area = "서울";
+
                    LocationGu.sou();
-                   location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+                   location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size()-1);
                    location_gu_picker.setMinValue(0);
                    location_gu_picker.setDisplayedValues(LocationGu.locationguNames());
                    location_gu_picker.setWrapSelectorWheel(false);
 
                    } else if(newVal == 1){
                     Log.v("tetet","광주");
+
+                    select_area = "광주";
+
                    LocationGu.gw();
-                   location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+                   location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size()-1);
                    location_gu_picker.setMinValue(0);
                    location_gu_picker.setDisplayedValues(LocationGu.locationguNames());
-                   Log.v("location",LocationGu.locationguNames()+"");
-
-
                    location_gu_picker.setWrapSelectorWheel(false);
-
 
                }
 
+            }
+        });
+
+        location_gu_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+
+
+                if(select_area != null){
+                    if(select_area.equals("서울")){
+                        Log.v("select_gu", picker.getValue()+1+"");
+                        select_gu = LocationGu.getLocationGu(select_area, picker.getValue());
+                        Log.v("s",select_gu);
+                        location = picker.getValue()+1;
+                    }else if(select_area.equals("광주")){
+                        Log.v("select_gu", picker.getValue()+27+"");
+                        select_gu = LocationGu.getLocationGu(select_area, picker.getValue());
+                        location = picker.getValue()+27;
+                    }
+
+                    Log.v("locationGu", select_gu);
+                }
+
+
+
+//                if(newVal == 0){
+//                    LocationGu.sou();
+//                    Log.v("rsult","1번구");
+//                }else if(newVal == 1) {
+//                    LocationGu.gw();
+//                    Log.v("rsult","2번구");
+//                }
             }
         });
 

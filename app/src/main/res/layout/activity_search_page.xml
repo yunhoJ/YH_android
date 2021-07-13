@@ -27,19 +27,29 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <NumberPicker
-            android:id="@+id/area_picker"
-            android:layout_width="120dp"
-            android:layout_height="45dp"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <NumberPicker
-            android:id="@+id/area_picker2"
-            android:layout_width="120dp"
-            android:layout_height="45dp"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints" />
+            <NumberPicker
+                android:id="@+id/area_picker2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints" />
+
+            <NumberPicker
+                android:id="@+id/area_picker1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
 
     </LinearLayout>
 
