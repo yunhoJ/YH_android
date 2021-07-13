@@ -58,6 +58,6 @@ public class Fragment_A extends Fragment {
     }
     // DTO 생성자 만들면 오류남
 
-    CommunityAMainDTO communityAMainDTO = new CommunityAMainDTO();
+    //CommunityAMainDTO communityAMainDTO = new CommunityAMainDTO();
 
 }
