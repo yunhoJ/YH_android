@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".searchPage">
+    tools:context=".SearchPage">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -15,7 +15,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchMainView">
+        app:layout_constraintTop_toBottomOf="@+id/Find_View">
 
         <TextView
             android:id="@+id/tv_area"
@@ -44,7 +44,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/searchMainView"
+        android:id="@+id/Find_View"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_weight="0.05"
@@ -571,8 +571,8 @@
         app:iconTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/searchMainView"
-        app:layout_constraintTop_toTopOf="@+id/searchMainView"
+        app:layout_constraintStart_toStartOf="@+id/Find_View"
+        app:layout_constraintTop_toTopOf="@+id/Find_View"
         app:rippleColor="#00FFFFFF" />
 
 

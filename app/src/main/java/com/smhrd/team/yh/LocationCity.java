@@ -25,6 +25,7 @@ public class LocationCity {
         locationCityArrayList.add(gwangju);
 
 
+
     }
 
 

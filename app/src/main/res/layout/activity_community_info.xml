@@ -51,7 +51,7 @@
         app:rippleColor="#00FFFFFF" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_community_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -87,7 +87,7 @@
         app:srcCompat="@drawable/star" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_community_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -165,7 +165,7 @@
         app:srcCompat="@drawable/staroff" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_change_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
