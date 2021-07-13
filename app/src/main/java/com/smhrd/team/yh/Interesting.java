@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Interesting {
     private static ArrayList<Interesting> interestingArrayList;
-
+    private static ArrayList<Interesting> itrArrayList;
     private int id;
     private String name;
 
@@ -36,6 +36,30 @@ public class Interesting {
         interestingArrayList.add(finance);
 
     }
+
+//    public static String getInteresting(String area, int selectIndex){
+//
+//        String itr = null;
+//
+//        if(area.equals("서울")){
+//            itr = interestingArrayList.get(selectIndex).getName();
+//        }else if(area.equals("광주")){
+//            itr = interestingArrayList.get(selectIndex).getName();
+//        }
+//        return itr;
+//    }
+
+
+//    public static void itr(){
+//        ArrayList<Interesting> itrArraylist = Interesting.getInterestingArrayList();
+//        interestingArrayList = new ArrayList<>();
+//
+//        String itr[] = {"교육","고용","주거","건강","문화","서민금융"};
+//        for(int i = 0; i < itr.length; i++){
+//        Interesting t = new Interesting(i,itr[i]);
+//        interestingArrayList.add(t);
+//        }
+//    }
 
     public static  ArrayList<Interesting> getInterestingArrayList(){
         return interestingArrayList;
