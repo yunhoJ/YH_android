@@ -215,7 +215,7 @@
             android:textStyle="bold" />
 
         <NumberPicker
-            android:id="@+id/area_picker"
+            android:id="@+id/area_picker1"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical" />
