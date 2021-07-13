@@ -31,14 +31,23 @@
         <activity android:name=".Search_Child" />
         <activity android:name=".Search_Pregnant" />
         <activity android:name=".JoinResult" />
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.YH">
+        <activity android:name=".JoinResult"></activity>
         <activity android:name=".AS" />
         <activity android:name=".QnA" />
+        <activity android:name=".UserInfoChange" />
+        <activity android:name=".test2"></activity>
+        <activity android:name=".UserInfoChange2" >
+
+        </activity>
         <activity android:name=".UserInfoChange" />
         <activity android:name=".test2" />
         <activity android:name=".UserInfoChange2" />
         <activity android:name=".hamburger" />
         <activity android:name=".happyApp" />
-        <activity android:name=".hemberger_test" />
+        <activity android:name=".hemberger_test"></activity>
+
         <activity android:name=".My_comment" />
         <activity android:name=".user_delete" />
         <activity android:name=".Join">
@@ -53,14 +62,28 @@
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
         <activity android:name=".ListViewItem" />
-        <activity
-            android:name=".ListViewAdapter"
+        <activity android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".SearchPage" />
         <activity android:name=".MainActivity" />
         <activity android:name=".volley_test" />
+        <activity android:name=".searchPage"/>
+        <activity android:name=".MainActivity2"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".volley_test">
+
+        </activity>
+        <activity android:name=".Community_info">
+
+        </activity>
     </application>
 
 </manifest>

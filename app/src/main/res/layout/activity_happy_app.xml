@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/mainview"
-        app:layout_constraintTop_toTopOf="@+id/Find_View"
+        app:layout_constraintTop_toTopOf="@+id/searchMainView"
         app:rippleColor="#00FFFFFF" />
 
     <TextView
