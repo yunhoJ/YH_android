@@ -2,6 +2,7 @@ package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,9 @@ public class pw_find extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_id_find);
+        setContentView(R.layout.activity_pw_find);
+
+        Intent intent = getIntent();
 
         pwfind = findViewById(R.id.idfind);
         pwfind_birth = findViewById(R.id.pwfind_birth);
@@ -33,6 +36,23 @@ public class pw_find extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //MemberDTo dto =
+            }
+        });
+
+        // 어플 화면 상단 좌측 이전 버튼 화면이동
+        btn_prepw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent1);
+            }
+        });
+        // 어플 화면 상단 우측 햄버거 버튼 화면이동
+        btn_pwfindham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getApplicationContext(), hemberger_test.class);
+                startActivity(intent2);
             }
         });
     }

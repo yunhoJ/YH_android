@@ -10,21 +10,10 @@ public class LocationGu {
 
     private int id;
     private String name;
-    private int num;
 
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public LocationGu(int id, String name, int num) {
+    public LocationGu(int id, String name) {
         this.id = id;
         this.name = name;
-        this.num=num;
-
     }
 
     public static void initLocationGus() {
@@ -33,10 +22,10 @@ public class LocationGu {
 
         locationGuArrayList = new ArrayList<>();
 
-        LocationGu gangnam = new LocationGu(0, "강남구",1);
+        LocationGu gangnam = new LocationGu(0, "강남구");
         locationGuArrayList.add(gangnam);
 
-        LocationGu gangbuk = new LocationGu(0, "강북구",2);
+        LocationGu gangbuk = new LocationGu(0, "강북구");
         locationGuArrayList.add(gangbuk);
 
         /*LocationGu gwangsan = new LocationGu(1, "광산구");
@@ -50,85 +39,85 @@ public class LocationGu {
         ArrayList<LocationCity> locationCityArrayList = LocationCity.getLocationCityArrayList();
 
         locationGuArrayList = new ArrayList<>();
-        LocationGu gangnam = new LocationGu(0, "강남구",1);
+        LocationGu gangnam = new LocationGu(0, "강남구");
         if(gangnam.name.equals("강남구")){
             gangnam.id = 1;
         }
         locationGuArrayList.add(gangnam);
 
-        LocationGu gangdong = new LocationGu(0, "강동구",2);
+        LocationGu gangdong = new LocationGu(0, "강동구");
         locationGuArrayList.add(gangdong);
 
-        LocationGu gangbuk = new LocationGu(0, "강북구",3);
+        LocationGu gangbuk = new LocationGu(0, "강북구");
         locationGuArrayList.add(gangbuk);
 
-        LocationGu gangseo = new LocationGu(0, "강서구",4);
+        LocationGu gangseo = new LocationGu(0, "강서구");
         locationGuArrayList.add(gangseo);
 
-        LocationGu gwanak = new LocationGu(0, "관악구",5);
+        LocationGu gwanak = new LocationGu(0, "관악구");
         locationGuArrayList.add(gwanak);
 
-        LocationGu gwangjin = new LocationGu(0, "광진구",6);
+        LocationGu gwangjin = new LocationGu(0, "광진구");
         locationGuArrayList.add(gwangjin);
 
-        LocationGu guro = new LocationGu(0, "구로구",7);
+        LocationGu guro = new LocationGu(0, "구로구");
         locationGuArrayList.add(guro);
 
-        LocationGu geomcheon = new LocationGu(0, "금천구",8);
+        LocationGu geomcheon = new LocationGu(0, "금천구");
         locationGuArrayList.add(geomcheon);
 
-        LocationGu nowon = new LocationGu(0, "노원구",9);
+        LocationGu nowon = new LocationGu(0, "노원구");
         locationGuArrayList.add(nowon);
 
-        LocationGu dobong = new LocationGu(0, "도봉구",10);
+        LocationGu dobong = new LocationGu(0, "도봉구");
         locationGuArrayList.add(dobong);
 
-        LocationGu dongdaemoon = new LocationGu(0, "동대문구",11);
+        LocationGu dongdaemoon = new LocationGu(0, "동대문구");
         locationGuArrayList.add(dongdaemoon);
 
-        LocationGu dongjak = new LocationGu(0, "동작구",12);
+        LocationGu dongjak = new LocationGu(0, "동작구");
         locationGuArrayList.add(dongjak);
 
-        LocationGu mapo = new LocationGu(0, "마포구",13);
+        LocationGu mapo = new LocationGu(0, "마포구");
         locationGuArrayList.add(mapo);
 
-        LocationGu seoulbonchung = new LocationGu(0, "본청",14);
+        LocationGu seoulbonchung = new LocationGu(0, "본청");
         locationGuArrayList.add(seoulbonchung);
 
-        LocationGu seodaemoon = new LocationGu(0, "서대문구",15);
+        LocationGu seodaemoon = new LocationGu(0, "서대문구");
         locationGuArrayList.add(seodaemoon);
 
-        LocationGu seocho = new LocationGu(0, "서초구",16);
+        LocationGu seocho = new LocationGu(0, "서초구");
         locationGuArrayList.add(seocho);
 
-        LocationGu sungdong = new LocationGu(0, "성동구",17);
+        LocationGu sungdong = new LocationGu(0, "성동구");
         locationGuArrayList.add(sungdong);
 
-        LocationGu sungbuk = new LocationGu(0, "성북구",18);
+        LocationGu sungbuk = new LocationGu(0, "성북구");
         locationGuArrayList.add(sungbuk);
 
-        LocationGu songpa = new LocationGu(0, "송파구",19);
+        LocationGu songpa = new LocationGu(0, "송파구");
         locationGuArrayList.add(songpa);
 
-        LocationGu yangcheon = new LocationGu(0, "양천구",20);
+        LocationGu yangcheon = new LocationGu(0, "양천구");
         locationGuArrayList.add(yangcheon);
 
-        LocationGu yungdeongpo = new LocationGu(0, "영등포구",21);
+        LocationGu yungdeongpo = new LocationGu(0, "영등포구");
         locationGuArrayList.add(yungdeongpo);
 
-        LocationGu yongsan = new LocationGu(0, "용산구",22);
+        LocationGu yongsan = new LocationGu(0, "용산구");
         locationGuArrayList.add(yongsan);
 
-        LocationGu eanpyung = new LocationGu(0, "은평구",23);
+        LocationGu eanpyung = new LocationGu(0, "은평구");
         locationGuArrayList.add(eanpyung);
 
-        LocationGu jongro = new LocationGu(0, "종로구",24);
+        LocationGu jongro = new LocationGu(0, "종로구");
         locationGuArrayList.add(jongro);
 
-        LocationGu joonggu = new LocationGu(0, "중구",25);
+        LocationGu joonggu = new LocationGu(0, "중구");
         locationGuArrayList.add(joonggu);
 
-        LocationGu joongranggu = new LocationGu(0, "중랑구",26);
+        LocationGu joongranggu = new LocationGu(0, "중랑구");
         locationGuArrayList.add(joongranggu);
 
     }
@@ -136,24 +125,23 @@ public class LocationGu {
         ArrayList<LocationCity> locationCityArrayList = LocationCity.getLocationCityArrayList();
 
         locationGuArrayList = new ArrayList<>();
-        LocationGu gwangsan = new LocationGu(1, "광산구",27);
+        LocationGu gwangsan = new LocationGu(1, "광산구");
         locationGuArrayList.add(gwangsan);
 
-        LocationGu nam = new LocationGu(1, "남구",28);
+        LocationGu nam = new LocationGu(1, "남구");
         locationGuArrayList.add(nam);
 
-        LocationGu dong = new LocationGu(1, "동구",29);
+        LocationGu dong = new LocationGu(1, "동구");
         locationGuArrayList.add(dong);
 
-        LocationGu gwangjubon = new LocationGu(1, "본청",30);
+        LocationGu gwangjubon = new LocationGu(1, "본청");
         locationGuArrayList.add(gwangjubon);
 
-        LocationGu buk = new LocationGu(1, "북구",31);
+        LocationGu buk = new LocationGu(1, "북구");
         locationGuArrayList.add(buk);
 
-        LocationGu seo = new LocationGu(1, "서구",32);
+        LocationGu seo = new LocationGu(1, "서구");
         locationGuArrayList.add(seo);
-
     }
 
 
@@ -166,12 +154,12 @@ public class LocationGu {
 
     public static String[] locationguNames() {
         String[] names = new String[locationGuArrayList.size()];
+        String[] names2 = new String[LocationCity.getLocationCityArrayList().size()];
         for (int i = 0; i < locationGuArrayList.size(); i++) {
             names[i] = locationGuArrayList.get(i).name;
         }
         return names;
     }
-
 
     public int getId() {
         return id;

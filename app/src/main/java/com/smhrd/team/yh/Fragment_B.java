@@ -48,7 +48,7 @@ public class Fragment_B extends Fragment {
         btn_hamb = fragment.findViewById(R.id.button60);
 
 
-        happyListView = fragment.findViewById(R.id.happyListView);
+        happyListView = fragment.findViewById(R.id.community_listview_main);
 
         // 상단 검색 버튼 페이지 이동
         btn_search.setOnClickListener(new View.OnClickListener() {
