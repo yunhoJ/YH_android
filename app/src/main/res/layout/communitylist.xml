@@ -23,7 +23,7 @@
             android:layout_marginBottom="7dp">
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/btn_custom_star"
                 android:layout_width="35dp"
                 android:layout_height="25dp"
                 android:background="#00FFFFFF"
@@ -36,14 +36,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/img_community_star"
+                android:id="@+id/img_community"
                 android:layout_width="35dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/button9"
+                app:layout_constraintStart_toEndOf="@+id/btn_custom_star"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/star" />

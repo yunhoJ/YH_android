@@ -7,22 +7,6 @@
     android:orientation="vertical"
     tools:context=".Fragment_A">
 
-
-    <Switch
-        android:id="@+id/comm_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:showText="true"
-        android:textOff="전체"
-        android:textOn="맞춤"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
-
     <TextView
         android:id="@+id/mainview"
         android:layout_width="match_parent"
@@ -45,7 +29,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:gravity="center|left"
-        android:text="내용을 입력해주세요"
+        android:text="검색"
         android:textColor="#9A9A9A"
         android:textSize="12sp"
         app:backgroundTint="#00FFFFFF"
@@ -80,7 +64,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <Button
-        android:id="@+id/btn_hamb"
+        android:id="@+id/button60"
         android:layout_width="59dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"
@@ -95,15 +79,14 @@
         app:rippleColor="#00FFFFFF" />
 
     <ListView
-        android:id="@+id/community_listview_main"
+        android:id="@+id/community_listview"
         android:layout_width="0dp"
         android:layout_height="499dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comm_switch" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

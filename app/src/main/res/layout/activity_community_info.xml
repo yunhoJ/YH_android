@@ -51,7 +51,7 @@
         app:rippleColor="#00FFFFFF" />
 
     <TextView
-        android:id="@+id/tv_comm_policy"
+        android:id="@+id/tv_community_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -109,23 +109,78 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/staroff" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/staroff" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/staroff" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/staroff" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/staroff" />
+
     <TextView
-        android:id="@+id/tv_change_comm"
+        android:id="@+id/tv_change_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="(/5.0)점"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.613"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/btn_comm"
+        android:id="@+id/button"
         android:layout_width="84dp"
         android:layout_height="45dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="92dp"
         android:text="등록"
         android:textStyle="bold"
         app:backgroundTint="#FFE34020"
@@ -134,72 +189,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
-    <Button
-        android:id="@+id/btn_comm_insert"
-        android:layout_width="115dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="32dp"
-        android:text="게시하기"
-        android:textStyle="bold"
-        app:backgroundTint="#FFE34020"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.611"
-        app:layout_constraintStart_toEndOf="@+id/edt_community_content"
-        app:layout_constraintTop_toBottomOf="@+id/community_listview" />
-
     <View
         android:id="@+id/view"
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="204dp"
         android:background="#FFFF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/mainview" />
 
+    <ListView
+        android:layout_width="411dp"
+        android:layout_height="502dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="232dp">
+
+    </ListView>
+
     <RatingBar
-        android:id="@+id/ratingbar_Indicator"
-        style="@style/Widget.AppCompat.RatingBar.Indicator"
-        android:progressTint="@android:color/holo_orange_light"
-        android:progressBackgroundTint="@android:color/holo_orange_light"
-        android:secondaryProgressTint="@android:color/holo_orange_light"
+        android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:numStars="5"
-        android:rating="0.0"
-        android:stepSize="0.5"
-        android:isIndicator="false"
-        app:layout_constraintEnd_toEndOf="@+id/mainview"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="@+id/mainview"
-        app:layout_constraintTop_toTopOf="@+id/mainview" />
-
-    <ListView
-        android:id="@+id/community_listview"
-        android:layout_width="411dp"
-        android:layout_height="380dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="124dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/edt_community_content"
-        android:layout_width="247dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="내용을 입력해주세요"
-        android:inputType="textPersonName"
-        android:textColorHint="#0E0909"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/community_listview" />
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="81dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

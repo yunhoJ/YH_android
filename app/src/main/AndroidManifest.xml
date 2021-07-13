@@ -13,35 +13,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YH"
         android:usesCleartextTraffic="true">
-        <activity android:name=".shadow_test"></activity>
-        <activity android:name=".search_One" />
+        <activity android:name=".Search_Culture"></activity>
+        <activity android:name=".Search_Microfinance" />
+        <activity android:name=".Search_Dwelling" />
+        <activity android:name=".Search_Employ" />
+        <activity android:name=".Search_Education" />
+        <activity android:name=".Search_Health" />
+        <activity android:name=".Search_Low_Income" />
+        <activity android:name=".Search_Single_Parent" />
+        <activity android:name=".Search_Disabled" />
+        <activity android:name=".Search_Old_Age" />
+        <activity android:name=".Search_Middle_Age" />
+        <activity android:name=".Search_Youth" />
+        <activity android:name=".Search_Teenager" />
+        <activity android:name=".Search_Child" />
+        <activity android:name=".Search_Pregnant" />
         <activity android:name=".JoinResult" />
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.YH">
         <activity android:name=".AS" />
         <activity android:name=".QnA" />
-        <activity android:name=".UserInfoChange" />
+
+
         <activity android:name=".test2"></activity>
         <activity android:name=".UserInfoChange2" >
+
         </activity>
+
         <activity android:name=".hamburger" />
         <activity android:name=".happyApp" />
-        <activity android:name=".hemberger_test"></activity>
-
+        <activity android:name=".hemberger_test" />
         <activity android:name=".My_comment" />
         <activity android:name=".user_delete" />
-        <activity android:name=".Join">
-        </activity>
-        <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Join">   </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Community_info">
-
-        </activity>
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />
         <activity android:name=".id_find" />
@@ -50,10 +53,16 @@
             android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
-        <activity android:name=".searchPage"/>
-        <activity android:name=".MainActivity2"/>
-        <activity android:name=".MainActivity">
 
+        <activity android:name=".MainActivity2"/>
+        <activity android:name=".SearchPage" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".volley_test" />
     </application>

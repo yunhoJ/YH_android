@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page5"
+        android:title="전체"/>
+    <item
+        android:title="맞춤"
+        android:id="@+id/page6"
+        />
+
+</menu>
