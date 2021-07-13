@@ -9,7 +9,7 @@ public class shadow_test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shadow_test2);
+        setContentView(R.layout.activity_shadow_test);
 
         
     }

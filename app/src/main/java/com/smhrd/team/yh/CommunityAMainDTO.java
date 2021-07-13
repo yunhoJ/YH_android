@@ -3,15 +3,23 @@ package com.smhrd.team.yh;
 
 import android.graphics.drawable.Drawable;
 
+import java.util.ArrayList;
+
 public class CommunityAMainDTO {
     String tv_community_title,tv_community_star,tv_community_rating,tv_community_person;
     Drawable img_community_star;
+
+
 
     public CommunityAMainDTO(String tv_community_title, String tv_community_star, String tv_community_rating, String tv_community_person) {
         this.tv_community_title = tv_community_title;
         this.tv_community_star = tv_community_star;
         this.tv_community_rating = tv_community_rating;
         this.tv_community_person = tv_community_person;
+
+    }
+
+    public CommunityAMainDTO() {
 
     }
 
@@ -54,4 +62,5 @@ public class CommunityAMainDTO {
     public void setImg_community_star(Drawable img_community_star) {
         this.img_community_star = img_community_star;
     }
+
 }

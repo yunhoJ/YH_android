@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class Fragment_D extends Fragment implements View.OnClickListener{
     private TextView tv_setting_gun1, tv_setting_gun2;
     private Button btn_setting_notice, btn_setting_change, btn_setting_quit, btn_setting_qa, btn_setting_as;
@@ -18,10 +20,13 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        // DTO ArrayList에 담기
+        Intent intent = new Intent();
+        ArrayList<CommunityAMainDTO> CommunityList = new ArrayList<CommunityAMainDTO>();
+        intent.putExtra("CommunityList",CommunityList);
+
 
         View fragment=inflater.inflate(R.layout.fragment_d,container,false);
-
-
 
         initView(fragment);
 
@@ -77,5 +82,6 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
             startActivity(intent);
         }
     }
+
 
 }

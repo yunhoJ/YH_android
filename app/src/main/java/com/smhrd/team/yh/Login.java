@@ -88,18 +88,27 @@ public class Login extends AppCompatActivity {
         login_tv_id.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(),id_find.class);
+                startActivity(intent);
             }
         });
 
         login_tv_pw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(),pw_find.class);
+                startActivity(intent);
             }
         });
 
-        logi
+        login_tv_join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Join.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
