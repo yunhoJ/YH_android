@@ -87,7 +87,7 @@
         app:srcCompat="@drawable/star" />
 
     <TextView
-        android:id="@+id/tv_comm_avg"
+        android:id="@+id/tv_community_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"

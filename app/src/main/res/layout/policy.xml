@@ -62,7 +62,7 @@
                 android:layout_marginBottom="10dp">
 
                 <ImageView
-                    android:id="@+id/img_policy"
+                    android:id="@+id/img_community_star"
                     android:layout_width="35dp"
                     android:layout_height="25dp"
                     android:layout_gravity="right"

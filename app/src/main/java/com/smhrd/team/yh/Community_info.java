@@ -2,32 +2,15 @@ package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Community_info extends AppCompatActivity {
     private RatingBar ratingbar_indicator;
@@ -55,7 +38,7 @@ public class Community_info extends AppCompatActivity {
 
         tv_change_comm = findViewById(R.id.tv_change_comm);
         tv_comm_policy = findViewById(R.id.tv_comm_policy);
-        tv_comm_avg = findViewById(R.id.tv_comm_avg);
+        tv_comm_avg = findViewById(R.id.tv_community_star);
         edt_community_content = findViewById(R.id.edt_community_content);
         btn_comm = findViewById(R.id.btn_comm);
         btn_comm_insert = findViewById(R.id.btn_comm_insert);
