@@ -46,7 +46,7 @@
             android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
-        <activity android:name=".searchPage"/>
+<!--        <activity android:name=".searchPage"/>-->
         <activity android:name=".MainActivity2"/>
         <activity android:name=".MainActivity">
             <intent-filter>
