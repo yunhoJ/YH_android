@@ -101,78 +101,23 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="80dp"
         android:text="별점을 남겨주세요"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/staroff" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/staroff" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/staroff" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/staroff" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/staroff" />
-
     <TextView
-        android:id="@+id/tv_change_id"
+        android:id="@+id/tv_change_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="28dp"
         android:text="(/5.0)점"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -180,12 +125,12 @@
         android:id="@+id/button"
         android:layout_width="84dp"
         android:layout_height="45dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="116dp"
         android:text="등록"
         android:textStyle="bold"
         app:backgroundTint="#FFE34020"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
@@ -193,26 +138,70 @@
         android:id="@+id/view"
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="236dp"
         android:background="#FFFF0000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/mainview" />
 
     <ListView
-        android:layout_width="411dp"
-        android:layout_height="502dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="232dp">
+        android:id="@+id/community_list"
+        android:layout_width="413dp"
+        android:layout_height="395dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent">
 
     </ListView>
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingbar_indicator"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="181dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="0.5"
+        android:progressTint="@android:color/holo_orange_light"
+        android:progressBackgroundTint="@android:color/holo_orange_light"
+        android:secondaryProgressTint="@android:color/holo_orange_light"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <EditText
+        android:id="@+id/edt_community_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="81dp" />
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="내용을 입력해주세요"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/community_list" />
+
+    <Button
+        android:id="@+id/btn_comm_insert"
+        android:layout_width="136dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:text="게시하기"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/community_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

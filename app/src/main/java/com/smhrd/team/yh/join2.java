@@ -110,12 +110,12 @@ public class join2 extends AppCompatActivity {
                 if(join_area != null){
                     if(join_area.equals("서울")){
                         Log.v("select_gu", picker.getValue()+1+"");
-                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
+                        //join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
                         Log.v("s",join_gu);
                         location = picker.getValue()+1;
                     }else if(join_area.equals("광주")){
                         Log.v("select_gu", picker.getValue()+27+"");
-                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
+                        //join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
                         location = picker.getValue()+27;
                     }
 
