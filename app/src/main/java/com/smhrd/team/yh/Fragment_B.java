@@ -54,8 +54,8 @@ public class Fragment_B extends Fragment {
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), SearchPage.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getActivity(), SearchPage.class);
+                startActivity(intent);
             }
         });
 

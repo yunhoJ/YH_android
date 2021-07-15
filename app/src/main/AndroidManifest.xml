@@ -31,6 +31,7 @@
         <activity android:name=".My_comment" />
         <activity android:name=".user_delete" />
         <activity android:name=".Join">
+
         </activity>
 
 
@@ -46,16 +47,19 @@
             android:name=".ListViewAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
-        <activity android:name=".searchPage"/>
-        <activity android:name=".MainActivity2"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".SearchPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity2"/>
+        <activity android:name=".MainActivity">
+
+        </activity>
         <activity android:name=".volley_test" />
+
     </application>
 
 </manifest>

@@ -23,7 +23,6 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
 
          fragment=inflater.inflate(R.layout.fragment_d,container,false);
 
-
         
         initView(fragment);
 
@@ -85,10 +84,14 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         }
         else if(v.getId() == R.id.tv_setting_gun1){
             Log.v("data","관심있는 복지 혜택");
+
+
         }else if(v.getId() == R.id.tv_setting_gun2){
             Intent intent = new Intent(getActivity(),My_comment.class);
             startActivity(intent);
         }
     }
-
+public static Fragment_D newInstance(){
+        return new Fragment_D();
+}
 }

@@ -52,7 +52,7 @@ public class Community_info extends AppCompatActivity {
 
 
 
-        tv_change_star = findViewById(R.id.tv_change_star);
+        tv_change_star = findViewById(R.id.tv_change_id);
         //tv_comm_policy = findViewById(R.id.tv_comm_policy);
         tv_comm_avg = findViewById(R.id.tv_community_star);
         edt_community_content = findViewById(R.id.edt_community_content);
