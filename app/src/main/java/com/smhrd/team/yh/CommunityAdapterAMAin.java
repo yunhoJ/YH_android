@@ -38,7 +38,7 @@ public class CommunityAdapterAMAin extends BaseAdapter {
 
         TextView tv_community_title= convertView.findViewById(R.id.tv_community_title);
         TextView tv_community_star= convertView.findViewById(R.id.tv_community_star);
-        TextView tv_community_rating= convertView.findViewById(R.id.tv_community_rating);
+        TextView tv_community_rating= convertView.findViewById(R.id.tv_comm_policy);
         TextView tv_community_person= convertView.findViewById(R.id.tv_community_person);
         CommunityAMainDTO community=communityDTO.get(position);
         tv_community_title.setText(community.getTv_community_title());

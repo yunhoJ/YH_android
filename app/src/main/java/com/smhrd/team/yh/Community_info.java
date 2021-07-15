@@ -2,6 +2,7 @@ package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,8 +53,8 @@ public class Community_info extends AppCompatActivity {
 
 
 
-        tv_change_star = findViewById(R.id.tv_change_star);
-        //tv_comm_policy = findViewById(R.id.tv_comm_policy);
+        tv_change_star = findViewById(R.id.tv_change_id);
+        tv_comm_policy = findViewById(R.id.tv_comm_policy);
         tv_comm_avg = findViewById(R.id.tv_community_star);
         edt_community_content = findViewById(R.id.edt_community_content);
         btn_comm = findViewById(R.id.btn_comm);
@@ -61,6 +62,15 @@ public class Community_info extends AppCompatActivity {
         community_list = findViewById(R.id.community_list);
         String content = edt_community_content.getText().toString();
         String date = "CURRENT_TIMESTAMP";
+
+//        Intent intent=getIntent();
+//        CommunityAMainDTO communityAMainDTO=(CommunityAMainDTO) intent.getSerializableExtra("dot");
+//        Log.v("asdf",communityAMainDTO+"");
+//        String title=communityAMainDTO.getTv_community_title();
+//
+//
+//        tv_comm_policy.setText(title);
+
 
 
         btn_comm_insert.setOnClickListener(new View.OnClickListener() {

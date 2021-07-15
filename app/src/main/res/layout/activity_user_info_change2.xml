@@ -23,7 +23,7 @@
             app:backgroundTint="#FFE34020" />
 
         <TextView
-            android:id="@+id/tv_community_rating"
+            android:id="@+id/tv_comm_policy"
             android:layout_width="210dp"
             android:layout_height="match_parent"
             android:background="#FFE34020"
