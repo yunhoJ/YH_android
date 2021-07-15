@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Fragment_C extends Fragment {
 
     private Button fragc_btn_all, fragc_btn_choice, btn_happyham;
@@ -21,6 +24,7 @@ public class Fragment_C extends Fragment {
     private TextView mainview, happytitle, happysub;
     private MainActivity mainActivity;
     private BottomNavigationView navi;
+    private String id;
     @Override //액티비티에서 A 를실행하는순간 연결
     public void onAttach( Context context) {
         super.onAttach(context);
@@ -37,7 +41,19 @@ public class Fragment_C extends Fragment {
         mainview = fragment.findViewById(R.id.mainview);
         happytitle = fragment.findViewById(R.id.tv_community_person);
         happysub = fragment.findViewById(R.id.happysub);
+
+
         getChildFragmentManager().beginTransaction().replace(R.id.child_fragment, new Fragment_C_child1()).commit();
+       String happysuble =PreferenceManager.getString(fragment.getContext(),"happysuble");
+       String Login=PreferenceManager.getString(fragment.getContext(),"Login");
+        try {
+            JSONObject jsonObject=new JSONObject(Login);
+            id=jsonObject.getString("users_id");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        happysub.setText(id+" 님의 맞춤 정책은"+happysuble+"개입니다. ");
       navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
           @Override
           public boolean onNavigationItemSelected( MenuItem item) {
@@ -47,6 +63,7 @@ public class Fragment_C extends Fragment {
               {
                   getChildFragmentManager().beginTransaction().add(R.id.child_fragment, new Fragment_C()).commit();
                   getChildFragmentManager().beginTransaction().replace(R.id.child_fragment, new Fragment_C_child1()).commit();
+
 
               }
               else if(selectItem==R.id.page6){
