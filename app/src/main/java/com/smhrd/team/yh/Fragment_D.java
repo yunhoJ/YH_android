@@ -24,7 +24,7 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
          fragment=inflater.inflate(R.layout.fragment_d,container,false);
 
 
-
+        
         initView(fragment);
 
         button();
@@ -78,6 +78,10 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
         }else if(v.getId()==R.id.btn_setting_Logout){
             PreferenceManager.clear(fragment.getContext());
             Toast.makeText(fragment.getContext(), "로그아웃", Toast.LENGTH_SHORT).show();
+          Intent intent=new Intent(fragment.getContext(),MainActivity.class);
+          startActivity(intent);
+
+
         }
         else if(v.getId() == R.id.tv_setting_gun1){
             Log.v("data","관심있는 복지 혜택");

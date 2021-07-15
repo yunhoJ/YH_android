@@ -30,6 +30,8 @@
                 android:layout_marginTop="5dp"
                 android:paddingLeft="15dp"
                 android:text="전세대출지원금"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -39,6 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:paddingLeft="15dp"
                 android:text="광주\n만 24세~32세" />
 
