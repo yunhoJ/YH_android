@@ -1,6 +1,7 @@
 package com.smhrd.team.yh;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CustomPolicyAdapter extends BaseAdapter {
     private     boolean ischecked;
@@ -46,14 +48,25 @@ public class CustomPolicyAdapter extends BaseAdapter {
         HomePolisyDTO dto=arrayList.get(position);
         tv_custom_policy_title.setText(dto.getTv_policy_title());
         tv_custom_policy_content.setText(dto.getTv_policy_content());
+
         custom_star.setImageResource(R.drawable.staroff);
+
+        ArrayList<HomePolisyDTO> list=new ArrayList<HomePolisyDTO>();
 
         btn_custom_star.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(ischecked==false) {
+
                     custom_star.setImageResource(R.drawable.star);
+                    HomePolisyDTO dto = new HomePolisyDTO(tv_custom_policy_title.getText().toString(), tv_custom_policy_content.getText().toString());
+                    list.add(dto);
+                    PreferenceManager.setStringArrayPref(context.getApplicationContext(), "my_policy_lisy",list);
+                    for (int i = 0; i <list.size() ; i++) {
+
+                        Log.v("asdf", list.get(i).getTv_policy_title());
+                    }
                     ischecked=true;
                 }else if (ischecked==true) {
                     custom_star.setImageResource(R.drawable.staroff);

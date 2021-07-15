@@ -38,8 +38,9 @@ public class Community_info extends AppCompatActivity {
     private RequestQueue queue;
     private StringRequest stringRequest;
     private ListView community_list;
-    private String users_id;
+    private String users_id, title;
     private CommunityAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class Community_info extends AppCompatActivity {
         myThread.start();
 
 
-
+        ratingbar_indicator = findViewById(R.id.ratingbar_indicator);
         tv_change_star = findViewById(R.id.tv_change_id);
         tv_comm_policy = findViewById(R.id.tv_comm_policy);
         tv_comm_avg = findViewById(R.id.tv_community_star);
@@ -62,13 +63,10 @@ public class Community_info extends AppCompatActivity {
         community_list = findViewById(R.id.community_list);
         btn_rating_insert = findViewById(R.id.btn_rating_insert);
 
-//        Intent intent=getIntent();
-//        CommunityAMainDTO communityAMainDTO=(CommunityAMainDTO) intent.getSerializableExtra("dot");
-//        Log.v("asdf",communityAMainDTO+"");
-//        String title=communityAMainDTO.getTv_community_title();
-//
-//
-//        tv_comm_policy.setText(title);
+        Intent intent = getIntent();
+        CommunityAMainDTO communityAMainDTO = (CommunityAMainDTO) intent.getSerializableExtra("dto");
+
+        title = communityAMainDTO.getTv_community_title();
 
         btn_rating_insert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,44 +74,49 @@ public class Community_info extends AppCompatActivity {
                 //Intent intent = new Intent(getApplicationContext(),)
             }
         });
+
+        tv_comm_policy.setText(title);
+
+
         btn_comm_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendRequest();
 
-                community_list.setAdapter(adapter);
+//                community_list.setAdapter(adapter);
             }
         });
-       ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
+        ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
     }
 //
 
-        class Listener implements RatingBar.OnRatingBarChangeListener {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                ratingbar_indicator.setRating(rating);
-                tv_change_star.setText("(" + Float.toString(rating) + "/5.0)점");
+    class Listener implements RatingBar.OnRatingBarChangeListener {
+        @Override
+        public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+            ratingbar_indicator.setRating(rating);
+            tv_change_star.setText("(" + Float.toString(rating) + "/5.0)점");
 
-            }
         }
+    }
 
-    public void chatSelect(){
+    public void chatSelect() {
         adapter = new CommunityAdapter();
         queue = Volley.newRequestQueue(this);
         String url = "http://59.0.234.126:3000/ChatSelect";
-        stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.v("resultValue", response);
+
                 try {
                     JSONArray array = new JSONArray(response);
-                    for(int i = 0 ; i <array.length(); i++){
+                    for (int i = 0; i < array.length(); i++) {
                         JSONObject jsonObject = array.getJSONObject(i);
                         String id = jsonObject.getString("users_id");
                         String date = jsonObject.getString("community_date");
                         String content = jsonObject.getString("community_content");
-                        String policy = "근로장려금";
-                        adapter.addItem(id,date,content);
+                        String policy = title;
+                        adapter.addItem(id, date, content);
                     }
                     community_list.setAdapter(adapter);
                     //community_list.setSelection(adapter.getCount()-1);
@@ -132,7 +135,7 @@ public class Community_info extends AppCompatActivity {
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
 
                 try {
-                    String utf8String = new String(response.data,"UTF-8");
+                    String utf8String = new String(response.data, "UTF-8");
                     return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -145,7 +148,9 @@ public class Community_info extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 // Server로 데이터를 보낼 시 넣어주는 곳
                 // alt + shift + r 한꺼번에 바꿀 수 있다.
-                Map<String,String> params = new HashMap<String,String>();
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("policy", title);
+                Log.v("policy",title);
                 return params;
             }
         };
@@ -172,7 +177,7 @@ public class Community_info extends AppCompatActivity {
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
 
                 try {
-                    String utf8String = new String(response.data,"UTF-8");
+                    String utf8String = new String(response.data, "UTF-8");
                     return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -184,16 +189,14 @@ public class Community_info extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 // Server로 데이터를 보낼 시 넣어주는 곳
                 // alt + shift + r 한꺼번에 바꿀 수 있다.
-                Map<String,String> params = new HashMap<String, String>();
-                String login1 = PreferenceManager.getString(getApplication(),"Login");
+                Map<String, String> params = new HashMap<String, String>();
+                String login1 = PreferenceManager.getString(getApplication(), "Login");
                 try {
-                    JSONObject jsonObject= new JSONObject(login1);
+                    JSONObject jsonObject = new JSONObject(login1);
                     jsonObject.getString("users_id");
-
-                    params.put("id",jsonObject.getString("users_id"));
-//                  params.put("date",);
+                    params.put("id", jsonObject.getString("users_id"));
                     params.put("content", edt_community_content.getText().toString());
-                    params.put("policy","근로장려금");
+                    params.put("policy", title);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -251,17 +254,19 @@ public class Community_info extends AppCompatActivity {
 
         queue.add(stringRequest);
     }
-    public class MyThread extends Thread{
+
+    public class MyThread extends Thread {
         @Override
         public void run() {
-            while(true){
-                chatSelect();
-                try {
+
+            try {
+                while (true) {
+                    chatSelect();
                     Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
-    }
+}
