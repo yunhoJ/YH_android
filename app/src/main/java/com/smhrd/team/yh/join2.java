@@ -76,7 +76,7 @@ public class join2 extends AppCompatActivity {
         join_picker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                if(newVal == 0){
+                if(newVal == 1){
                     Log.v("tetet","서울");
 
                     join_area = "서울";
@@ -87,7 +87,7 @@ public class join2 extends AppCompatActivity {
                     join_picker2.setDisplayedValues(LocationGu.locationguNames());
                     join_picker2.setWrapSelectorWheel(false);
 
-                } else if(newVal == 1){
+                } else if(newVal == 2){
                     Log.v("tetet","광주");
 
                     join_area = "광주";
@@ -98,6 +98,13 @@ public class join2 extends AppCompatActivity {
                     join_picker2.setDisplayedValues(LocationGu.locationguNames());
                     join_picker2.setWrapSelectorWheel(false);
 
+                }else if(newVal == 0){
+                    join_area = "시";
+                    LocationGu.initLocationGus();
+                    join_picker2.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+                    join_picker2.setMinValue(1);
+                    join_picker2.setDisplayedValues(null);
+                    join_picker2.setWrapSelectorWheel(false);
                 }
 
             }

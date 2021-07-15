@@ -18,10 +18,13 @@ public class LocationCity {
 
         locationCityArrayList = new ArrayList<>();
 
-        LocationCity seoul = new LocationCity(0,"서울");
+        LocationCity si = new LocationCity(0,"시");
+        locationCityArrayList.add(si);
+
+        LocationCity seoul = new LocationCity(1,"서울");
         locationCityArrayList.add(seoul);
 
-        LocationCity gwangju = new LocationCity(1,"광주");
+        LocationCity gwangju = new LocationCity(2,"광주");
         locationCityArrayList.add(gwangju);
 
 

@@ -32,34 +32,29 @@ public class Interesting {
         Interesting culture = new Interesting(0,"문화");
         interestingArrayList.add(culture);
 
-        Interesting finance = new Interesting(0,"서민금융");
-        interestingArrayList.add(finance);
-
     }
 
-//    public static String getInteresting(String area, int selectIndex){
-//
-//        String itr = null;
-//
-//        if(area.equals("서울")){
-//            itr = interestingArrayList.get(selectIndex).getName();
-//        }else if(area.equals("광주")){
-//            itr = interestingArrayList.get(selectIndex).getName();
-//        }
-//        return itr;
-//    }
+    public static String getInteresting(String intrs, int selectIdx){
+
+        String itr = null;
 
 
-//    public static void itr(){
-//        ArrayList<Interesting> itrArraylist = Interesting.getInterestingArrayList();
-//        interestingArrayList = new ArrayList<>();
-//
-//        String itr[] = {"교육","고용","주거","건강","문화","서민금융"};
-//        for(int i = 0; i < itr.length; i++){
-//        Interesting t = new Interesting(i,itr[i]);
-//        interestingArrayList.add(t);
-//        }
-//    }
+            itr = interestingArrayList.get(selectIdx).getName();
+
+        return itr;
+    }
+
+
+    public static void itr(){
+        ArrayList<Interesting> itrArraylist = Interesting.getInterestingArrayList();
+        interestingArrayList = new ArrayList<>();
+
+        String itr[] = {"교육","고용","주거","건강","문화","서민금융"};
+        for(int i = 0; i < itr.length; i++){
+        Interesting t = new Interesting(i,itr[i]);
+        interestingArrayList.add(t);
+        }
+    }
 
     public static  ArrayList<Interesting> getInterestingArrayList(){
         return interestingArrayList;

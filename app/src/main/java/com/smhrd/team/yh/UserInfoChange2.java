@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
@@ -36,7 +35,11 @@ public class UserInfoChange2 extends AppCompatActivity {
     private RequestQueue queue;
     private StringRequest stringRequest;
 
-        // 도시 location_city_picker, 구 interesting_picker
+    private String select_area;
+    private String select_gu;
+    private String select_interesting;
+    private int c_location;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +105,7 @@ public class UserInfoChange2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                change_location = String.valueOf(c_location);
 
                 MemberDTO  memberDTO =new MemberDTO(c.getUsers_id(), c.getUsers_pw(), c.getUsers_gender(), change_interesting, change_income,
                         change_singleParent, c.getUsers_phone_number(), change_disabled_person, change_fragnant, c.getUsers_alaram(), change_location);
@@ -142,24 +146,45 @@ public class UserInfoChange2 extends AppCompatActivity {
         interesting_picker.setWrapSelectorWheel(false);
 
 
-
-
-
-        btn_infoChange_finish = findViewById(R.id.btn_infoChange_finish); //수정완료 버튼 가져오기
-
-        btn_infoChange_finish.setOnClickListener(new View.OnClickListener() { // 수정완료 클릭 리스너
+        interesting_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal == 0){
+                    Log.v("pick",picker.getValue()+"");
+                    change_interesting = Interesting.getInteresting(select_interesting,picker.getValue());
+                    Log.v("intrs",change_interesting);
+                    change_interesting = "education";
+                    Log.v("rn",change_interesting);
+                }else if (newVal == 1){
+                    change_interesting = Interesting.getInteresting(select_interesting,picker.getValue());
+                    change_interesting = "hire";
+                    Log.v("rn",change_interesting);
+                }else if (newVal == 2){
+                    change_interesting = Interesting.getInteresting(select_interesting,picker.getValue());
+                    change_interesting = "home";
+                    Log.v("rn",change_interesting);
+                }else if (newVal == 3){
+                    change_interesting = Interesting.getInteresting(select_interesting,picker.getValue());
+                    change_interesting = "health";
+                    Log.v("rn",change_interesting);
+                }else if (newVal == 4){
+                    change_interesting = Interesting.getInteresting(select_interesting,picker.getValue());
+                    change_interesting = "culture";
+                    Log.v("rn",change_interesting);
+                }
             }
         });
+
 
         // 도시 location_city_picker, 구 location_gu_picker
 
         location_city_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-               if(newVal == 0){
+               if(newVal == 1){
+
+                   select_area = "서울";
+
                    Log.v("tetet","서울");
                    LocationGu.sou();
                    location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
@@ -167,8 +192,11 @@ public class UserInfoChange2 extends AppCompatActivity {
                    location_gu_picker.setDisplayedValues(LocationGu.locationguNames());
                    location_gu_picker.setWrapSelectorWheel(false);
 
-                   } else if(newVal == 1){
+                   } else if(newVal == 2){
                     Log.v("tetet","광주");
+
+                   select_area = "광주";
+
                    LocationGu.gw();
                    location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
                    location_gu_picker.setMinValue(0);
@@ -177,13 +205,40 @@ public class UserInfoChange2 extends AppCompatActivity {
 
 
                    location_gu_picker.setWrapSelectorWheel(false);
-
-
+               }else if(newVal == 0){
+                   select_area = "시";
+                   LocationGu.initLocationGus();
+                   location_gu_picker.setMaxValue(LocationGu.getLocationGuArrayList().size() - 1);
+                   location_gu_picker.setMinValue(1);
+                   location_gu_picker.setDisplayedValues(null);
+                   location_gu_picker.setWrapSelectorWheel(false);
                }
 
             }
         });
 
+        location_gu_picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+
+
+                if(select_area != null){
+                    if(select_area.equals("서울")){
+                        Log.v("select_gu", picker.getValue()+1+"");
+                        select_gu = LocationGu.getLocationGu(select_area, picker.getValue());
+                        Log.v("s",select_gu);
+                        c_location = picker.getValue()+1;
+                    }else if(select_area.equals("광주")){
+                        Log.v("select_gu", picker.getValue()+27+"");
+                        select_gu = LocationGu.getLocationGu(select_area, picker.getValue());
+                        c_location = picker.getValue()+27;
+                    }
+
+                    Log.v("locationGu", select_gu);
+                }
+
+            }
+        });
 
     }
 
@@ -204,7 +259,7 @@ public class UserInfoChange2 extends AppCompatActivity {
                         Intent intent1 = new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(intent1);
                     }else{
-                        Toast.makeText(getApplicationContext(), "회원가입에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "회원수정에 실패하셨습니다!!", Toast.LENGTH_SHORT).show();
 //                        join2_low_income.setText("");
 //                        join2_single_parent.setText("");
 //                        join2_phone_number.setText("");

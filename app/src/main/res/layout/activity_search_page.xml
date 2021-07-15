@@ -33,7 +33,7 @@
             android:orientation="horizontal">
 
             <NumberPicker
-                android:id="@+id/area_picker2"
+                android:id="@+id/area_picker1"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -42,7 +42,7 @@
                 tools:ignore="MissingConstraints" />
 
             <NumberPicker
-                android:id="@+id/area_picker1"
+                android:id="@+id/area_picker2"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
