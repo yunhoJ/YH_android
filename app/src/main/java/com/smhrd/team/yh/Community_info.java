@@ -34,7 +34,7 @@ public class Community_info extends AppCompatActivity {
     private RatingBar ratingbar_indicator;
     private TextView tv_change_star, tv_comm_policy, tv_comm_avg;
     private EditText edt_community_content;
-    private Button btn_comm, btn_comm_insert;
+    private Button btn_comm, btn_comm_insert, btn_rating_insert;
     private RequestQueue queue;
     private StringRequest stringRequest;
     private ListView community_list;
@@ -60,6 +60,7 @@ public class Community_info extends AppCompatActivity {
         btn_comm = findViewById(R.id.btn_comm);
         btn_comm_insert = findViewById(R.id.btn_comm_insert);
         community_list = findViewById(R.id.community_list);
+        btn_rating_insert = findViewById(R.id.btn_rating_insert);
 
 //        Intent intent=getIntent();
 //        CommunityAMainDTO communityAMainDTO=(CommunityAMainDTO) intent.getSerializableExtra("dot");
@@ -69,8 +70,12 @@ public class Community_info extends AppCompatActivity {
 //
 //        tv_comm_policy.setText(title);
 
-
-
+        btn_rating_insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(getApplicationContext(),)
+            }
+        });
         btn_comm_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,6 +193,54 @@ public class Community_info extends AppCompatActivity {
                     params.put("id",jsonObject.getString("users_id"));
 //                  params.put("date",);
                     params.put("content", edt_community_content.getText().toString());
+                    params.put("policy","근로장려금");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                return params;
+            }
+        };
+
+        queue.add(stringRequest);
+    }
+    public void sendRating() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://59.0.234.126:3000/RatingSend";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.v("resultValue", response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // Server 통신시 Error발생 하면 오는 곳
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String utf8String = new String(response.data,"UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return super.parseNetworkResponse(response);
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                // Server로 데이터를 보낼 시 넣어주는 곳
+                // alt + shift + r 한꺼번에 바꿀 수 있다.
+                Map<String,String> params = new HashMap<String, String>();
+                String login1 = PreferenceManager.getString(getApplication(),"Login");
+                try {
+                    JSONObject jsonObject= new JSONObject(login1);
+                    jsonObject.getString("users_id");
+                    params.put("id",jsonObject.getString("users_id"));
+                    params.put("point", String.valueOf(ratingbar_indicator.getRating()));
                     params.put("policy","근로장려금");
                 } catch (JSONException e) {
                     e.printStackTrace();
