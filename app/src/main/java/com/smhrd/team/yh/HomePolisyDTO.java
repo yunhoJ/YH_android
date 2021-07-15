@@ -4,9 +4,9 @@ import android.graphics.drawable.Drawable;
 import android.widget.Button;
 
 public class HomePolisyDTO {
-    String tv_policy_title;
-    String tv_policy_content;
-    Drawable img;
+   private String tv_policy_title;
+    private String tv_policy_content;
+    private Drawable img;
 
 
     public HomePolisyDTO(String tv_policy_title, String tv_policy_content) {
