@@ -111,27 +111,27 @@ public class join2 extends AppCompatActivity {
 
         });
 
-//        join_picker2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-//            @Override
-//            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-//                if(join_area != null){
-//                    if(join_area.equals("서울")){
-//                        Log.v("select_gu", picker.getValue()+1+"");
-//                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
-//                        Log.v("s",join_gu);
-//                        location = picker.getValue()+1;
-//                    }else if(join_area.equals("광주")){
-//                        Log.v("select_gu", picker.getValue()+27+"");
-//                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
-//                        location = picker.getValue()+27;
-//                    }
-//
-//                    Log.v("locationGu", join_gu);
-//                    Log.v("loc_num",location+"");
-//                }
-//
-//            }
-//        });
+        join_picker2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(join_area != null){
+                    if(join_area.equals("서울")){
+                        Log.v("select_gu", picker.getValue()+1+"");
+                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
+                        Log.v("s",join_gu);
+                        location = picker.getValue()+1;
+                    }else if(join_area.equals("광주")){
+                        Log.v("select_gu", picker.getValue()+27+"");
+                        join_gu = LocationGu.getLocationGu(join_area, picker.getValue());
+                        location = picker.getValue()+27;
+                    }
+
+                    Log.v("locationGu", join_gu);
+                    Log.v("loc_num",location+"");
+                }
+
+            }
+        });
 
         join2_phone_number = findViewById(R.id.join2_phone_number);
 

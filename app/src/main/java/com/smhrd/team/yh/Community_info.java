@@ -52,22 +52,20 @@ public class Community_info extends AppCompatActivity {
 
 
 
-        tv_change_star = findViewById(R.id.tv_change_star);
+        tv_change_star = findViewById(R.id.tv_change_id);
         //tv_comm_policy = findViewById(R.id.tv_comm_policy);
         tv_comm_avg = findViewById(R.id.tv_community_star);
         edt_community_content = findViewById(R.id.edt_community_content);
         btn_comm = findViewById(R.id.btn_comm);
         btn_comm_insert = findViewById(R.id.btn_comm_insert);
         community_list = findViewById(R.id.community_list);
-        String content = edt_community_content.getText().toString();
-        String date = "CURRENT_TIMESTAMP";
 
 
         btn_comm_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendRequest();
-                adapter.addItem(users_id,date,content);
+
                 community_list.setAdapter(adapter);
             }
         });
@@ -88,7 +86,7 @@ public class Community_info extends AppCompatActivity {
         adapter = new CommunityAdapter();
         queue = Volley.newRequestQueue(this);
         String url = "http://59.0.234.126:3000/ChatSelect";
-        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.v("resultValue", response);
@@ -96,13 +94,14 @@ public class Community_info extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for(int i = 0 ; i <array.length(); i++){
                         JSONObject jsonObject = array.getJSONObject(i);
-                        String id = jsonObject.getString("id");
-                        String date = jsonObject.getString("date");
-                        String content = jsonObject.getString("content");
+                        String id = jsonObject.getString("users_id");
+                        String date = jsonObject.getString("community_date");
+                        String content = jsonObject.getString("community_content");
+                        String policy = "근로장려금";
                         adapter.addItem(id,date,content);
                     }
                     community_list.setAdapter(adapter);
-                    community_list.setSelection(adapter.getCount()-1);
+                    //community_list.setSelection(adapter.getCount()-1);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -175,11 +174,11 @@ public class Community_info extends AppCompatActivity {
                 try {
                     JSONObject jsonObject= new JSONObject(login1);
                     jsonObject.getString("users_id");
-                    jsonObject.getString("date");
-                    jsonObject.getString("content");
+
                     params.put("id",jsonObject.getString("users_id"));
-                    params.put("date",jsonObject.getString("community_date"));
-                    params.put("content", jsonObject.getString("community_date"));
+//                  params.put("date",);
+                    params.put("content", edt_community_content.getText().toString());
+                    params.put("policy","근로장려금");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -195,7 +194,7 @@ public class Community_info extends AppCompatActivity {
             while(true){
                 chatSelect();
                 try {
-                    Thread.sleep(400);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
