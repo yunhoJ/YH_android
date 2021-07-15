@@ -33,12 +33,13 @@ public class Community_info extends AppCompatActivity {
     private RatingBar ratingbar_indicator;
     private TextView tv_change_star, tv_comm_policy, tv_comm_avg;
     private EditText edt_community_content;
-    private Button btn_comm, btn_comm_insert;
+    private Button btn_comm, btn_comm_insert, btn_rating_insert;
     private RequestQueue queue;
     private StringRequest stringRequest;
     private ListView community_list;
-    private String users_id;
+    private String users_id, title;
     private CommunityAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,11 +176,9 @@ public class Community_info extends AppCompatActivity {
                 try {
                     JSONObject jsonObject= new JSONObject(login1);
                     jsonObject.getString("users_id");
-                    jsonObject.getString("date");
-                    jsonObject.getString("content");
                     params.put("id",jsonObject.getString("users_id"));
-                    params.put("date",jsonObject.getString("community_date"));
-                    params.put("content", jsonObject.getString("community_date"));
+                    params.put("point", String.valueOf(ratingbar_indicator.getRating()));
+                    params.put("policy","근로장려금");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -189,17 +188,19 @@ public class Community_info extends AppCompatActivity {
 
         queue.add(stringRequest);
     }
-    public class MyThread extends Thread{
+
+    public class MyThread extends Thread {
         @Override
         public void run() {
-            while(true){
-                chatSelect();
-                try {
-                    Thread.sleep(400);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+
+            try {
+                while (true) {
+                    chatSelect();
+                    Thread.sleep(1000);
                 }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
-    }
+}

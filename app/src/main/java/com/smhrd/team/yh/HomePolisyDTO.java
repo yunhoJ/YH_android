@@ -4,10 +4,32 @@ import android.graphics.drawable.Drawable;
 import android.widget.Button;
 
 public class HomePolisyDTO {
-    String tv_policy_title;
-    String tv_policy_content;
-    Drawable img;
+   private String tv_policy_title;
+    private String tv_policy_content;
+    private Drawable img;
+    private int starList;
 
+    public HomePolisyDTO(String tv_policy_title, String tv_policy_content, int starList) {
+        this.tv_policy_title = tv_policy_title;
+        this.tv_policy_content = tv_policy_content;
+        this.starList = starList;
+    }
+
+    public int getStarList() {
+        return starList;
+    }
+
+    public void setStarList(int starList) {
+        this.starList = starList;
+    }
+
+    @Override
+    public java.lang.String toString() {
+        return "{" +
+                "\"tv_policy_title\":\"" + tv_policy_title +
+                "\", \"tv_policy_content\":\"" + tv_policy_content +
+                "\", \"starList\":\"" + starList +"\"}";
+    }
 
     public HomePolisyDTO(String tv_policy_title, String tv_policy_content) {
         this.tv_policy_title = tv_policy_title;

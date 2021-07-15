@@ -2,6 +2,16 @@ package com.smhrd.team.yh;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class PreferenceManager {
     private static final String PREFERENCE_NAME = "my_app";
@@ -10,6 +20,7 @@ public class PreferenceManager {
     private static final int DEFAULT_VALUE_INT = -1;
     private static final long DEFAULT_VALUE_LONG = -1L;
     private static final float DEFAULT_VALUE_FLOAT = -1F;
+    private static final String SETTINGS_PLAYER_JSON = "settings_item_json";
 
     private static SharedPreferences getPreferences(Context context) {
         return context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
@@ -95,5 +106,51 @@ public class PreferenceManager {
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
         editor.commit();
+    }
+   public static void setStringArrayPref(Context context, String key, ArrayList<HomePolisyDTO> values) {
+
+        SharedPreferences prefs = getPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        JSONArray a = new JSONArray();
+
+        for (int i = 0; i < values.size(); i++) {
+            a.put(values.get(i));
+        }
+
+        if (!values.isEmpty()) {
+
+            editor.putString(key, a.toString());
+            Log.v("test2",a.toString());
+        } else {
+            editor.putString(key, null);
+        }
+
+        editor.apply();
+    }
+
+   public static ArrayList<JSONObject> getStringArrayPref(Context context, String key) {
+
+        SharedPreferences prefs = getPreferences(context);
+        String json = prefs.getString(key, null);
+       Log.v("test", json);
+        ArrayList<JSONObject> urls = new ArrayList<JSONObject> ();
+
+        if (json != null) {
+            try {
+                JSONArray a = new JSONArray(json);
+                for (int i = 0; i < a.length(); i++) {
+//                    HomePolisyDTO homePolisyDTO;
+                    JSONObject jo = new JSONObject((String)a.get(i));
+
+
+//                    homePolisyDTO= (HomePolisyDTO) a.get(i);
+//
+                            urls.add(jo);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return urls;
     }
 }

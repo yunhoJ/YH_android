@@ -1,6 +1,7 @@
 package com.smhrd.team.yh;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CustomPolicyAdapter extends BaseAdapter {
     private     boolean ischecked;
     ArrayList<HomePolisyDTO> arrayList=new ArrayList<HomePolisyDTO>();
+    ArrayList<HomePolisyDTO> list=new ArrayList<HomePolisyDTO>();
+    ArrayList<Integer> starlist=new ArrayList<Integer>();
 
+    private Button btn_custom_star;
     @Override
     public int getCount() {
         return arrayList.size();
@@ -41,11 +46,12 @@ public class CustomPolicyAdapter extends BaseAdapter {
         TextView tv_custom_policy_content = convertView.findViewById(R.id.tv_custom_policy_content);
         Button btn_custom_policy_apply = convertView.findViewById(R.id.btn_custom_policy_apply);
         Button btn_custom_policy_detail = convertView.findViewById(R.id.btn_custom_policy_detail);
-        Button btn_custom_star=convertView.findViewById(R.id.btn_custom_star);
+        btn_custom_star=convertView.findViewById(R.id.btn_custom_star);
         ImageView custom_star=convertView.findViewById(R.id.img_community);
         HomePolisyDTO dto=arrayList.get(position);
         tv_custom_policy_title.setText(dto.getTv_policy_title());
         tv_custom_policy_content.setText(dto.getTv_policy_content());
+
         custom_star.setImageResource(R.drawable.staroff);
 
         btn_custom_star.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +59,16 @@ public class CustomPolicyAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 if(ischecked==false) {
+
                     custom_star.setImageResource(R.drawable.star);
+                    HomePolisyDTO dto = new HomePolisyDTO(tv_custom_policy_title.getText().toString(), tv_custom_policy_content.getText().toString());
+
+                    list.add(dto);
+                    PreferenceManager.setStringArrayPref(context.getApplicationContext(), "my_policy_lisy",list);
+                    for (int i = 0; i <list.size() ; i++) {
+
+                        Log.v("asdf", list.get(i).getTv_policy_title());
+                    }
                     ischecked=true;
                 }else if (ischecked==true) {
                     custom_star.setImageResource(R.drawable.staroff);
@@ -61,6 +76,9 @@ public class CustomPolicyAdapter extends BaseAdapter {
                 }
             }
         });
+//        if(starlist.get(position)==1){
+//            btn_custom_star.performClick();
+//        }
 
         return convertView;
     }
@@ -68,6 +86,15 @@ public class CustomPolicyAdapter extends BaseAdapter {
         HomePolisyDTO dto = new HomePolisyDTO(tv_custom_policy_title, tv_custom_policy_content);
         arrayList.add(dto);
 
+    }
+    public void addItem(String tv_custom_policy_title, String tv_custom_policy_content, int isstar){
+        HomePolisyDTO dto = new HomePolisyDTO(tv_custom_policy_title, tv_custom_policy_content);
+
+        arrayList.add(dto);
+        starlist.add(isstar);
+//        if(isstar==1){
+//            btn_custom_star.performClick();
+//        }
     }
 
 
