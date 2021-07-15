@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -72,6 +73,10 @@ public class Community_info extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Intent intent = new Intent(getApplicationContext(),)
+                sendRating();
+                Toast.makeText(getApplicationContext(), "별점이 등록되었습니다!", Toast.LENGTH_SHORT).show();
+                if(ratingbar_indicator.getRating()>0){
+                    ratingbar_indicator.setRating(0);}
             }
         });
 
@@ -244,7 +249,7 @@ public class Community_info extends AppCompatActivity {
                     jsonObject.getString("users_id");
                     params.put("id",jsonObject.getString("users_id"));
                     params.put("point", String.valueOf(ratingbar_indicator.getRating()));
-                    params.put("policy","근로장려금");
+                    params.put("policy",title);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
