@@ -3,9 +3,10 @@ package com.smhrd.team.yh;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CommunityAMainDTO {
+public class CommunityAMainDTO implements Serializable {
     String tv_community_title,tv_community_star,tv_community_rating,tv_community_person;
     Drawable img_community_star;
 

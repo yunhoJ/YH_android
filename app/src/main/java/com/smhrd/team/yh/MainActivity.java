@@ -63,12 +63,12 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("prefer1", PreferenceManager.getString(getApplicationContext(), "Login"));
 
                 } else if (selectItem == R.id.page4) {
-                    if (true) {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
+                    if (PreferenceManager.getString(getApplicationContext(), "Login").equals("")) {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_2).commit();
                     }
-//                    else{
-//                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_2).commit();
-//                        }
+                    else{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
+                        }
                 }
 
                 return true;

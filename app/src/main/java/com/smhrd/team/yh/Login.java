@@ -60,6 +60,11 @@ public class Login extends Fragment {
         login_edt_pw = fragment.findViewById(R.id.login_edt_pw);
         login_btn = fragment.findViewById(R.id.login_btn);
         login_ck = fragment.findViewById(R.id.login_ck);
+        login_tv_join = fragment.findViewById(R.id.login_tv_join);
+        login_tv_id = fragment.findViewById(R.id.login_tv_id);
+        login_tv_pw = fragment.findViewById(R.id.login_tv_pw);
+
+
 
 
         sendRequest();
@@ -68,13 +73,27 @@ public class Login extends Fragment {
             public void onClick(View v) {
                 sendRequest();
                 if (isLogin) {
+                    String id = login_edt_id.getText().toString();
+                    String pw = login_edt_pw.getText().toString();
 
+                    Log.v("psssw", id+pw);
+                    MemberDTO dto = new MemberDTO(id,pw);
+                    Gson gson = new Gson();
+                    String value = gson.toJson(dto);
+                    Log.v("resultValue", value);
+
+
+                                                                    //아니 왜 key값임?
+                    PreferenceManager.setString(getActivity().getApplicationContext(),"Login",value);
+                    Intent intent=new Intent(getActivity().getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });
 
         return fragment;
     }
+
 
 
 
@@ -147,21 +166,29 @@ public class Login extends Fragment {
         };
         queue.add(stringRequest);
 
-        textView6 = fragment.findViewById(R.id.textView6);
-        login_tv_id = fragment.findViewById(R.id.login_tv_id);
-        login_tv_pw = fragment.findViewById(R.id.login_tv_pw);
-        login_edt_id = fragment.findViewById(R.id.login_edt_id);
-        login_edt_pw = fragment.findViewById(R.id.login_edt_pw);
-        login_ck = fragment.findViewById(R.id.login_ck);
-        login_btn = fragment.findViewById(R.id.login_btn);
-        view = fragment.findViewById(R.id.view);
-        view2 = fragment.findViewById(R.id.view2);
-        view3 = fragment.findViewById(R.id.view3);
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
+        login_tv_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(),Join.class);
+                startActivity(intent);
 
+            }
+        });
+
+        login_tv_id.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(),id_find.class);
+                startActivity(intent);
+            }
+        });
+
+        login_tv_pw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(),pw_find.class);
+                startActivity(intent);
             }
         });
 

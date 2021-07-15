@@ -7,21 +7,6 @@ public class CommunityDTO {
     private String community_content;
     private String community_policy;
 
-//    public CommunityDTO(String users_id, String community_content) {
-//        this.users_id = users_id;
-//        this.community_content = community_content;
-//    }
-//
-//    public CommunityDTO(String community_policy) {
-//        this.community_policy = community_policy;
-//    }
-
-    public CommunityDTO(String users_id, String community_date, String community_content) {
-        this.users_id = users_id;
-        this.community_date = community_date;
-        this.community_content = community_content;
-    }
-
     public String getUsers_id() {
         return users_id;
     }
@@ -46,11 +31,9 @@ public class CommunityDTO {
         this.community_content = community_content;
     }
 
-    public String getCommunity_policy() {
-        return community_policy;
-    }
-
-    public void setCommunity_policy(String community_policy) {
-        this.community_policy = community_policy;
+    public CommunityDTO(String users_id, String community_date, String community_content) {
+        this.users_id = users_id;
+        this.community_date = community_date;
+        this.community_content = community_content;
     }
 }
