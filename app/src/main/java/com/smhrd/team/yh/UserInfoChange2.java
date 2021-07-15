@@ -244,7 +244,7 @@ public class UserInfoChange2 extends AppCompatActivity {
 
     private void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://59.0.234.126:3000/Join";
+        String url = "http://59.0.234.126:3000/Change";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

@@ -2,9 +2,14 @@ package com.smhrd.team.yh;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -113,7 +118,9 @@ public class PreferenceManager {
         }
 
         if (!values.isEmpty()) {
+
             editor.putString(key, a.toString());
+            Log.v("test2",a.toString());
         } else {
             editor.putString(key, null);
         }
@@ -121,19 +128,24 @@ public class PreferenceManager {
         editor.apply();
     }
 
-   public static ArrayList<HomePolisyDTO> getStringArrayPref(Context context, String key) {
+   public static ArrayList<JSONObject> getStringArrayPref(Context context, String key) {
 
         SharedPreferences prefs = getPreferences(context);
         String json = prefs.getString(key, null);
-        ArrayList<HomePolisyDTO> urls = new ArrayList<HomePolisyDTO>();
+       Log.v("test", json);
+        ArrayList<JSONObject> urls = new ArrayList<JSONObject> ();
 
         if (json != null) {
             try {
                 JSONArray a = new JSONArray(json);
-
                 for (int i = 0; i < a.length(); i++) {
+//                    HomePolisyDTO homePolisyDTO;
+                    JSONObject jo = new JSONObject((String)a.get(i));
 
-                    urls.add((HomePolisyDTO) a.get(i));
+
+//                    homePolisyDTO= (HomePolisyDTO) a.get(i);
+//
+                            urls.add(jo);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

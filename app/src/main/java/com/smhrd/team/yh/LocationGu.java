@@ -47,6 +47,7 @@ public class LocationGu {
         return gu;
     }
 
+
     public static void sou(){
         ArrayList<LocationCity> locationCityArrayList = LocationCity.getLocationCityArrayList();
 

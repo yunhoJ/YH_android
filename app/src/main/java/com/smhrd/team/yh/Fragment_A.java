@@ -90,18 +90,19 @@ public class Fragment_A extends Fragment {
     public void sendRequest() {
         queue = Volley.newRequestQueue(fragment.getContext());//새로운 객체
         //ㄴ요청하는 것
-        String url = "http://59.0.234.126:3000/C_Policy";
+        String url = "http://59.0.234.126:3000/C_Policy_Rating";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() { //요청방식 get-내가 보낸데이터가 ?뒤 query=검색한거 일때-내가 검색한 기록을 공유해야 할때,post 데이터가 노출되지 않는다
             //ㄴ요청 정보
             @Override
             public void onResponse(String response) {
-            Log.v("response11", response);
+            Log.v("response112", response);
             try {
                 JSONArray jsonArray=new JSONArray(response);
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject= jsonArray.getJSONObject(i);
                     String C_policy_name=jsonObject.getString("C_Policy_Name");
+
 
                     dto=new CommunityAMainDTO(C_policy_name,"★★★★","4.0/5.0","1020명");
                     list.add(dto);
@@ -159,6 +160,7 @@ public class Fragment_A extends Fragment {
                 JSONObject jsonObject=new JSONObject(login1);
                 Log.v("login12",jsonObject.getString("users_id"));
                 params.put("id",jsonObject.getString("users_id"));
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
