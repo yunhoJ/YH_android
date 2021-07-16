@@ -96,19 +96,41 @@ public class Fragment_A extends Fragment {
             @Override
             public void onResponse(String response) {
             Log.v("response112", response);
+            String Star;
             try {
                 JSONArray jsonArray= new JSONArray(response);
 
                 for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject= jsonArray.getJSONObject(i);
-                    String C_policy_name=jsonObject.getString("name");
-                    String count=jsonObject.getString("count");
-                    String avg=jsonObject.getString("avg");
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String C_policy_name = jsonObject.getString("name");
+                    String count = jsonObject.getString("count");
+                    String avg = jsonObject.getString("avg");
+                    float avgs=Float.valueOf(avg);
 
-
-                    dto=new CommunityAMainDTO(C_policy_name,"★★★★",avg+"/5.0",count);
+                    if (avgs > 4.5) {
+                        Star = "★★★★★";
+                    } else if (avgs > 4) {
+                        Star = "★★★★☆";
+                    } else if (avgs > 3.5) {
+                        Star = "★★★★";
+                    } else if (avgs > 3) {
+                        Star = "★★★☆";
+                    } else if (avgs > 2.5) {
+                        Star = "★★★";
+                    }else if (avgs > 2) {
+                        Star = "★★☆";
+                    } else if (avgs > 1.5) {
+                        Star = "★★";
+                    }else if (avgs > 1) {
+                        Star = "★☆";
+                    } else if (avgs > 0) {
+                        Star = "★";
+                    }else {
+                        Star = "☆";
+                    }
+                    dto=new CommunityAMainDTO(C_policy_name,Star,avgs+"/5.0",count);
                     list.add(dto);
-                    adapter.addItem(C_policy_name,"★★★★",avg+"/5.0",count+"명");
+                    adapter.addItem(C_policy_name,Star,avgs+"/5.0",count);
 
 
                 }

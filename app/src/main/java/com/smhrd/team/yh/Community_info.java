@@ -33,14 +33,15 @@ import java.util.Map;
 
 public class Community_info extends AppCompatActivity {
     private RatingBar ratingbar_indicator;
-    private TextView tv_change_star, tv_comm_policy, tv_comm_avg;
+    private TextView tv_change_star, tv_comm_policy, tv_comm_avg, tv_community_star,tv_community_p;
     private EditText edt_community_content;
-    private Button btn_comm, btn_comm_insert, btn_rating_insert;
+    private Button btn_comm, btn_comm_insert, btn_rating_insert ,btn_community_back;
     private RequestQueue queue;
     private StringRequest stringRequest;
     private ListView community_list;
     private String users_id, title;
     private CommunityAdapter adapter;
+
 
 
     @Override
@@ -53,7 +54,9 @@ public class Community_info extends AppCompatActivity {
         MyThread myThread = new MyThread();
         myThread.start();
 
-
+        btn_community_back=findViewById(R.id.btn_community_back);
+        tv_community_star=findViewById(R.id.tv_community_star);
+        tv_community_p=findViewById(R.id.tv_community_p);
         ratingbar_indicator = findViewById(R.id.ratingbar_indicator);
         tv_change_star = findViewById(R.id.tv_change_id);
         tv_comm_policy = findViewById(R.id.tv_comm_policy);
@@ -69,6 +72,8 @@ public class Community_info extends AppCompatActivity {
 
         title = communityAMainDTO.getTv_community_title();
 
+
+
         btn_rating_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +86,9 @@ public class Community_info extends AppCompatActivity {
         });
 
         tv_comm_policy.setText(title);
+        tv_community_p.setText(communityAMainDTO.getTv_community_person()+"명");
+        tv_community_star.setText(communityAMainDTO.getTv_community_rating());
+        Log.v("asfd",tv_community_star.getText().toString());
 
 
         btn_comm_insert.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +97,15 @@ public class Community_info extends AppCompatActivity {
                 sendRequest();
 
                // community_list.setAdapter(adapter);
+            }
+        });
+        btn_community_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myThread.interrupt();
+                Intent intent1=new Intent(getApplicationContext(),MainActivity.class);
+
+                startActivity(intent1);
             }
         });
         ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
@@ -265,7 +282,7 @@ public class Community_info extends AppCompatActivity {
         public void run() {
 
             try {
-                while (true) {
+                while (!Thread.currentThread().isInterrupted()) {
                     chatSelect();
                     Thread.sleep(1000);
                 }
