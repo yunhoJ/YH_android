@@ -35,6 +35,19 @@
         app:srcCompat="@drawable/ic_baseline_menu_24"
         tools:ignore="VectorDrawableCompat" />
 
+    <ImageView
+        android:id="@+id/imghappyham2"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="348dp"
+        android:layout_marginRight="348dp"
+        app:layout_constraintEnd_toEndOf="@+id/mainview"
+        app:layout_constraintStart_toStartOf="@+id/btn_community_back"
+        app:layout_constraintTop_toTopOf="@+id/mainview"
+        app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+        tools:ignore="VectorDrawableCompat" />
+
     <Button
         android:id="@+id/btn_happyham"
         android:layout_width="59dp"
@@ -50,17 +63,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="#00FFFFFF" />
 
+    <Button
+        android:id="@+id/btn_community_back"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:background="#00ff0000"
+        android:text=""
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/mainview"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="@+id/mainview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#00FFFFFF" />
+
     <TextView
         android:id="@+id/tv_comm_policy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="근로장려금()"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
@@ -69,17 +99,19 @@
         android:layout_width="30dp"
         android:layout_height="27dp"
         android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainview"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="?android:attr/actionModeFindDrawable" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.667"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,11 +122,11 @@
         android:id="@+id/tv_community_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="4.9/5.0 (1270명)"
+        android:layout_marginTop="60dp"
+        android:text="4.9/5.0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
         app:layout_constraintTop_toBottomOf="@+id/mainview" />
 
     <TextView
@@ -203,5 +235,18 @@
         app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/community_list" />
+
+    <TextView
+        android:id="@+id/tv_community_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="left"
+        android:text="3명"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_community_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_community_star"
+        app:layout_constraintTop_toTopOf="@+id/tv_community_star" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
