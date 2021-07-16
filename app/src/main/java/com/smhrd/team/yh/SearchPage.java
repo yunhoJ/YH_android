@@ -41,7 +41,7 @@ public class SearchPage extends AppCompatActivity {
     private StringRequest stringRequest;
     private NumberPicker area_picker1, area_picker2; //picker 변수정의
     private TextView tv_area, tv1, tv2, tv3, tv4, tv5;
-    private String search_area, search_gu;
+    private String search_area, search_gu,respon;
     private int search_location;
     private String val;
     private HomePolisyAdapter adapter = new HomePolisyAdapter();
@@ -52,10 +52,6 @@ public class SearchPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
-
-        Intent intent = getIntent();
-
-
 
         btn_pregnant = findViewById(R.id.btn_pregnant);
         btn_child = findViewById(R.id.btn_child);
@@ -162,8 +158,10 @@ public class SearchPage extends AppCompatActivity {
                 Gson gson = new Gson();
                 val = gson.toJson(searchPageDTO);
                 Log.v("preg",val);
+
                 sendRequest();
-                Intent intent1 = new Intent(getApplicationContext(),Fragment_B.class);
+
+
 
             }
         });
@@ -347,6 +345,13 @@ public class SearchPage extends AppCompatActivity {
             public void onResponse(String response) {
                 // Server로 부터 데이터를 받아온 곳
                 Log.v("resultValue",response);
+
+                Intent intent1=new Intent(getApplicationContext(),MainActivity.class);
+                intent1.putExtra("response",response);
+                startActivity(intent1);
+                finish();
+
+
 //                try {
 //                    //JSONArray jsonArray=new JSONArray(response);
 ////                    for (int i = 0; i < jsonArray.length(); i++) {
@@ -388,6 +393,7 @@ public class SearchPage extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(val);
                     params.put("location_no",jsonObject.getString("search_gu"));
                     params.put("category",jsonObject.getString("search_category"));
+                    PreferenceManager.setString(getApplicationContext(),"Search_title",jsonObject.getString("search_category"));
 //                    params.put("category",jsonObject.getString("search_category"));
 //                    params.put("infants",jsonObject.getString(search_child));
 //                    params.put("child",jsonObject.getString(search_teenager));
