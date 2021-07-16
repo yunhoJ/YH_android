@@ -128,6 +128,8 @@ public class PreferenceManager {
         editor.apply();
     }
 
+
+
    public static ArrayList<JSONObject> getStringArrayPref(Context context, String key) {
 
         SharedPreferences prefs = getPreferences(context);
