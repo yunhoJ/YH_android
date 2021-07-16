@@ -88,7 +88,7 @@ public class Community_info extends AppCompatActivity {
             public void onClick(View v) {
                 sendRequest();
 
-//                community_list.setAdapter(adapter);
+               // community_list.setAdapter(adapter);
             }
         });
         ratingbar_indicator.setOnRatingBarChangeListener(new Listener());
@@ -155,7 +155,7 @@ public class Community_info extends AppCompatActivity {
                 // alt + shift + r 한꺼번에 바꿀 수 있다.
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("policy", title);
-                Log.v("policy",title);
+               // Log.v("policy",title);
                 return params;
             }
         };
