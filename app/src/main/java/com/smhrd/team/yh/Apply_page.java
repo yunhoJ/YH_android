@@ -25,10 +25,23 @@ public class Apply_page extends AppCompatActivity {
         mWebView = findViewById(R.id.webView);//xml 자바코드 연결
         mWebView.getSettings().setJavaScriptEnabled(true);//자바스크립트 허용
 
-        mWebView.loadUrl(myUrl+"www.naver.com");//웹뷰 실행
+        mWebView.loadUrl(myUrl+"bokjiro.go.kr/nwel/bokjiroMain.do");//웹뷰 실행
         mWebView.setWebChromeClient(new WebChromeClient());//웹뷰에 크롬 사용 허용//이 부분이 없으면 크롬에서 alert가 뜨지 않음
         mWebView.setWebViewClient(new WebViewClient());//새창열기 없이 웹뷰 내에서 다시 열기//페이지 이동 원활히 하기위해 사용
 
+
+// Initial webview
+        mWebView.setWebViewClient(new WebViewClient());
+// Enable JavaScript
+        mWebView.getSettings().setJavaScriptEnabled(true);
+// Enable Zoom
+        mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setSupportZoom(true);
+// Adjust web display
+        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.getSettings().setUseWideViewPort(true);
+// url은 알아서 설정 예) http://m.naver.com/
+        mWebView.loadUrl("http://bokjiro.go.kr/nwel/bokjiroMain.do");
     }
 
 
