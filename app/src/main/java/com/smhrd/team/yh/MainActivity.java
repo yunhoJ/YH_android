@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static Context my_context;
     public String url="";
+    public String content = "";
     private Bundle bundle;
     private BottomNavigationView navi;
     private Fragment_A fragment_a;

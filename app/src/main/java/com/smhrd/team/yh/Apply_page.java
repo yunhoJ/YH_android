@@ -27,35 +27,35 @@ public class Apply_page extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         String url = ((MainActivity)((MainActivity)getActivity()).my_context).url;
+        String content = ((MainActivity)((MainActivity)getActivity()).my_context).content;
         fragment=inflater.inflate(R.layout.activity_apply_page,container,false);
-        Log.v("test",url);
+        mWebView = fragment.findViewById(R.id.mWebView);
+        if(url.equals("a")){
+            url="http://bokjiro.go.kr/welInfo/retrieveGvmtWelInfo.do?welInfSno=15189";
+            mWebView.loadUrl(url);
+        }
+        if(content.equals("a")){
+            content = "http://bokjiro.go.kr/welInfo/retrieveGvmtWelInfo.do?welInfSno=15189";
+            mWebView.loadUrl(content);
+        }
+        Log.v("test1",url);
+        // 웹뷰 셋팅
+        mWebView.getSettings().setJavaScriptEnabled(true);//자바스크립트 허용
 
-//        Intent intent1=getActivity().getIntent();
-//        String response= intent1.getStringExtra("response");
-        //어플 화면 상단 좌측 이전 버튼 & 우측 햄버거 버튼 화면이동 만들기
-//        try {
-//            JSONArray array=new JSONArray(response);
-//            for(int i=0;i<array.length();i++){
-//                JSONObject jsonObject=array.getJSONObject(i);
-//                String title=jsonObject.getString("Policy_Name");
-//                String summary=jsonObject.getString("Policy_Summary");
-//                adapter.addItem(title,summary);
-//            }
-//            SelectView.setAdapter(adapter);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        String title=PreferenceManager.getString(fragment.getContext(),"Search_title");
-//        Search_title.setText(title);
-//        btn_Find_Pre.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(fragment.getContext(),MainActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+        //웹뷰 실행
+        mWebView.setWebChromeClient(new WebChromeClient());//웹뷰에 크롬 사용 허용//이 부분이 없으면 크롬에서 alert가 뜨지 않음
+        mWebView.setWebViewClient(new WebViewClient());//새창열기 없이 웹뷰 내에서 다시 열기//페이지 이동 원활히 하기위해 사용
 
+        // Initial webview
+        mWebView.setWebViewClient(new WebViewClient());
+// Enable JavaScript
+        mWebView.getSettings().setJavaScriptEnabled(true);
+// Enable Zoom
+        mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setSupportZoom(true);
+// Adjust web display
+       mWebView.getSettings().setLoadWithOverviewMode(true);
+       mWebView.getSettings().setUseWideViewPort(true);
 
         return fragment;
 
@@ -66,24 +66,10 @@ public class Apply_page extends Fragment {
 //        setContentView(R.layout.activity_apply_page);
 //        mWebView= findViewById(R.id.mWebView);
 //
-//        // 웹뷰 셋팅
-//        mWebView.getSettings().setJavaScriptEnabled(true);//자바스크립트 허용
-//
-//        mWebView.loadUrl("http://bokjiro.go.kr/nwel/bokjiroMain.do");//웹뷰 실행
-//        mWebView.setWebChromeClient(new WebChromeClient());//웹뷰에 크롬 사용 허용//이 부분이 없으면 크롬에서 alert가 뜨지 않음
-//        mWebView.setWebViewClient(new WebViewClient());//새창열기 없이 웹뷰 내에서 다시 열기//페이지 이동 원활히 하기위해 사용
 //
 //
-//// Initial webview
-//        mWebView.setWebViewClient(new WebViewClient());
-//// Enable JavaScript
-//        mWebView.getSettings().setJavaScriptEnabled(true);
-//// Enable Zoom
-//        mWebView.getSettings().setBuiltInZoomControls(true);
-//        mWebView.getSettings().setSupportZoom(true);
-//// Adjust web display
-//        mWebView.getSettings().setLoadWithOverviewMode(true);
-//        mWebView.getSettings().setUseWideViewPort(true);
+//
+
 //// url은 알아서 설정 예) http://m.naver.com/
 //    }
 
