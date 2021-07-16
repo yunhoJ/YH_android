@@ -101,12 +101,14 @@ public class Fragment_A extends Fragment {
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject= jsonArray.getJSONObject(i);
-                    String C_policy_name=jsonObject.getString("C_Policy_Name");
+                    String C_policy_name=jsonObject.getString("name");
+                    String count=jsonObject.getString("count");
+                    String avg=jsonObject.getString("avg");
 
 
-                    dto=new CommunityAMainDTO(C_policy_name,"★★★★","4.0/5.0","1020명");
+                    dto=new CommunityAMainDTO(C_policy_name,"★★★★",avg+"/5.0",count);
                     list.add(dto);
-                    adapter.addItem(C_policy_name,"★★★★","4.0/5.0","1020명");
+                    adapter.addItem(C_policy_name,"★★★★",avg+"/5.0",count+"명");
 
 
                 }
