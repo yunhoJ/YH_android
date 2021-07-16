@@ -98,7 +98,7 @@ public class Fragment_A extends Fragment {
             Log.v("response112", response);
             String Star;
             try {
-                JSONArray jsonArray=new JSONArray(response);
+                JSONArray jsonArray= new JSONArray(response);
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);

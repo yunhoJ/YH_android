@@ -156,7 +156,7 @@ public class SearchPage extends AppCompatActivity {
         btn_pregnant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_pregnant = "1";
+                search_pregnant = "Policy_pregnant_women";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_pregnant);
                 Gson gson = new Gson();
@@ -171,7 +171,7 @@ public class SearchPage extends AppCompatActivity {
         btn_child.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_child = "1";
+                search_child = "Policy_infants";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_child);
                 Gson gson = new Gson();
@@ -184,7 +184,7 @@ public class SearchPage extends AppCompatActivity {
         btn_teenager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_teenager = "1";
+                search_teenager = "Policy_child";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_teenager);
                 Gson gson = new Gson();
@@ -197,7 +197,7 @@ public class SearchPage extends AppCompatActivity {
         btn_youth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_youth = "1";
+                search_youth = "Policy_youth";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_youth);
                 Gson gson = new Gson();
@@ -210,7 +210,7 @@ public class SearchPage extends AppCompatActivity {
         btn_middle_Age.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_middle_age = "1";
+                search_middle_age = "Policy_middle";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_middle_age);
                 Gson gson = new Gson();
@@ -223,7 +223,7 @@ public class SearchPage extends AppCompatActivity {
         btn_old_Age.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_old_age = "1";
+                search_old_age = "Policy_old";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_old_age);
                 Gson gson = new Gson();
@@ -236,7 +236,7 @@ public class SearchPage extends AppCompatActivity {
         btn_disabled.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_disabled = "1";
+                search_disabled = "Policy_disabled_person";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_disabled);
                 Gson gson = new Gson();
@@ -249,7 +249,7 @@ public class SearchPage extends AppCompatActivity {
         btn_single_Parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_single_parent = "1";
+                search_single_parent = "Policy_single_parent";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_single_parent);
                 Gson gson = new Gson();
@@ -262,7 +262,7 @@ public class SearchPage extends AppCompatActivity {
         btn_low_Income.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_low_income = "1";
+                search_low_income = "Policy_low_income";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_low_income);
                 Gson gson = new Gson();
@@ -275,7 +275,7 @@ public class SearchPage extends AppCompatActivity {
         btn_health.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_health = "health";
+                search_health = "Policy_health";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_health);
                 Gson gson = new Gson();
@@ -288,7 +288,7 @@ public class SearchPage extends AppCompatActivity {
         btn_education.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_education = "education";
+                search_education = "Policy_education";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_education);
                 Gson gson = new Gson();
@@ -301,7 +301,7 @@ public class SearchPage extends AppCompatActivity {
         btn_employ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_employ = "hire";
+                search_employ = "Policy_hire";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_employ);
                 Gson gson = new Gson();
@@ -314,7 +314,7 @@ public class SearchPage extends AppCompatActivity {
         btn_dwelling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_dwelling = "home";
+                search_dwelling = "Policy_home";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_dwelling);
                 Gson gson = new Gson();
@@ -327,7 +327,7 @@ public class SearchPage extends AppCompatActivity {
         btn_culture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_culture = "culture";
+                search_culture = "Policy_culture";
                 String location = String.valueOf(search_location);
                 SearchPageDTO searchPageDTO = new SearchPageDTO(location, search_culture);
                 Gson gson = new Gson();
@@ -341,31 +341,31 @@ public class SearchPage extends AppCompatActivity {
 
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://59.0.234.126:3000/Search";
+        String url = "http://59.0.234.126:3000/Search_Select";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 // Server로 부터 데이터를 받아온 곳
                 Log.v("resultValue",response);
-                try {
-                    JSONArray jsonArray=new JSONArray(response);
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject= jsonArray.getJSONObject(i);
-                        String policy_name=jsonObject.getString("policy_name");
-                        String policy_summary=jsonObject.getString("policy_summary");
-                        Log.v("jsonObject11",jsonObject+"");
-                        Log.v("policy_name1",policy_name);
-                        Log.v("policy_summary1",policy_summary);
-                        adapter.addItem(policy_name,policy_summary);
-                        search_ListView.setAdapter(adapter);
-                    }
-                    Intent intent = new Intent(getApplicationContext(),Fragment_B.class);
-                    startActivity(intent);
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    //JSONArray jsonArray=new JSONArray(response);
+////                    for (int i = 0; i < jsonArray.length(); i++) {
+////                        JSONObject jsonObject= jsonArray.getJSONObject(i);
+////                        String policy_name=jsonObject.getString("policy_name");
+////                        String policy_summary=jsonObject.getString("policy_summary");
+////                        Log.v("jsonObject11",jsonObject+"");
+////                        Log.v("policy_name1",policy_name);
+////                        Log.v("policy_summary1",policy_summary);
+////                        adapter.addItem(policy_name,policy_summary);
+////                        search_ListView.setAdapter(adapter);
+//                    }
+//                    Intent intent = new Intent(getApplicationContext(),Fragment_B.class);
+//                    startActivity(intent);
+//
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
             }
         }, new Response.ErrorListener() {
@@ -386,8 +386,23 @@ public class SearchPage extends AppCompatActivity {
 //                Log.v("category","preg");
                 try {
                     JSONObject jsonObject = new JSONObject(val);
-                    params.put("Location",jsonObject.getString("search_location"));
-                    params.put("Policy",jsonObject.getString("search_category"));
+                    params.put("location_no",jsonObject.getString("search_gu"));
+                    params.put("category",jsonObject.getString("search_category"));
+//                    params.put("category",jsonObject.getString("search_category"));
+//                    params.put("infants",jsonObject.getString(search_child));
+//                    params.put("child",jsonObject.getString(search_teenager));
+//                    params.put("youth",jsonObject.getString(search_youth));
+//                    params.put("middle",jsonObject.getString(search_middle_age));
+//                    params.put("old",jsonObject.getString(search_old_age));
+//                    params.put("pregnant_women",jsonObject.getString(search_pregnant));
+//                    params.put("culture",jsonObject.getString(search_culture));
+//                    params.put("disabled",jsonObject.getString(search_disabled));
+//                    params.put("home",jsonObject.getString(search_dwelling));
+//                    params.put("single_parent",jsonObject.getString(search_single_parent));
+//                    params.put("health",jsonObject.getString(search_health));
+//                    params.put("hire",jsonObject.getString(search_employ));
+//                    params.put("education",jsonObject.getString(search_education));
+//                    params.put("low_income", jsonObject.getString(search_low_income));
 
                     Log.v("params",params+"");
 
