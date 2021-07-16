@@ -16,8 +16,6 @@
         <activity android:name=".shadow_test"></activity>
         <activity android:name=".search_One" />
         <activity android:name=".JoinResult" />
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.YH">
         <activity android:name=".AS" />
         <activity android:name=".QnA" />
         <activity android:name=".UserInfoChange" />
@@ -27,21 +25,11 @@
         <activity android:name=".hamburger" />
         <activity android:name=".happyApp" />
         <activity android:name=".hemberger_test"></activity>
-        <activity android:name=".Apply_page">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".My_comment" />
         <activity android:name=".user_delete" />
         <activity android:name=".Join">
-
         </activity>
-
         <activity android:name=".Community_info">
-
         </activity>
         <activity android:name=".join2" />
         <activity android:name=".pw_find" />
@@ -52,13 +40,16 @@
             tools:ignore="Instantiatable" />
         <activity android:name=".Notice" />
         <activity android:name=".SearchPage">
-
+        </activity>
+        <activity android:name=".MainActivity2">
 
         </activity>
-        <activity android:name=".Search_Child"/>
-        <activity android:name=".MainActivity2"/>
-        <activity android:name=".MainActivity">
 
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".volley_test" />
 

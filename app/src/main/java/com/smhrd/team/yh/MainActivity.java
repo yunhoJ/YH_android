@@ -1,7 +1,9 @@
 package com.smhrd.team.yh;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +14,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Context my_context;
+    public String url="";
     private Bundle bundle;
     private BottomNavigationView navi;
     private Fragment_A fragment_a;
@@ -19,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment_C fragment_c;
     private Fragment_D fragment_d;
     private Fragment_D_2 fragment_d_2;
+    private Apply_page apply_page;
     private Search_Child search_child;
     private Login login;
 
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         fragment_c = new Fragment_C();
         fragment_d = new Fragment_D();
         fragment_d_2 = new Fragment_D_2();
+        apply_page = new Apply_page();
         search_child=new Search_Child();
         login = new Login();
 
@@ -91,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         ;
 
-
+        my_context = this;
     }
 
     ;

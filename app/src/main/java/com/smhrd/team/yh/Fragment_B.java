@@ -78,7 +78,7 @@ public class Fragment_B extends Fragment {
 
 
 
-       adapter.addItem("5차재난지원금","코로나 19 피해");
+       adapter.addItem("5차 재난지원금","코로나19 피해","a","a");
 //        adapter.addItem("전세대출지원금","광주지역 만 24세부터");
 //        adapter.addItem("청년구직활동지원금","청년 무직자");
 //        adapter.addItem("청소년급식비지원","한부모 가정 ");
