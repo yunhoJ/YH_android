@@ -64,6 +64,16 @@ public class HomePolisyAdapter extends BaseAdapter {
 //                Intent intent=new Intent(context,MainActivity.class);
 //                context.startActivity(intent);
                 ((MainActivity)((MainActivity)context).my_context).url=tv_policy_apply.getText().toString();
+
+            }
+        });
+        btn_policy_detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Apply_page apply_page = new Apply_page();
+                FragmentManager manager = ((AppCompatActivity)context).getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.child_fragment,apply_page).commit();
+                ((MainActivity)((MainActivity)context).my_context).content=tv_policy_detail.getText().toString();
             }
         });
 
