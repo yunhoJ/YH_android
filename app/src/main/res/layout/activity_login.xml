@@ -34,9 +34,11 @@
             android:ems="10"
             android:hint="  ID"
             android:inputType="textPersonName"
-            android:textColor="#E1E1E1"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
             android:textColorHint="#BFBFBF"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +52,8 @@
             android:background="@drawable/round"
             android:ems="10"
             android:hint="  PW"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
             android:textColorHint="#BFBFBF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,6 +157,8 @@
             app:layout_constraintStart_toEndOf="@+id/login_tv_pw"
             app:layout_constraintTop_toTopOf="@+id/login_tv_pw"
             app:layout_constraintVertical_bias="0.0" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -141,7 +141,7 @@ public class Community_info extends AppCompatActivity {
                         adapter.addItem(id, date, content);
                     }
                     community_list.setAdapter(adapter);
-                    //community_list.setSelection(adapter.getCount()-1);
+                    community_list.setSelection(adapter.getCount()-1);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

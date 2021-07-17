@@ -3,6 +3,7 @@ package com.smhrd.team.yh;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,10 +44,16 @@ public class Fragment_D extends Fragment implements View.OnClickListener{
 
 
          fragment=inflater.inflate(R.layout.fragment_d,container,false);
-        dtos= PreferenceManager.getStringArrayPref(fragment.getContext(),"my_policy_lisy");
-        tv_setting_gun1=fragment.findViewById(R.id.tv_setting_gun1);
-        tv_setting_gun2=fragment.findViewById(R.id.guideline2);
-        tv_setting_gun1.setText(dtos.size()+"건");
+
+
+        if( PreferenceManager.getStringArrayPref(fragment.getContext(),"my_policy_lisy")==null) {
+            tv_setting_gun1.setText( "0 건");
+        }else {
+            dtos = PreferenceManager.getStringArrayPref(fragment.getContext(), "my_policy_lisy");
+            tv_setting_gun1 = fragment.findViewById(R.id.tv_setting_gun1);
+            tv_setting_gun2 = fragment.findViewById(R.id.guideline2);
+            tv_setting_gun1.setText(dtos.size() + "건");
+        }
         sendRequest();
         initView(fragment);
 

@@ -106,9 +106,9 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/policy_navi"
-        android:layout_width="409dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="411dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="100dp"
         android:background="#FFFFFF"
         app:itemIconTint="#FDFCFC"
         app:itemTextColor="#FFE34020"

@@ -12,6 +12,9 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     public static Context my_context;
@@ -25,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private Fragment_D_2 fragment_d_2;
     private Apply_page apply_page;
     private Search_Child search_child;
+    private Fragment_D_admin fragment_d_admin;
     private Login login;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         navi = findViewById(R.id.navi);
 
+        fragment_d_admin=new Fragment_D_admin();
         fragment_a = new Fragment_A();
         fragment_b = new Fragment_B();
         fragment_c = new Fragment_C();
@@ -58,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
             Log.v("test","아래실행");
             getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, search_child).commit();// getSupportFragmentManager() 프레그 먼트 관리하는 객체
         }
+
+            String Login = PreferenceManager.getString(getApplicationContext(), "Login");
+            try {
+                JSONObject jsonObject = new JSONObject(Login);
+                id = jsonObject.getString("users_id");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
 
         navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -85,12 +100,16 @@ public class MainActivity extends AppCompatActivity {
                 } else if (selectItem == R.id.page4) {
                     if (PreferenceManager.getString(getApplicationContext(), "Login").equals("")) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_2).commit();
-                    }
-                    else{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
+                    } else {
+                        if (id.equals("admin") ) {
+                            Log.v("test","idadmin");
+                            getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d_admin).commit();
+                        } else {
+                            Log.v("test",id);
+                            getSupportFragmentManager().beginTransaction().replace(R.id.child_fragment, fragment_d).commit();
                         }
+                    }
                 }
-
                 return true;
             }
         });

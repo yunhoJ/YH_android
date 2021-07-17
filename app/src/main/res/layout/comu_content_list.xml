@@ -16,7 +16,7 @@
         android:layout_height="45dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-         />
+        android:src="@drawable/icon_cheongnyeon" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                 android:paddingLeft="0dp"
                 android:paddingTop="0dp"
                 android:paddingBottom="0dp"
-                android:text="▽답글 숨기기 "
+                android:text="▽답글 보기"
                 android:textColor="#FFE34020"
                 app:backgroundTint="#FFFFFF" />
 
@@ -85,7 +85,7 @@
                     android:paddingLeft="0dp"
                     android:paddingTop="0dp"
                     android:paddingBottom="0dp"
-                    android:text="좋아요"
+                    android:text="좋아요♡"
                     android:textColor="#FFE34020"
                     app:backgroundTint="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"

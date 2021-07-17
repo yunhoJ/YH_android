@@ -83,9 +83,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="근로장려금()"
-        android:maxLines="1"
         android:ellipsize="end"
+        android:maxLines="1"
+        android:text="근로장려금()"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -179,17 +179,18 @@
 
     <ListView
         android:id="@+id/community_list"
-        android:layout_width="413dp"
-        android:layout_height="395dp"
+        android:layout_width="421dp"
+        android:layout_height="427dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.103">
 
     </ListView>
 
@@ -201,11 +202,11 @@
         android:layout_marginTop="16dp"
         android:isIndicator="false"
         android:numStars="5"
-        android:rating="0.0"
-        android:stepSize="0.5"
-        android:progressTint="@android:color/holo_orange_light"
         android:progressBackgroundTint="@android:color/holo_orange_light"
+        android:progressTint="@android:color/holo_orange_light"
+        android:rating="0.0"
         android:secondaryProgressTint="@android:color/holo_orange_light"
+        android:stepSize="0.5"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -219,10 +220,12 @@
         android:ems="10"
         android:hint="내용을 입력해주세요"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/community_list" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
     <Button
         android:id="@+id/btn_comm_insert"
@@ -231,10 +234,12 @@
         android:layout_marginTop="16dp"
         android:text="게시하기"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/community_list" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
     <TextView
         android:id="@+id/tv_community_p"
@@ -248,5 +253,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_community_star"
         app:layout_constraintTop_toTopOf="@+id/tv_community_star" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="256dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

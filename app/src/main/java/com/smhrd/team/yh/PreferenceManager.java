@@ -134,7 +134,7 @@ public class PreferenceManager {
 
         SharedPreferences prefs = getPreferences(context);
         String json = prefs.getString(key, null);
-       Log.v("test", json);
+//       Log.v("test", json);
         ArrayList<JSONObject> urls = new ArrayList<JSONObject> ();
 
         if (json != null) {
