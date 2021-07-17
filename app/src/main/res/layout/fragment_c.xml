@@ -108,6 +108,7 @@
         android:id="@+id/policy_navi"
         android:layout_width="411dp"
         android:layout_height="47dp"
+
         android:layout_marginTop="100dp"
         android:background="#FFFFFF"
         app:itemIconTint="#FDFCFC"

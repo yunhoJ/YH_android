@@ -78,7 +78,7 @@ public class Fragment_B extends Fragment {
 
 
 
-       adapter.addItem("5차 재난지원금","코로나19 피해","a","a");
+//       adapter.addItem("5차 재난지원금","코로나19 피해","a","a");
 //        adapter.addItem("전세대출지원금","광주지역 만 24세부터");
 //        adapter.addItem("청년구직활동지원금","청년 무직자");
 //        adapter.addItem("청소년급식비지원","한부모 가정 ");
@@ -119,7 +119,7 @@ public class Fragment_B extends Fragment {
                         Log.v("policy_name1",policy_name);
                         Log.v("policy_summary1",policy_summary);
 
-                        adapter.addItem(policy_name,policy_summary);
+                        adapter.addItem(policy_name,policy_summary,"a","a");
                        happyListView.setAdapter(adapter);
                    }
 

@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent1 = new Intent(this, happyApp.class);
+        startActivity(intent1);
+
         navi = findViewById(R.id.navi);
 
         fragment_d_admin=new Fragment_D_admin();

@@ -85,8 +85,8 @@
 
     <ListView
         android:id="@+id/SelectView"
-        android:layout_width="414dp"
-        android:layout_height="620dp"
+        android:layout_width="420dp"
+        android:layout_height="581dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

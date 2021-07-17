@@ -54,11 +54,14 @@ public class Fragment_A extends Fragment {
         community_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                sendRequest();
                 Log.v("asdf","클릭");
                 Intent intent =new Intent(fragment.getContext(),Community_info.class);
                 intent.putExtra("dto",list.get(position));
                 startActivity(intent);
+
+
+
             }
         });
 
@@ -93,10 +96,13 @@ public class Fragment_A extends Fragment {
         String url = "http://59.0.234.126:3000/C_Policy_Rating";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() { //요청방식 get-내가 보낸데이터가 ?뒤 query=검색한거 일때-내가 검색한 기록을 공유해야 할때,post 데이터가 노출되지 않는다
             //ㄴ요청 정보
+
             @Override
             public void onResponse(String response) {
+
             Log.v("response112", response);
             String Star;
+
             try {
                 JSONArray jsonArray= new JSONArray(response);
 
@@ -128,9 +134,9 @@ public class Fragment_A extends Fragment {
                     }else {
                         Star = "☆";
                     }
-                    dto=new CommunityAMainDTO(C_policy_name,Star,avgs+"/5.0",count);
+                    dto=new CommunityAMainDTO(C_policy_name,Star,avg+"/5.0",count);
                     list.add(dto);
-                    adapter.addItem(C_policy_name,Star,avgs+"/5.0",count);
+                    adapter.addItem(C_policy_name,Star,avg+"/5.0",count);
 
 
                 }

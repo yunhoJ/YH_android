@@ -19,17 +19,19 @@
                     <action android:name="com.google.firebase.MESSAGING_EVENT"/>
                 </intent-filter>
             </service>
-        <activity android:name=".Fragment_D_admin"></activity>
+
         <activity android:name=".shadow_test" />
         <activity android:name=".search_One" />
         <activity android:name=".JoinResult" />
+        <activity android:name=".happyApp"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity android:name=".AS" />
         <activity android:name=".QnA" />
         <activity android:name=".UserInfoChange" />
         <activity android:name=".test2" />
         <activity android:name=".UserInfoChange2"></activity>
         <activity android:name=".hamburger" />
-        <activity android:name=".happyApp" />
+
         <activity android:name=".hemberger_test" />
         <activity android:name=".My_comment" />
         <activity android:name=".user_delete" />

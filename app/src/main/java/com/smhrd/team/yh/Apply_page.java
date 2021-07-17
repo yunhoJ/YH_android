@@ -31,11 +31,11 @@ public class Apply_page extends Fragment {
         fragment=inflater.inflate(R.layout.activity_apply_page,container,false);
         mWebView = fragment.findViewById(R.id.mWebView);
         if(url.equals("a")){
-            url="http://bokjiro.go.kr/welInfo/retrieveGvmtWelInfo.do?welInfSno=15189";
+            url="https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A01004&CappBizCD=17410000001&tp_seq=01";
             mWebView.loadUrl(url);
         }
         if(content.equals("a")){
-            content = "http://bokjiro.go.kr/welInfo/retrieveGvmtWelInfo.do?welInfSno=15189";
+            content = "http://bokjiro.go.kr/welInfo/retrieveGvmtWelInfo.do?welInfSno=16462";
             mWebView.loadUrl(content);
         }
         Log.v("test1",url);

@@ -104,7 +104,7 @@ public class Community_info extends AppCompatActivity {
             public void onClick(View v) {
                 myThread.interrupt();
                 Intent intent1=new Intent(getApplicationContext(),MainActivity.class);
-
+                sendRating();
                 startActivity(intent1);
             }
         });
@@ -266,6 +266,7 @@ public class Community_info extends AppCompatActivity {
                     jsonObject.getString("users_id");
                     params.put("id",jsonObject.getString("users_id"));
                     params.put("point", String.valueOf(ratingbar_indicator.getRating()));
+                    Log.v("asdf",String.valueOf(ratingbar_indicator.getRating()));
                     params.put("policy",title);
                 } catch (JSONException e) {
                     e.printStackTrace();
