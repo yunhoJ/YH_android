@@ -7,10 +7,13 @@
 # 화면 흐름도
 ![image](https://user-images.githubusercontent.com/86466096/141659297-7a28b6cb-e36e-4970-9584-de45a4a8d1be.png)
 
-![image](https://user-images.githubusercontent.com/86466096/141659362-7057dd6c-583d-4ab2-b887-01850933b2f4.png)
 
-![image](https://user-images.githubusercontent.com/86466096/141659435-778c2695-724c-4efe-a8a7-00ae5a256bb1.png)
 
+![image](https://user-images.githubusercontent.com/86466096/141659495-1b09dcb9-0974-4aab-a08d-23b046d58ef7.png)
+
+
+
+![image](https://user-images.githubusercontent.com/86466096/141659494-3c10a92a-3c14-4758-b3f7-556290086098.png)
 # 메뉴 구성도 
 ![image](https://user-images.githubusercontent.com/86466096/141659452-501817ce-c74a-48a8-9084-e69224842109.png)
 
