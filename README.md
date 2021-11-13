@@ -13,12 +13,9 @@
 
 # 화면 흐름도
 ![image](https://user-images.githubusercontent.com/86466096/141659297-7a28b6cb-e36e-4970-9584-de45a4a8d1be.png)
-
-
-
+-
 ![image](https://user-images.githubusercontent.com/86466096/141659495-1b09dcb9-0974-4aab-a08d-23b046d58ef7.png)
-
-
+-
 ![image](https://user-images.githubusercontent.com/86466096/141659532-61182356-2fbb-4168-8a38-727244867e22.png)
 # 메뉴 구성도 
 ![image](https://user-images.githubusercontent.com/86466096/141659452-501817ce-c74a-48a8-9084-e69224842109.png)
