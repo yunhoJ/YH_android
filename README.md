@@ -6,7 +6,7 @@
 
 ### 프로젝트 수행을 위한 주요 기술
 - 파이썬을 이용한 복지정보 크롤링
-- ListView, WebView, CustomAdapter
+- ListView, WebView, CustomAdapter, PreferenceManager
 - FCM과 안드로이드 연동   
 - Thread 클래스 상속 - 실시간 서버연동
 
